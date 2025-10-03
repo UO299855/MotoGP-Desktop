@@ -6,6 +6,8 @@
 /*Especificidad 001*/
 body { 
     font-family: "Tahoma", sans-serif;
+    color: #ffffff;
+    background-color: #3e5577;
     margin: 0pt;
 }
 
@@ -14,10 +16,19 @@ body > p:first-of-type {
     margin: 8pt;
 }
 
+/*Especificidad 001*/
+a {
+    color : #f4fe7b;
+}
+
+/*Especificdad 011 */
+a:hover {
+    color : #bec75e;
+}
+
 /*Especifidad 002 */
 header a {
     color:#f4fe7b;
-    text-decoration-line: none;
 }
 
 /*Especifidad 012*/
@@ -39,10 +50,4 @@ header h1 {
 /* Especificidad 001 */
 main {
     margin: 8pt;
-}
-
-/*Especificidad 010 */
-a.active {
-    color:#ee843d;
-    font-weight: bold;
 }
