@@ -1,0 +1,14 @@
+/* Javier Ortín Rodenas  UO299855*/
+/* Comentario con las reglas generales TODO:cambiar luego */
+/* Todos los selectores han de tener un comentario con su especificidad*/
+
+/*Especificidad 001*/
+header {
+    display: flex;
+}
+
+/*Especificidad 002*/
+header > nav {
+    display: flex;
+    flex-direction: row;
+}

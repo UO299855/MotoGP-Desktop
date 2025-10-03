@@ -10,7 +10,9 @@ body {
 }
 
 /*Especificidad 002*/
+/*Regla para las migas*/
 body > p:first-of-type {
+    font-size: 1.2em;
     margin: 8pt;
 }
 
@@ -41,7 +43,7 @@ main {
     margin: 8pt;
 }
 
-/*Especificidad 010 */
+/*Especificidad 011 */
 a.active {
     color:#ee843d;
     font-weight: bold;
