@@ -3,12 +3,50 @@
 /* Todos los selectores han de tener un comentario con su especificidad*/
 
 /*Especificidad 001*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*Especificidad 001*/
 header {
     display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 /*Especificidad 002*/
 header > nav {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    /*Aunque afecte a los hijos se especifica en el padre*/ 
+    flex-grow: 1;
+    /* usar propiedad GAP de flex*/
+}
+
+/*Especificidad 001*/
+main {
+    margin: 8pt;
+}
+
+
+/*Reglas dedicadas a la adaptabilidad */
+@media screen and (min-width: 320px) and (max-width: 799px) {
+
+    /*Especificidad 001*/
+    header {
+        flex-direction: column;
+    }
+
+    /*Especificidad 002*/
+    header > nav {
+        flex-direction: column;
+    }
+
+    /*Especificidad 001, 001*/
+    video, audio {
+        width: 100%;
+        height: auto; /*No se ve el audio con "auto" */
+    }
 }
