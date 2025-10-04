@@ -34,6 +34,11 @@ main {
 /*Reglas dedicadas a la adaptabilidad */
 @media screen and (min-width: 320px) and (max-width: 799px) {
 
+    /*Especificidad 012*/
+    body > p:first-of-type {
+        visibility: hidden;
+    }
+
     /*Especificidad 001*/
     header {
         flex-direction: column;
