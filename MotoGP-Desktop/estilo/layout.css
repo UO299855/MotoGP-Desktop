@@ -36,7 +36,7 @@ main {
 
     /*Especificidad 012*/
     body > p:first-of-type {
-        visibility: hidden;
+        display: none;
     }
 
     /*Especificidad 001*/
@@ -49,9 +49,14 @@ main {
         flex-direction: column;
     }
 
-    /*Especificidad 001, 001*/
-    video, audio {
+    /*Especificidad 001*/
+    video {
         width: 100%;
-        height: auto; /*No se ve el audio con "auto" */
+        height: auto;
+    }
+
+    /*Especificidad 001*/
+    audio {
+        width: 100%;
     }
 }

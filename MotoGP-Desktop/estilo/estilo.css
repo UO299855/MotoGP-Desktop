@@ -17,6 +17,7 @@ header {
 header a {
     color:#f4fe7b;
     text-decoration-line: none;
+    font-size: 1.1em;
 }
 
 /*Especifidad 012*/
@@ -28,7 +29,7 @@ header a:hover {
 header > nav > a.active {
     color:#ee843d;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 /*Especificidad 023 */
@@ -39,5 +40,5 @@ header > nav > a.active:hover {
 /*Especificidad 002*/
 /*Regla para las migas*/
 body > p:first-of-type {
-    font-size: 1.2em;
+    font-size: 0.8em;
 }
