@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE circuito SYSTEM "circuito.dtd">
+<!-- PONER METROS CON TODAS LAS LETRAS-->
+ <circuito>
+    <nombre>Pertamina Mandalika Circuit</nombre>
+    <longitud-circuito unidades="metros">4301</longitud-circuito>
+    <pais>Indonesia</pais>
+    <anchura-media unidades="metros">15</anchura-media>
+    <fecha>05/10/2025</fecha>
+    <hora>9:00</hora>
+    <vueltas>27</vueltas>
+    <patrocinador>Pertamina</patrocinador>
+    <referencias>
+        <referencia>https://www.motogp.com/es/calendar/2025/event/indonesia/c4def1f2-c288-4eab-9461-7acda49e765a?tab=circuit-info</referencia>
+        <referencia>https://es.wikipedia.org/wiki/Circuito_Urbano_Internacional_de_Mandalika</referencia>
+        <referencia>Referencia 3</referencia>
+    </referencias>
+    <fotografias>
+        <fotografia>Foto 1</fotografia>
+        <fotografia>Foto 2</fotografia>
+        <fotografia>Foto 3</fotografia>
+    </fotografias>
+    <videos>
+        <video>multimedia/circuito/video2.mp4</video>
+        <video>multimedia/circuito/video2.mp4</video>        
+    </videos>
+    <origen>
+        <coordenadas>
+            <longitud unidades = "grados" >116.303333</longitud>
+            <latitud unidades = "grados">-8.895555</latitud>
+            <altitud unidades="metros">9.25</altitud>
+        </coordenadas>
+    </origen>
+    <tramos>
+        <tramo sector="I1">
+            <distancia unidades="metros">360.92</distancia>
+            <coordenadas>
+                <longitud unidades = "grados" >116.3066666</longitud>
+                <latitud unidades = "grados">-8.89472222</latitud>
+                <altitud unidades="metros">9.63</altitud>
+            </coordenadas>
+        </tramo>
+    </tramos>
+    <vencedor nombre = "Fermín Aldeguer">
+        <tiempo-victoria unidades="segundos">2467.651</tiempo-victoria>
+    </vencedor>
+    <clasificados>
+        <clasificado puesto="1" puntos="545">Marc Marquez</clasificado>
+        <clasificado puesto="2" puntos="362">Alex Marquez</clasificado>
+        <clasificado puesto="3" puntos="274">Francesco Bagnaia</clasificado>
+    </clasificados>
+ </circuito>

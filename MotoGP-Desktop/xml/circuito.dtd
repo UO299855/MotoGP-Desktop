@@ -1,0 +1,49 @@
+
+
+<!ELEMENT circuito (nombre, longitud-circuito, pais, anchura-media, fecha, hora, vueltas, patrocinador, referencias, fotografias, videos, origen, tramos, vencedor, clasificados)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT longitud-circuito (#PCDATA)>
+<!ELEMENT anchura-media (#PCDATA)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT hora (#PCDATA)>
+<!ELEMENT vueltas (#PCDATA)>
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ELEMENT patrocinador (#PCDATA)>
+<!ELEMENT referencias (referencia+)> <!-- mínimo 3-->
+<!ELEMENT referencia (#PCDATA)>
+<!ELEMENT fotografias (fotografia+)> <!-- Entre 1 y 5-->
+<!ELEMENT fotografia (#PCDATA)>
+<!ELEMENT videos (video+)> <!-- Galería de vídeos (entre 1 y 3)-->
+<!ELEMENT video (#PCDATA)>
+<!ELEMENT origen (coordenadas)>
+<!ELEMENT coordenadas (longitud, latitud, altitud)> <!-- Punto de origen (latitud, longitud, altitud)-->
+<!ELEMENT tramos (tramo+)>
+<!ELEMENT tramo (distancia, coordenadas)>
+<!ELEMENT distancia (#PCDATA)>
+
+<!ELEMENT longitud (#PCDATA)>
+<!ELEMENT latitud (#PCDATA)>
+<!ELEMENT altitud (#PCDATA)>
+<!ELEMENT vencedor (tiempo-victoria)>
+<!ELEMENT tiempo-victoria (#PCDATA)>
+
+<!--3 primeros clasificados (después de la carreda) en la tabla global, no solo en el circuito de Indonesia -->
+<!ELEMENT clasificados (clasificado+)>
+<!ELEMENT clasificado (#PCDATA)>
+
+<!ATTLIST anchura-media unidades CDATA #REQUIRED>
+<!ATTLIST longitud-circuito unidades CDATA  #REQUIRED>
+<!ATTLIST longitud unidades CDATA #REQUIRED>
+<!ATTLIST latitud unidades CDATA #REQUIRED>
+<!ATTLIST altitud unidades CDATA #REQUIRED>
+<!ATTLIST vencedor nombre CDATA #REQUIRED>
+<!ATTLIST tiempo-victoria unidades CDATA #REQUIRED>
+<!ATTLIST clasificado puesto CDATA #REQUIRED>
+<!ATTLIST clasificado puntos CDATA #REQUIRED>
+<!ATTLIST distancia unidades CDATA #REQUIRED>
+<!ATTLIST tramo sector CDATA #REQUIRED>
+
+<!-- Entre 1 y 5, en máquina local-->
+<!-- usar unos 28 puntos para los tramos, y clasificarlo según sectores-->
+<!-- jugar con "tramos" (plural) que contiene a varios "tramo" (singular)-->

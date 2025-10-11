@@ -6,6 +6,7 @@
 /*Especificidad 001*/
 body { 
     font-family: "Tahoma", sans-serif;
+    background-color: #f4f4f4;
 }
 
 /*Especificidad 001 */
@@ -29,16 +30,52 @@ header a:hover {
 header > nav > a.active {
     color:#ee843d;
     font-weight: bold;
-    font-size: 1.3em;
 }
 
 /*Especificidad 023 */
-header > nav > a.active:hover {
+header > nav > a.active:hover, a:hover {
     color:#c0692e;
 }
+
+/*Especificidad 002*/ 
+ a {
+    color: #1e88e5;
+}
+
 
 /*Especificidad 002*/
 /*Regla para las migas*/
 body > p:first-of-type {
     font-size: 0.8em;
+}
+
+/*Especificidad 001*/
+section {
+    background-color : #FFFF;
+}
+
+/*Especificidad 001*/
+dt {
+    font-weight : bold;
+}
+
+/*Especificidad 002*/
+aside {
+    background-color: #f9f9f9;
+}
+
+
+table {
+    border: black;
+}
+
+/*Especificidad 001*/
+table caption {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/*Especificidad 012*/
+table tr:nth-child(odd) {
+    background-color: #f1f1f1;
 }

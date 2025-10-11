@@ -1,0 +1,116 @@
+/* Contenedor principal */
+main {
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #212121;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+header nav a:hover, header nav a.active {
+    color: #d32f2f; /* Rojo para resaltar el enlace activo */
+}
+
+/* Disposición de las imágenes y texto dentro de main */
+picture {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* Ficha de información del piloto */
+section {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h3 {
+    margin-bottom: 10px;
+}
+
+/* Disposición del aside (contenido relacionado) */
+aside {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+aside dl {
+    margin-top: 10px;
+}
+
+aside dt {
+    font-weight: bold;
+}
+
+aside dd {
+    margin-bottom: 8px;
+}
+
+/* Diseño de la tabla dentro de main */
+section table {
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+section table caption {
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+section table th, section table td {
+    text-align: left;
+    padding: 12px;
+}
+
+section table tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para el video */
+video {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* Disposición general de la página */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    background-color: #212121;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: 40px;
+}

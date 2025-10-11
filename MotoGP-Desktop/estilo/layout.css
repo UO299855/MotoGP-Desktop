@@ -27,9 +27,49 @@ header > nav {
 
 /*Especificidad 001*/
 main {
-    margin: 8pt;
+    margin: 2ex;
 }
 
+/*Especificidad 002*/
+/*Regla para las migas*/
+body > p:first-of-type {
+    margin: 2ex;
+}
+
+/*Especificidad 001, 001*/
+/*TODO regla del reloj */
+section, aside {
+    padding: 2ex;
+    margin: 2vw 2vw;
+}
+
+/*Especificidad 001*/
+picture {
+    display: flex;
+    justify-content: center;
+}
+
+/*Especificidad 001*/
+video {
+    display: block;
+    margin : 0 auto;
+}
+
+/*Especificidad 001*/
+table {
+    width : 100%;
+}
+
+/*Especificidad 001*/
+p {
+    text-align: justify;
+}
+
+/*Especificidad 002, 002*/
+table th, table td {
+    text-align: left;
+    padding: 1ex;
+}
 
 /*Reglas dedicadas a la adaptabilidad */
 @media screen and (min-width: 320px) and (max-width: 799px) {
