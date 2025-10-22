@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<circuito xsi:schemaLocation="http://www.uniovi.es circuito.xsd"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.uniovi.es">
+    <nombre>Pertamina Mandalika Circuit</nombre>
+    <longitud-circuito unidades="metros">4301</longitud-circuito>
+    <pais>Indonesia</pais>
+    <anchura-media unidades="metros">15</anchura-media>
+    <fecha>2025-10-05</fecha>
+    <hora>09:00:00</hora>
+    <vueltas>27</vueltas>
+    <patrocinador>Pertamina</patrocinador>
+    <referencias>
+        <referencia>https://www.motogp.com/es/calendar/2025/event/indonesia/c4def1f2-c288-4eab-9461-7acda49e765a?tab=circuit-info</referencia>
+        <referencia>https://es.wikipedia.org/wiki/Circuito_Urbano_Internacional_de_Mandalika</referencia>
+        <referencia>Referencia 3</referencia>
+    </referencias>
+    <fotografias>
+        <fotografia>Foto 1</fotografia>
+        <fotografia>Foto 2</fotografia>
+        <fotografia>Foto 3</fotografia>
+    </fotografias>
+    <videos>
+        <video>multimedia/circuito/video2.mp4</video>
+        <video>multimedia/circuito/video2.mp4</video>        
+    </videos>
+    <origen>
+        <coordenadas>
+            <longitud unidades = "grados" >116.303333</longitud>
+            <latitud unidades = "grados">-8.895555</latitud>
+            <altitud unidades="metros">9.25</altitud>
+        </coordenadas>
+    </origen>
+    <tramos>
+        <tramo sector="I1">
+            <distancia unidades="metros">200</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3072222</longitud>
+                <latitud unidades="grados">-8.8944444</latitud>
+                <altitud unidades="metros">8.59</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I2">
+            <distancia unidades="metros">155.68</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3086111</longitud>
+                <latitud unidades="grados">-8.8941667</latitud>
+                <altitud unidades="metros">8.23</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I3">
+            <distancia unidades="metros">0.49</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3086111</longitud>
+                <latitud unidades="grados">-8.8941667</latitud>
+                <altitud unidades="metros">7.74</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I4">
+            <distancia unidades="metros">43.42</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3083333</longitud>
+                <latitud unidades="grados">-8.8944444</latitud>
+                <altitud unidades="metros">7.68</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I5">
+            <distancia unidades="metros">68.41</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3088889</longitud>
+                <latitud unidades="grados">-8.8941667</latitud>
+                <altitud unidades="metros">8.35</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I6">
+            <distancia unidades="metros">248.98</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3086111</longitud>
+                <latitud unidades="grados">-8.8963889</latitud>
+                <altitud unidades="metros">7.68</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I7">
+            <distancia unidades="metros">0.47</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3086111</longitud>
+                <latitud unidades="grados">-8.8963889</latitud>
+                <altitud unidades="metros">7.21</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I8">
+            <distancia unidades="metros">86.84</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3091667</longitud>
+                <latitud unidades="grados">-8.8958333</latitud>
+                <altitud unidades="metros">7.83</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I9">
+            <distancia unidades="metros">196.33</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3077778</longitud>
+                <latitud unidades="grados">-8.8969444</latitud>
+                <altitud unidades="metros">7.54</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I10">
+            <distancia unidades="metros">130.26</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3086111</longitud>
+                <latitud unidades="grados">-8.8961111</latitud>
+                <altitud unidades="metros">7.52</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I11">
+            <distancia unidades="metros">43.42</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3083333</longitud>
+                <latitud unidades="grados">-8.8963889</latitud>
+                <altitud unidades="metros">7.52</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I12">
+            <distancia unidades="metros">61.78</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3083333</longitud>
+                <latitud unidades="grados">-8.8969444</latitud>
+                <altitud unidades="metros">7.41</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I13">
+            <distancia unidades="metros">137.80</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3077778</longitud>
+                <latitud unidades="grados">-8.8980556</latitud>
+                <altitud unidades="metros">7.21</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I14">
+            <distancia unidades="metros">130.26</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3086111</longitud>
+                <latitud unidades="grados">-8.8988889</latitud>
+                <altitud unidades="metros">7.37</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I15">
+            <distancia unidades="metros">30.52</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3088889</longitud>
+                <latitud unidades="grados">-8.8988889</latitud>
+                <altitud unidades="metros">7.22</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I16">
+            <distancia unidades="metros">30.52</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3091667</longitud>
+                <latitud unidades="grados">-8.8988889</latitud>
+                <altitud unidades="metros">7.15</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I17">
+            <distancia unidades="metros">187.82</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3088889</longitud>
+                <latitud unidades="grados">-8.9005556</latitud>
+                <altitud unidades="metros">6.44</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I18">
+            <distancia unidades="metros">43.42</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3091667</longitud>
+                <latitud unidades="grados">-8.9002778</latitud>
+                <altitud unidades="metros">6.46</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I19">
+            <distancia unidades="metros">97.56</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3088889</longitud>
+                <latitud unidades="grados">-8.9011111</latitud>
+                <altitud unidades="metros">6.60</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I20">
+            <distancia unidades="metros">173.68</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3077778</longitud>
+                <latitud unidades="grados">-8.9022222</latitud>
+                <altitud unidades="metros">6.61</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I21">
+            <distancia unidades="metros">43.42</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3075000</longitud>
+                <latitud unidades="grados">-8.9025000</latitud>
+                <altitud unidades="metros">6.61</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I22">
+            <distancia unidades="metros">30.52</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3072222</longitud>
+                <latitud unidades="grados">-8.9025000</latitud>
+                <altitud unidades="metros">6.54</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I23">
+            <distancia unidades="metros">91.55</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3063889</longitud>
+                <latitud unidades="grados">-8.9025000</latitud>
+                <altitud unidades="metros">7.06</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I24">
+            <distancia unidades="metros">68.40</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3058333</longitud>
+                <latitud unidades="grados">-8.9027778</latitud>
+                <altitud unidades="metros">6.91</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I25">
+            <distancia unidades="metros">68.90</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3055556</longitud>
+                <latitud unidades="grados">-8.9033333</latitud>
+                <altitud unidades="metros">6.91</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I26">
+            <distancia unidades="metros">86.84</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3050000</longitud>
+                <latitud unidades="grados">-8.9038889</latitud>
+                <altitud unidades="metros">6.90</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I27">
+            <distancia unidades="metros">205.21</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3033333</longitud>
+                <latitud unidades="grados">-8.9047222</latitud>
+                <altitud unidades="metros">7.75</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I28">
+            <distancia unidades="metros">44.46</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3030556</longitud>
+                <latitud unidades="grados">-8.9050000</latitud>
+                <altitud unidades="metros">17.32</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I29">
+            <distancia unidades="metros">61.86</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3025000</longitud>
+                <latitud unidades="grados">-8.9050000</latitud>
+                <altitud unidades="metros">7.24</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I30">
+            <distancia unidades="metros">136.80</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3036111</longitud>
+                <latitud unidades="grados">-8.9044444</latitud>
+                <altitud unidades="metros">6.75</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I31">
+            <distancia unidades="metros">205.20</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3019444</longitud>
+                <latitud unidades="grados">-8.9052778</latitud>
+                <altitud unidades="metros">6.98</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I32">
+            <distancia unidades="metros">30.89</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3019444</longitud>
+                <latitud unidades="grados">-8.9050000</latitud>
+                <altitud unidades="metros">6.57</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I33">
+            <distancia unidades="metros">247.11</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3019444</longitud>
+                <latitud unidades="grados">-8.9027778</latitud>
+                <altitud unidades="metros">4.30</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I34">
+            <distancia unidades="metros">43.42</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3022222</longitud>
+                <latitud unidades="grados">-8.9025000</latitud>
+                <altitud unidades="metros">4.83</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I35">
+            <distancia unidades="metros">164.61</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3036111</longitud>
+                <latitud unidades="grados">-8.9019444</latitud>
+                <altitud unidades="metros">5.14</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I36">
+            <distancia unidades="metros">43.42</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3038889</longitud>
+                <latitud unidades="grados">-8.9016667</latitud>
+                <altitud unidades="metros">5.58</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I37">
+            <distancia unidades="metros">61.78</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3038889</longitud>
+                <latitud unidades="grados">-8.9011111</latitud>
+                <altitud unidades="metros">5.83</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I38">
+            <distancia unidades="metros">218.36</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3036111</longitud>
+                <latitud unidades="grados">-8.8991667</latitud>
+                <altitud unidades="metros">6.35</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I39">
+            <distancia unidades="metros">30.89</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3036111</longitud>
+                <latitud unidades="grados">-8.8988889</latitud>
+                <altitud unidades="metros">6.34</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I40">
+            <distancia unidades="metros">127.26</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3038889</longitud>
+                <latitud unidades="grados">-8.8977778</latitud>
+                <altitud unidades="metros">7.00</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I41">
+            <distancia unidades="metros">215.83</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3019444</longitud>
+                <latitud unidades="grados">-8.8980556</latitud>
+                <altitud unidades="metros">7.00</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I42">
+            <distancia unidades="metros">264.63</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3005556</longitud>
+                <latitud unidades="grados">-8.8961111</latitud>
+                <altitud unidades="metros">6.93</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I43">
+            <distancia unidades="metros">68.91</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3002778</longitud>
+                <latitud unidades="grados">-8.8955556</latitud>
+                <altitud unidades="metros">7.66</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I44">
+            <distancia unidades="metros">68.90</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3005556</longitud>
+                <latitud unidades="grados">-8.8950000</latitud>
+                <altitud unidades="metros">8.36</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I45">
+            <distancia unidades="metros">68.90</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3008333</longitud>
+                <latitud unidades="grados">-8.8944444</latitud>
+                <altitud unidades="metros">8.76</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I46">
+            <distancia unidades="metros">30.52</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3011111</longitud>
+                <latitud unidades="grados">-8.8944444</latitud>
+                <altitud unidades="metros">8.31</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I47">
+            <distancia unidades="metros">30.52</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3013889</longitud>
+                <latitud unidades="grados">-8.8944444</latitud>
+                <altitud unidades="metros">8.33</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I48">
+            <distancia unidades="metros">43.42</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3011111</longitud>
+                <latitud unidades="grados">-8.8947222</latitud>
+                <altitud unidades="metros">8.42</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I49">
+            <distancia unidades="metros">123.55</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3011111</longitud>
+                <latitud unidades="grados">-8.8958333</latitud>
+                <altitud unidades="metros">7.33</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I50">
+            <distancia unidades="metros">30.89</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3011111</longitud>
+                <latitud unidades="grados">-8.8961111</latitud>
+                <altitud unidades="metros">7.30</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I51">
+            <distancia unidades="metros">30.52</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3013889</longitud>
+                <latitud unidades="grados">-8.8961111</latitud>
+                <altitud unidades="metros">7.30</altitud>
+            </coordenadas>
+        </tramo>
+        <tramo sector="I52">
+            <distancia unidades="metros">251.83</distancia>
+            <coordenadas>
+                <longitud unidades="grados">116.3036111</longitud>
+                <latitud unidades="grados">-8.8955556</latitud>
+                <altitud unidades="metros">9.09</altitud>
+            </coordenadas>
+        </tramo>
+    </tramos>
+    <vencedor nombre = "Fermín Aldeguer">
+        <tiempo-victoria unidades="segundos">PT2467.651S</tiempo-victoria>
+    </vencedor>
+    <clasificados>
+        <clasificado puesto="1" puntos="545">Marc Marquez</clasificado>
+        <clasificado puesto="2" puntos="362">Alex Marquez</clasificado>
+        <clasificado puesto="3" puntos="274">Francesco Bagnaia</clasificado>
+    </clasificados>
+ </circuito>

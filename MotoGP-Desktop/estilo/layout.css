@@ -37,7 +37,6 @@ body > p:first-of-type {
 }
 
 /*Especificidad 001, 001*/
-/*TODO regla del reloj */
 section, aside {
     padding: 2ex;
     margin: 2vw 2vw;
