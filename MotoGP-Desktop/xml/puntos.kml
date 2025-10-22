@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Tramo 1</name>
+      <description>Tramo del sector I1</description>
+      <Point>
+        <coordinates>116.3072222,-8.8944444,8.59</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 2</name>
+      <description>Tramo del sector I2</description>
+      <Point>
+        <coordinates>116.3086111,-8.8941667,8.23</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 3</name>
+      <description>Tramo del sector I3</description>
+      <Point>
+        <coordinates>116.3086111,-8.8941667,7.74</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 4</name>
+      <description>Tramo del sector I4</description>
+      <Point>
+        <coordinates>116.3083333,-8.8944444,7.68</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 5</name>
+      <description>Tramo del sector I5</description>
+      <Point>
+        <coordinates>116.3088889,-8.8941667,8.35</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 6</name>
+      <description>Tramo del sector I6</description>
+      <Point>
+        <coordinates>116.3086111,-8.8963889,7.68</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 7</name>
+      <description>Tramo del sector I7</description>
+      <Point>
+        <coordinates>116.3086111,-8.8963889,7.21</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 8</name>
+      <description>Tramo del sector I8</description>
+      <Point>
+        <coordinates>116.3091667,-8.8958333,7.83</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 9</name>
+      <description>Tramo del sector I9</description>
+      <Point>
+        <coordinates>116.3077778,-8.8969444,7.54</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 10</name>
+      <description>Tramo del sector I10</description>
+      <Point>
+        <coordinates>116.3086111,-8.8961111,7.52</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 11</name>
+      <description>Tramo del sector I11</description>
+      <Point>
+        <coordinates>116.3083333,-8.8963889,7.52</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 12</name>
+      <description>Tramo del sector I12</description>
+      <Point>
+        <coordinates>116.3083333,-8.8969444,7.41</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 13</name>
+      <description>Tramo del sector I13</description>
+      <Point>
+        <coordinates>116.3077778,-8.8980556,7.21</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 14</name>
+      <description>Tramo del sector I14</description>
+      <Point>
+        <coordinates>116.3086111,-8.8988889,7.37</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 15</name>
+      <description>Tramo del sector I15</description>
+      <Point>
+        <coordinates>116.3088889,-8.8988889,7.22</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 16</name>
+      <description>Tramo del sector I16</description>
+      <Point>
+        <coordinates>116.3091667,-8.8988889,7.15</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 17</name>
+      <description>Tramo del sector I17</description>
+      <Point>
+        <coordinates>116.3088889,-8.9005556,6.44</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 18</name>
+      <description>Tramo del sector I18</description>
+      <Point>
+        <coordinates>116.3091667,-8.9002778,6.46</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 19</name>
+      <description>Tramo del sector I19</description>
+      <Point>
+        <coordinates>116.3088889,-8.9011111,6.60</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 20</name>
+      <description>Tramo del sector I20</description>
+      <Point>
+        <coordinates>116.3077778,-8.9022222,6.61</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 21</name>
+      <description>Tramo del sector I21</description>
+      <Point>
+        <coordinates>116.3075000,-8.9025000,6.61</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 22</name>
+      <description>Tramo del sector I22</description>
+      <Point>
+        <coordinates>116.3072222,-8.9025000,6.54</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 23</name>
+      <description>Tramo del sector I23</description>
+      <Point>
+        <coordinates>116.3063889,-8.9025000,7.06</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 24</name>
+      <description>Tramo del sector I24</description>
+      <Point>
+        <coordinates>116.3058333,-8.9027778,6.91</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 25</name>
+      <description>Tramo del sector I25</description>
+      <Point>
+        <coordinates>116.3055556,-8.9033333,6.91</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 26</name>
+      <description>Tramo del sector I26</description>
+      <Point>
+        <coordinates>116.3050000,-8.9038889,6.90</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 27</name>
+      <description>Tramo del sector I27</description>
+      <Point>
+        <coordinates>116.3033333,-8.9047222,7.75</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 28</name>
+      <description>Tramo del sector I28</description>
+      <Point>
+        <coordinates>116.3030556,-8.9050000,17.32</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 29</name>
+      <description>Tramo del sector I29</description>
+      <Point>
+        <coordinates>116.3025000,-8.9050000,7.24</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 30</name>
+      <description>Tramo del sector I30</description>
+      <Point>
+        <coordinates>116.3036111,-8.9044444,6.75</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 31</name>
+      <description>Tramo del sector I31</description>
+      <Point>
+        <coordinates>116.3019444,-8.9052778,6.98</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 32</name>
+      <description>Tramo del sector I32</description>
+      <Point>
+        <coordinates>116.3019444,-8.9050000,6.57</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 33</name>
+      <description>Tramo del sector I33</description>
+      <Point>
+        <coordinates>116.3019444,-8.9027778,4.30</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 34</name>
+      <description>Tramo del sector I34</description>
+      <Point>
+        <coordinates>116.3022222,-8.9025000,4.83</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 35</name>
+      <description>Tramo del sector I35</description>
+      <Point>
+        <coordinates>116.3036111,-8.9019444,5.14</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 36</name>
+      <description>Tramo del sector I36</description>
+      <Point>
+        <coordinates>116.3038889,-8.9016667,5.58</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 37</name>
+      <description>Tramo del sector I37</description>
+      <Point>
+        <coordinates>116.3038889,-8.9011111,5.83</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 38</name>
+      <description>Tramo del sector I38</description>
+      <Point>
+        <coordinates>116.3036111,-8.8991667,6.35</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 39</name>
+      <description>Tramo del sector I39</description>
+      <Point>
+        <coordinates>116.3036111,-8.8988889,6.34</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 40</name>
+      <description>Tramo del sector I40</description>
+      <Point>
+        <coordinates>116.3038889,-8.8977778,7.00</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 41</name>
+      <description>Tramo del sector I41</description>
+      <Point>
+        <coordinates>116.3019444,-8.8980556,7.00</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 42</name>
+      <description>Tramo del sector I42</description>
+      <Point>
+        <coordinates>116.3005556,-8.8961111,6.93</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 43</name>
+      <description>Tramo del sector I43</description>
+      <Point>
+        <coordinates>116.3002778,-8.8955556,7.66</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 44</name>
+      <description>Tramo del sector I44</description>
+      <Point>
+        <coordinates>116.3005556,-8.8950000,8.36</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 45</name>
+      <description>Tramo del sector I45</description>
+      <Point>
+        <coordinates>116.3008333,-8.8944444,8.76</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 46</name>
+      <description>Tramo del sector I46</description>
+      <Point>
+        <coordinates>116.3011111,-8.8944444,8.31</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 47</name>
+      <description>Tramo del sector I47</description>
+      <Point>
+        <coordinates>116.3013889,-8.8944444,8.33</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 48</name>
+      <description>Tramo del sector I48</description>
+      <Point>
+        <coordinates>116.3011111,-8.8947222,8.42</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 49</name>
+      <description>Tramo del sector I49</description>
+      <Point>
+        <coordinates>116.3011111,-8.8958333,7.33</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 50</name>
+      <description>Tramo del sector I50</description>
+      <Point>
+        <coordinates>116.3011111,-8.8961111,7.30</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 51</name>
+      <description>Tramo del sector I51</description>
+      <Point>
+        <coordinates>116.3013889,-8.8961111,7.30</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tramo 52</name>
+      <description>Tramo del sector I52</description>
+      <Point>
+        <coordinates>116.3036111,-8.8955556,9.09</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
