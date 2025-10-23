@@ -53,7 +53,7 @@ def parse_circuit(circuit_file : str, relative_to_ground : bool = False, extrude
     new_kml : Kml = Kml()
 
     #Fijamos el diccionario de dominios para hacer más legible el código
-    ns_dict = {"ns": "http://www.uniovi.es"}
+    ns_dict : dict[str, str] = {"ns": "http://www.uniovi.es"}
 
     #Hallamos la raíz del arbol del esquema del circuito
     circuit_root = ET.parse(circuit_file).getroot()
@@ -75,8 +75,9 @@ def parse_circuit(circuit_file : str, relative_to_ground : bool = False, extrude
         i+=1
     return new_kml
         
-
+#TODO revisar rutas absolutas
 def main():
+    "Aplica el procedimiento al archivo del trabajo"
     parse_circuit("MotoGP-Desktop/xml/circuitoEsquema.xml").escribir("MotoGP-Desktop/xml/circuitoEsquema.kml")
 
 if __name__ == "__main__":
