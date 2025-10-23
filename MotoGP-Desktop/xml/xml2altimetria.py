@@ -66,27 +66,43 @@ def find_maximum_height(root : ET.Element, ns_dict : dict[str, str]) -> float:
             h_max = height_value
     return h_max
 
+def add_sacaled_point(points : str, x : float, y : float, x_scale : float = 1, y_scale : float = 1) -> str:
+    """
+    Añade un punto a la polilínea
+    """
+    return points + f"{x * x_scale}, {y * y_scale} "
+
 def process_point(svg : Svg, tramo : ET.Element, h_max : float, ns_dict : dict[str, str], points : str, last_x : float, x_scale : float = 1, y_scale : float = 1):
     dist_tramo : float = x_scale * float(tramo.find("./ns:distancia", ns_dict).text)
     altitud : float =  y_scale * (h_max - float(tramo.find("./ns:coordenadas/ns:altitud", ns_dict).text))
     last_x += dist_tramo
     svg.addText(tramo.get("sector"), str(last_x),str(altitud),'Verdana','1',"none")
-    return (points + f"{last_x}, {altitud} ", last_x)
+    return (points + f"{last_x},{altitud} ", last_x, altitud)
     
 def parse_circuit(circuit_file : str, x_scale = 1, y_scale = 1) -> Svg:
     ns_dict : dict[str, str] = {"ns" : "http://www.uniovi.es"}
     circuit_root : ET.Element = ET.parse(circuit_file).getroot()
     h_max : float = find_maximum_height(circuit_root, ns_dict)
-    puntos : str = "0,0 "
-    last_x : float = 0
     new_svg : Svg = Svg()
-    for tramo in circuit_root.findall("./ns:tramos/ns:tramo", ns_dict):
-        puntos, last_x = process_point(new_svg, tramo, h_max, ns_dict, puntos, last_x, x_scale, y_scale)
+
+    #Procesamos el primer tramo fuera del bucle para establecer un punto de partida
+    tramos : list[ET.Element] = circuit_root.findall("./ns:tramos/ns:tramo", ns_dict)
+    puntos, first_x, first_y = process_point(new_svg, tramos[0], h_max, ns_dict, "", 0, x_scale, y_scale)
+    last_x : float = first_x #Guardamos el valor X del primer nodo para cerrar la polilínea y lo usaremos también como margen
     
+    
+    #Procesamos el resto
+    for tramo in tramos[1:]:
+        puntos, last_x = process_point(new_svg, tramo, h_max, ns_dict, puntos, last_x, x_scale, y_scale)[:2]
+    
+    #Cerramos la polilínea y la incluimos en el SVG
+    puntos += f"{last_x},{h_max * y_scale} {first_x},{h_max * y_scale} {first_x}, {first_y}"
     new_svg.addPolyline(puntos, stroke="red", strokeWidth="4", fill="none")
+
+
     #Escala el SVG para que quepa entero
     #Usamos la función "techo" para redondear siempre hacia arriba
-    new_svg.adjustWidth(str(math.ceil(last_x))) #last_x ya incluye el escalado
+    new_svg.adjustWidth(str(math.ceil(last_x + first_x))) #la componente X ya está escalada
     new_svg.adjustHeight(str(math.ceil(y_scale * h_max))) #h_max en cambio no
     return new_svg
 
