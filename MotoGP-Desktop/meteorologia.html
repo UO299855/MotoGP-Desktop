@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+
+    <script src="js/ciudad.js"></script>
 </head>
 
 <body>
@@ -31,9 +33,12 @@
     </header>
     <!--Migas de navegación-->
     <p>Estás en <a href="index.html" title="Volver a la página de inicio">Inicio</a> >> <strong><a href="meteorologia.html" title="Información sobre la meteorologia">Meteorología</a></strong></p>
-    <main>
-        <h2>Meteorología del circuito</h2>
-        <p>en desarrollo</p>
+    <main> 
+        <script>            
+            let ciudad = new Ciudad("Baturiti", "Indonesia", "no tine gentilicio")
+            ciudad.setSecondaryInfo(52156, 156, -165)
+            ciudad.writeCoords()
+        </script>
     </main>
 </body>
 </html>

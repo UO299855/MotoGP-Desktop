@@ -1,0 +1,12 @@
+/* MotoGP-Desktop */
+/* Hoja de estilos destinada a la disposición del juego de memoria */
+
+/*El tamaño 1fr es 'una fracción' */
+/* Usar grid-template y grid-gap*/
+/*CSS-TRICKS tiene la mejor guía de CSS según todos los profesores de SEW */
+/*Usar grid-column-start y grid-column-end */
+/* Usar una media query para que la disposición sea de 2x6 y que se vean bien (casi hasta el 50)*/
+
+main {
+    display: grid;
+}
