@@ -66,11 +66,6 @@ def find_maximum_height(root : ET.Element, ns_dict : dict[str, str]) -> float:
             h_max = height_value
     return h_max
 
-def add_sacaled_point(points : str, x : float, y : float, x_scale : float = 1, y_scale : float = 1) -> str:
-    """
-    Añade un punto a la polilínea
-    """
-    return points + f"{x * x_scale}, {y * y_scale} "
 
 def process_point(svg : Svg, tramo : ET.Element, h_max : float, ns_dict : dict[str, str], points : str, last_x : float, x_scale : float = 1, y_scale : float = 1):
     dist_tramo : float = x_scale * float(tramo.find("./ns:distancia", ns_dict).text)
