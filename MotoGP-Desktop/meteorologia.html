@@ -32,13 +32,31 @@
     </nav>
     </header>
     <!--Migas de navegación-->
-    <p>Estás en <a href="index.html" title="Volver a la página de inicio">Inicio</a> >> <strong><a href="meteorologia.html" title="Información sobre la meteorologia">Meteorología</a></strong></p>
-    <main> 
+    <p>Estás en <a href="index.html" title="Volver a la página de inicio">Inicio</a> >> <strong><a href="meteorologia.html" title="Información sobre la meteorologia del circuito">Meteorología</a></strong></p>
+    <main>
         <script>            
             let ciudad = new Ciudad("Baturiti", "Indonesia", "no tine gentilicio")
-            ciudad.setSecondaryInfo(52156, 156, -165)
-            ciudad.writeCoords()
+            ciudad.setSecondaryInfo(52345, 8.33333333, 115.166666666)
         </script>
+        <h2>
+            <script>
+            document.write(`${ciudad.getNombre()} (${ciudad.getPais()})`)
+            </script>
+        </h2>
+        <section>
+            <h3>Información demográfica</h3>
+            <p>
+                <script>
+                    document.write(ciudad.getSecondaryInfo())
+                </script>
+            </p>
+        </section>
+        <section>
+            <h2>Informacion geográfica</h2>
+            <script>
+                ciudad.writeCoords()
+            </script>
+        </section>
     </main>
 </body>
 </html>

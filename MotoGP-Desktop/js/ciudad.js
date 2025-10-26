@@ -32,7 +32,7 @@ class Ciudad {
      * @param {number} latitud 
      * @param {number} longitud 
      */
-    setSecondaryInfo(poblacion, longitud, latitud) {
+    setSecondaryInfo(poblacion, latitud, longitud) {
         this.poblacion = poblacion
         this.latitud = latitud
         this.longitud = longitud
@@ -43,7 +43,7 @@ class Ciudad {
      * @returns <ul><li>*gentilicio*</li><li>*población*</li></ul>
      */
     getSecondaryInfo() {
-        return `<ul><li>${this.nombre}</li><li>${this.gentilicio}</li></ul>`
+        return `<ul><li>Gentilicio: ${this.gentilicio}</li><li>Población: ${this.poblacion}</li></ul>`
     }
 
     /**
@@ -51,6 +51,19 @@ class Ciudad {
      * Sigue el formato '<p>*longitud* *latitud*</p>'
      */
     writeCoords() {
-        document.write("<p>" + this.longitud + " " + this.latitud + "</p>");
+        const tabla = document.createElement("table")
+        const filaLat = tabla.appendChild(document.createElement("tr"))
+        const headerLat = filaLat.appendChild(document.createElement("th"))
+        headerLat.textContent = "Latitud"
+        const dataLat = filaLat.appendChild(document.createElement("td"))
+        dataLat.textContent = this.latitud
+
+        const filaLong = tabla.appendChild(document.createElement("tr"))
+        const headerLong = filaLong.appendChild(document.createElement("th"))
+        headerLong.textContent = "Longitud"
+        const dataLong = filaLong.appendChild(document.createElement("td"))
+        dataLong.textContent = this.longitud        
+        
+        document.currentScript.parentNode.insertBefore(tabla, document.currentScript);
     }
 }
