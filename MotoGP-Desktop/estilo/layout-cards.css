@@ -7,6 +7,38 @@
 /*Usar grid-column-start y grid-column-end */
 /* Usar una media query para que la disposición sea de 2x6 y que se vean bien (casi hasta el 50)*/
 
+/*Especificidad 002*/
+main > h2 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: center;
+}
+
+main > article {
+    align-self: center;
+    justify-self: center;
+}
+
+/*Especificidad 001*/
 main {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr 2fr 2fr;
+    row-gap: 2ex;
+    column-gap: 2ex;
+    justify-content: center;
+    align-content: center;
+}
+
+/*Reglas dedicadas a la adaptabilidad */
+@media screen and (min-width: 320px) and (max-width: 799px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 2fr 2fr 2fr 2fr 2fr;
+    }
+    main > article {
+        align-self: stretch;
+        justify-self: stretch;
+        width: 45vw
+    }
 }
