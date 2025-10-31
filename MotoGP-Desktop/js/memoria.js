@@ -5,7 +5,7 @@ class Memoria {
          */
         const cartas = document.querySelectorAll("article");
         for(let i = 0; i < cartas.length; i++) {
-            cartas[i].onclick = this.flipCard
+            cartas[i].onclick = this.flipCard.bind(cartas[i], cartas[i])
         }
     }
 
@@ -14,7 +14,7 @@ class Memoria {
      * @param {Element} card Carta parámetro
      */
     flipCard(card) {
-        console.log(this)
+        console.log(card) //TODO borrar el logeo
         card.setAttribute("data-state", "flip")
     }
 }
