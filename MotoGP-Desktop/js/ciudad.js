@@ -79,6 +79,8 @@ class Ciudad {
         const letraLong = degsLong > 0 ? "E" : "W"
         // Como ahora usamos letras para determinar el signo de los grados,
         // usamos Math.abs en degsLat y degsLong
-        document.write(`<p>Está localizada en las coordenadas ${Math.abs(degsLat)}°${minsLat}'${secsLat}''${letraLat} ${Math.abs(degsLong)}°${minsLong}'${secsLong}''${letraLong}<p>`)
+        let parrafo = document.createElement("p")
+        parrafo.textContent = `Está localizada en las coordenadas ${Math.abs(degsLat)}°${minsLat}'${secsLat}''${letraLat} ${Math.abs(degsLong)}°${minsLong}'${secsLong}''${letraLong}`
+        document.querySelector("main").lastChild.appendChild(parrafo)
     }
 }

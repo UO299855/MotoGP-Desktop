@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="icon" href="multimedia/favicon.ico" type="image/ico"/>
 
     <script src="js/ciudad.js"></script>
 </head>
@@ -38,21 +39,19 @@
             let ciudad = new Ciudad("Baturiti", "Indonesia", "no tine gentilicio")
             ciudad.setSecondaryInfo(52345, -8.33333333, 115.166666666)
         </script>
-        <h2>
-            <script>
-            document.write(`${ciudad.getNombre()} (${ciudad.getPais()})`)
-            </script>
-        </h2>
+        <h2></h2>
+        <script>
+            document.querySelector("h2").textContent = `${ciudad.getNombre()} (${ciudad.getPais()})`
+        </script>
         <section>
             <h3>Información demográfica</h3>
-            <p>
-                <script>
-                    document.write(ciudad.getSecondaryInfo())
-                </script>
-            </p>
+            <p></p>
+            <script>
+                document.querySelector("h3 + p").innerHTML = ciudad.getSecondaryInfo()
+            </script>
         </section>
         <section>
-            <h2>Informacion geográfica</h2>
+            <h3>Informacion geográfica</h3>
             <script>
                 ciudad.writeCoords()
             </script>

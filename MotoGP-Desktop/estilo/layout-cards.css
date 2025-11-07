@@ -8,7 +8,7 @@
 /* Usar una media query para que la disposición sea de 2x6 y que se vean bien (casi hasta el 50)*/
 
 /*Especificidad 002*/
-main > h2 {
+main > h2, main > p {
     grid-column-start: 1;
     grid-column-end: -1;
     justify-self: center;
@@ -23,7 +23,7 @@ main > article {
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 2fr 2fr 2fr;
+    grid-template-rows: 0.5fr 0.25fr 2fr 2fr 2fr;
     row-gap: 2ex;
     column-gap: 2ex;
     justify-content: center;

@@ -16,6 +16,7 @@ class Html:
         ET.SubElement(head, "meta", name="viewport", content="width=device-width, initial-scale=1.0")
         ET.SubElement(head, "link", rel="stylesheet", type="text/css", href="estilo/estilo.css")
         ET.SubElement(head, "link", rel="stylesheet", type="text/css", href="estilo/layout.css")
+        ET.SubElement(head, "link", rel="icon", type="image/ico", href="multimedia/favicon.ico")
 
     def __create_body(self):
         self.body : ET.Element = ET.SubElement(self.root, "body")

@@ -59,11 +59,6 @@ table {
     width : 100%;
 }
 
-/*Especificidad 001*/
-p {
-    text-align: justify;
-}
-
 /*Especificidad 002, 002*/
 table th, table td {
     text-align: left;

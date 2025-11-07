@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="estilo/cards.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout-cards.css" />    
 
+    <script src="js/cronometro.js"></script>
     <script src="js/memoria.js"></script>
 </head>
 
@@ -33,10 +34,11 @@
         <a href="ayuda.html" title="Ir al menú de ayuda del proyecto MotoGP-Desktop">Ayuda</a>
     </nav>
     </header>
-    <!--Migas de navegación-->
-    <p>Estás en <a href="index.html" title="Volver a la página de inicio">Inicio</a> >> <strong><a href="circuito.html" title="Información sobre el circuito">Circuito</a></strong></p>
+    <!--Migas de navegación TODO poner enlaces-->
+    <p>Estás en <a href="index.html" title="Volver a la página de inicio">Inicio</a> >> <a href="juegos.html" title="Lista de juegos de la aplicación">Juegos</a> >> <strong>Memoria</strong></p>
     <main>
         <h2>Juego de memoria con cartas</h2>
+        <p>00:00.0</p>
         <article>
             <h3>Memory card</h3>
             <img src="multimedia/logos/honda.svg" alt="Logo-Honda">
@@ -85,7 +87,9 @@
             <h3>Memory card</h3>
             <img src="multimedia/logos/motogp.svg" alt="Logo-MotoGP">
         </article>
-        <script>new Memoria().barajarCartas()</script>
+        <script>
+            new Memoria()
+        </script>
     </main>
 </body>
 </html>
