@@ -15,6 +15,10 @@
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" href="multimedia/favicon.ico" type="image/ico"/>
 
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
     <script src="js/ciudad.js"></script>
 </head>
 
@@ -33,7 +37,7 @@
     </nav>
     </header>
     <!--Migas de navegación-->
-    <p>Estás en <a href="index.html" title="Volver a la página de inicio">Inicio</a> >> <strong><a href="meteorologia.html" title="Información sobre la meteorologia del circuito">Meteorología</a></strong></p>
+    <p>Estás en <a href="index.html" title="Volver a la página de inicio">Inicio</a> >> <strong><a href="meteorologia.html" title="Información sobre la meteorología del circuito">Meteorología</a></strong></p>
     <main>
         <script>            
             let ciudad = new Ciudad("Baturiti", "Indonesia", "no tine gentilicio")
@@ -51,7 +55,7 @@
             </script>
         </section>
         <section>
-            <h3>Informacion geográfica</h3>
+            <h3>Información geográfica</h3>
             <script>
                 ciudad.writeCoords()
             </script>

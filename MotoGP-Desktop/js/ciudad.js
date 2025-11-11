@@ -83,4 +83,15 @@ class Ciudad {
         parrafo.textContent = `Está localizada en las coordenadas ${Math.abs(degsLat)}°${minsLat}'${secsLat}''${letraLat} ${Math.abs(degsLong)}°${minsLong}'${secsLong}''${letraLong}`
         document.querySelector("main").lastChild.appendChild(parrafo)
     }
+
+    getMeteorologiaCarrera() {
+        const url = "https://archive-api.open-meteo.com/v1/archive?latitude=-8.33&longitude=115.15&start_date=2025-11-09&end_date=2025-11-09&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,rain,wind_direction_10m,wind_speed_10m&daily=sunrise,sunset&timezone=Asia/Singapore"
+        $.ajax({
+            dataType: "json",
+            url: url,
+            method: 'GET',
+            success: parsearDatos,
+            error: manejarError
+        })
+    }
 }

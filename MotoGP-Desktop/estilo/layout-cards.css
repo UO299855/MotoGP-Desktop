@@ -34,7 +34,7 @@ main {
 @media screen and (min-width: 320px) and (max-width: 799px) {
     main {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 0.5fr 2fr 2fr 2fr 2fr 2fr;
+        grid-template-rows: 0.5fr 0.25 2fr 2fr 2fr 2fr 2fr;
     }
     main > article {
         align-self: stretch;
