@@ -84,14 +84,66 @@ class Ciudad {
         document.querySelector("main").lastChild.appendChild(parrafo)
     }
 
+    #tablaDatosCarrera(data, section) {
+        const params = {
+            "apparent_temperature" : "Temperatura ambiente",
+            "rain" : "Lluvia",
+            "relative_humidity_2m" : "Humedad relativa",
+            "temperature_2m" : "Temperatura",
+            "wind_direction_10m" : "Dirección del viento",
+            "wind_speed_10m" : "Velocidad del viento"
+        }
+        const hours = [15, 16]
+
+        let table = $("<table></table>").appendTo(section)
+        let headRow = $("<tr></tr>").appendTo(table)
+        $("<th id='key' scope='col'>Clave</th>").appendTo(headRow)
+
+        for(let hour of hours) {
+            $(`<th id='${hour}' scope='col'>${hour}h</th>`).appendTo(headRow)
+        }
+
+        for(let key in params) {
+            let row = $("<tr></tr>").appendTo(table)
+            let value = params[key]
+            $(`<th id='${value.replace(" ", "_")}' scope='cols'>${value} (${data.hourly_units[key]})</th>`).appendTo(row)
+            for(let hour of hours) {
+                $(`<td>${data.hourly[key][hour]}</td>`).appendTo(row)
+            }
+        }
+    }
+    
+    /**
+     * La carrera tuvo lugar el día 5 de octubre de 2025 de 15:00 a 16:00 hora GMT+8
+     */
+    #procesarJSONCarrera(data, section) {
+        $("<h2> Información meteorológica de la carrera </h2>").appendTo($("main"))
+        console.log(data) //TODO quitar
+
+        //Procesamos las magnitudes diarias
+        let dailySection = $("<section></section>").appendTo($("main"))
+        $("<h3>Información global del día</h3>").appendTo(dailySection)
+        let dailyList = $("<ul></ul>").appendTo(dailySection)
+        let sunrise = $("<li></li>")
+        sunrise.text(`Salida del sol: ${new Date(data.daily.sunrise[0]).toLocaleTimeString("es-ES", {hour12: false, hour:"2-digit", minute:"2-digit"})} (${data.timezone_abbreviation})`)
+        sunrise.appendTo(dailyList)
+        let sunset = $("<li></li>")
+        sunset.text(`Puesta de sol: ${new Date(data.daily.sunset[0]).toLocaleTimeString("es-ES", {hour12: false, hour:"2-digit", minute:"2-digit"})} (${data.timezone_abbreviation})`)
+        sunset.appendTo(dailyList)
+
+        //Procesamos las magnitudes por horas
+        this.#tablaDatosCarrera(data, $("<section><h3>Información por horas</h3></section>").appendTo($("main")))
+    }
+
     getMeteorologiaCarrera() {
-        const url = "https://archive-api.open-meteo.com/v1/archive?latitude=-8.33&longitude=115.15&start_date=2025-11-09&end_date=2025-11-09&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,rain,wind_direction_10m,wind_speed_10m&daily=sunrise,sunset&timezone=Asia/Singapore"
+        //TODO revisar url
+        const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${this.#latitud}&longitude=${this.#longitud}&start_date=2025-10-05&end_date=2025-10-05&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,rain,wind_direction_10m,wind_speed_10m&daily=sunrise,sunset&timezone=Asia/Singapore`
         $.ajax({
             dataType: "json",
             url: url,
             method: 'GET',
-            success: parsearDatos,
-            error: manejarError
+            success: this.#procesarJSONCarrera.bind(this),
+            error: () => {console.log("no se ha podido cargar el JSON")} //TODO
         })
     }
 }

@@ -30,6 +30,11 @@ main {
     margin: 2ex;
 }
 
+/*Especificidad 003*/
+main section + h2 {
+    margin-top: 4ex;
+}
+
 /*Especificidad 002*/
 /*Regla para las migas*/
 body > p:first-of-type {
