@@ -84,41 +84,34 @@ class Ciudad {
         document.querySelector("main").lastChild.appendChild(parrafo)
     }
 
-    #tablaDatosCarrera(data, section) {
-        const params = {
-            "apparent_temperature" : "Temperatura ambiente",
-            "rain" : "Lluvia",
-            "relative_humidity_2m" : "Humedad relativa",
-            "temperature_2m" : "Temperatura",
-            "wind_direction_10m" : "Dirección del viento",
-            "wind_speed_10m" : "Velocidad del viento"
-        }
-        const hours = [15, 16]
-
-        let table = $("<table></table>").appendTo(section)
-        let headRow = $("<tr></tr>").appendTo(table)
-        $("<th id='key' scope='col'>Clave</th>").appendTo(headRow)
-
-        for(let hour of hours) {
-            $(`<th id='${hour}' scope='col'>${hour}h</th>`).appendTo(headRow)
-        }
-
-        for(let key in params) {
-            let row = $("<tr></tr>").appendTo(table)
-            let value = params[key]
-            $(`<th id='${value.replace(" ", "_")}' scope='cols'>${value} (${data.hourly_units[key]})</th>`).appendTo(row)
-            for(let hour of hours) {
-                $(`<td>${data.hourly[key][hour]}</td>`).appendTo(row)
-            }
-        }
-    }
     
+    
+    getMeteorologiaCarrera() {
+        const url = "https://archive-api.open-meteo.com/v1/archive"
+        $.ajax({
+            dataType: "json",
+            url: url,
+            method: 'GET',
+            data: {
+                latitude: this.#latitud,
+                longitude: this.#longitud,
+                start_date: "2025-10-05",
+                end_date: "2025-10-05",
+                hourly: "temperature_2m,apparent_temperature,relative_humidity_2m,rain,wind_direction_10m,wind_speed_10m",
+                daily: "sunrise,sunset",
+                timezone: "Asia/Singapore" //Es la misma que la de Indonesia para la región del circuito
+            },
+            success: this.#procesarJSONCarrera.bind(this),
+            error: () => {console.log("no se ha podido cargar el JSON")} //TODO
+        })
+    }
+
     /**
      * La carrera tuvo lugar el día 5 de octubre de 2025 de 15:00 a 16:00 hora GMT+8
      */
-    #procesarJSONCarrera(data, section) {
+    #procesarJSONCarrera(data) {
+        //TODO refactorizar con 'after' en lugar de unir al main
         $("<h2> Información meteorológica de la carrera </h2>").appendTo($("main"))
-        console.log(data) //TODO quitar
 
         //Procesamos las magnitudes diarias
         let dailySection = $("<section></section>").appendTo($("main"))
@@ -132,18 +125,104 @@ class Ciudad {
         sunset.appendTo(dailyList)
 
         //Procesamos las magnitudes por horas
-        this.#tablaDatosCarrera(data, $("<section><h3>Información por horas</h3></section>").appendTo($("main")))
+        this.#tablaDatosCarrera(data, $(`<section><h3>Información por horas (${data.timezone_abbreviation})</h3></section>`).appendTo($("main")))
     }
 
-    getMeteorologiaCarrera() {
-        //TODO revisar url
-        const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${this.#latitud}&longitude=${this.#longitud}&start_date=2025-10-05&end_date=2025-10-05&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,rain,wind_direction_10m,wind_speed_10m&daily=sunrise,sunset&timezone=Asia/Singapore`
+    #tablaDatosCarrera(data, section) {
+        //TODO refactorizar con 'after' en lugar de unir al main
+        const params = {
+            "apparent_temperature" : "Temperatura ambiente",
+            "rain" : "Lluvia",
+            "relative_humidity_2m" : "Humedad relativa",
+            "temperature_2m" : "Temperatura",
+            "wind_direction_10m" : "Dirección del viento",
+            "wind_speed_10m" : "Velocidad del viento"
+        }
+        const hours = [14, 15, 16]
+
+        let table = $("<table></table>").appendTo(section)
+        let headRow = $("<tr></tr>").appendTo(table)
+        $("<th id='magnitud_carrera' scope='col'>Magnitud</th>").appendTo(headRow)
+
+        for(let hour of hours) {
+            $(`<th id='${hour}h' scope='col'>${hour}h</th>`).appendTo(headRow)
+        }
+
+        for(let key in params) {
+            let row = $("<tr></tr>").appendTo(table)
+            let value = params[key]
+            $(`<th id='${value.replaceAll(" ", "_")}_carrera' scope='row' headers='magnitud_carrera'>${value} (${data.hourly_units[key]})</th>`).appendTo(row)
+            for(let hour of hours) {
+                $(`<td headers='${value.replaceAll(" ", "_")}_carrera ${hour}h'>${data.hourly[key][hour]}</td>`).appendTo(row)
+            }
+        }
+    }  
+
+
+    getMeteorologiaEntrenos() {
+        const url = "https://archive-api.open-meteo.com/v1/archive"
         $.ajax({
             dataType: "json",
             url: url,
             method: 'GET',
-            success: this.#procesarJSONCarrera.bind(this),
+            data: {
+                latitude: this.#latitud,
+                longitude: this.#longitud,
+                start_date: "2025-10-02",
+                end_date: "2025-10-04",
+                hourly: "temperature_2m,relative_humidity_2m,rain,wind_speed_10m",
+                timezone: "Asia/Singapore" //Es la misma que la de Indonesia para la región del circuito
+            },
+            success: this.#procesarJSONEntrenos.bind(this),
             error: () => {console.log("no se ha podido cargar el JSON")} //TODO
         })
+    }
+
+    #procesarJSONEntrenos(data) {
+        let header = $(`<h2>Información sobre los entrenamientos</h2>`).appendTo($("main"))
+        let section = ($("<section></section>"))
+        header.after(section)
+        let h3 = ($("<h3>Promedios por horas para los días de entrenamiento</h3>")).appendTo(section)
+        const dayTimes = [[15, 16], [9, 19], [8, 15]]
+        const params = {
+            "temperature_2m": "Temperatura",
+            "relative_humidity_2m": "Humedad relativa",
+            "rain" : "Lluvia",
+            "wind_speed_10m" : "Velocidad del viento"
+        }
+        let table = $("<table></table>")
+
+        //Cabeceras de la tabla
+        let headerRow = $("<tr></tr>").appendTo(table)
+        $(`<th id='magnitud_entreno' scope='col'>Magnitud/Fecha</th>`).appendTo(headerRow)
+        headerRow.appendTo(table)
+        let dayHeaders = []
+        for (let day in dayTimes) { // Usamos in para sacar los índices, no los arrays
+            // Sacamos las fechas del JSON
+            dayHeaders[day] = new Date(data.hourly.time[24*day]).toLocaleDateString("es-ES", {"day": "2-digit", "month" : "2-digit"})
+            $(`<th id='dia_${dayHeaders[day].replaceAll("/", "_")}' scope='col'>${dayHeaders[day]}</th>`).appendTo(headerRow)
+        }
+
+        //Entradas con datos
+        for (let key in params) {
+            let row = $("<tr></tr>").appendTo(table)
+            //Magnitud a medir
+            $(`<th id='${params[key].replaceAll(" ", "_")}_entreno' scope='row' headers='magnitud_entreno'>${params[key]} (${data.hourly_units[key]})</th>`).appendTo(row)
+            for(let day in dayTimes) {
+                let sum = 0
+                let bound = dayTimes[day][1] + 24 * day
+                // Hacemos la media de la magnitud en la franja horaria del día
+                for(let i = dayTimes[day][0] + 24 * day; i <= bound; i++) {
+                    sum += data.hourly[key][i]
+                }
+                //Promedio con dos decimales
+                let average = (sum/(dayTimes[day][1] - dayTimes[day][0])).toFixed(2)
+                //Unimos la fila
+                $(`<td headers='${params[key].replaceAll(" ", "_")}_entreno dia_${dayHeaders[day].replaceAll("/", "_")}'>${average}</td>`).appendTo(row)
+            }
+        }
+
+        //Insertamos la tabla una vez rellena
+        h3.after(table)
     }
 }

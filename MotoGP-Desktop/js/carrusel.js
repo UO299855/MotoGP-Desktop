@@ -30,7 +30,6 @@ class  Carrusel {
      * Extrae la información de (this.#maximo + 1) fotografías del JSON devuelto por la API
      */
     #procesarJSONFotografias(data) {
-        console.log(data)
         $.each(data.items, (i, item) => {
             this.#fotos[i] = {
                 src: item.media.m.replace("_m.jpg", "_z.jpg"),

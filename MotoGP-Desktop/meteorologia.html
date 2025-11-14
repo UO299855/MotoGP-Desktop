@@ -49,9 +49,8 @@
         </script>
         <section>
             <h3>Información demográfica</h3>
-            <p></p>
             <script>
-                document.querySelector("h3 + p").innerHTML = ciudad.getSecondaryInfo()
+                document.querySelector("section").innerHTML += ciudad.getSecondaryInfo()
             </script>
         </section>
         <section>
@@ -59,6 +58,7 @@
             <script>
                 ciudad.writeCoords()
                 ciudad.getMeteorologiaCarrera()
+                ciudad.getMeteorologiaEntrenos()
             </script>
         </section>
     </main>
