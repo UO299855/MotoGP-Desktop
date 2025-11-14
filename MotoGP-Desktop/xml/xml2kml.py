@@ -78,7 +78,7 @@ def parse_circuit(circuit_file : str, relative_to_ground : bool = False, extrude
 #TODO revisar rutas absolutas
 def main():
     "Aplica el procedimiento al archivo del trabajo"
-    parse_circuit("MotoGP-Desktop/xml/circuitoEsquema.xml").escribir("MotoGP-Desktop/xml/circuitoEsquema.kml")
+    parse_circuit("circuitoEsquema.xml").escribir("circuitoEsquema.kml")
 
 if __name__ == "__main__":
     main()

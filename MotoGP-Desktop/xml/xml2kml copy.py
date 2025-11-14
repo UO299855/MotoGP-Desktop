@@ -77,7 +77,7 @@ def parse_circuit(circuit_file : str, relative_to_ground : bool = False) -> Kml:
         
 
 def main():
-    parse_circuit("MotoGP-Desktop/xml/circuitoEsquema.xml").escribir("MotoGP-Desktop/xml/puntos.kml")
+    parse_circuit("circuitoEsquema.xml").escribir("puntos.kml")
 
 if __name__ == "__main__":
     main()

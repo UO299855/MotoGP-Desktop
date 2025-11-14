@@ -104,7 +104,7 @@ def parse_circuit(circuit_file : str, x_scale = 1, y_scale = 1) -> Svg:
 
 #TODO revisar rutas de archivo
 def main() -> None:
-    parse_circuit("MotoGP-Desktop/xml/circuitoEsquema.xml", 1, 50).escribir("MotoGP-Desktop/xml/altimetria.svg")
+    parse_circuit("circuitoEsquema.xml", 1, 50).escribir("altimetria.svg")
 
 if __name__ == "__main__":
     main()

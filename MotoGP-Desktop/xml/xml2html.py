@@ -74,4 +74,4 @@ class CircuitProcessor:
 
 
 if __name__ == "__main__":
-    CircuitProcessor().main("MotoGP-Desktop/xml/circuitoEsquema.xml", "MotoGP-Desktop/prueba.html")
+    CircuitProcessor().main("circuitoEsquema.xml", "infoCircuito.html")
