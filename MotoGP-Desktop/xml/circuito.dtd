@@ -1,6 +1,4 @@
-
-
-<!ELEMENT circuito (nombre, longitud-circuito, pais, anchura-media, fecha, hora, vueltas, patrocinador, referencias, fotografias, videos, origen, tramos, vencedor, clasificados)>
+<!ELEMENT circuito (nombre, longitud-circuito, localidad, pais, anchura-media, fecha, hora, vueltas, patrocinador, referencias, fotografias, videos, origen, tramos, vencedor, clasificados)>
 <!ELEMENT nombre (#PCDATA)>
 <!ELEMENT longitud-circuito (#PCDATA)>
 <!ELEMENT anchura-media (#PCDATA)>

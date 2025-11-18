@@ -4,6 +4,7 @@
  <circuito>
     <nombre>Pertamina Mandalika Circuit</nombre>
     <longitud-circuito unidades="metros">4301</longitud-circuito>
+    <localidad>Baturiti</localidad>
     <pais>Indonesia</pais>
     <anchura-media unidades="metros">15</anchura-media>
     <fecha>05/10/2025</fecha>
