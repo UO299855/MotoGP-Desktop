@@ -42,7 +42,6 @@ header > nav > a.active:hover, a:hover {
     color: #1e88e5;
 }
 
-
 /*Especificidad 002*/
 /*Regla para las migas*/
 body > p:first-of-type {
@@ -64,7 +63,7 @@ aside {
     background-color: #f9f9f9;
 }
 
-
+/*Especificidad 001*/
 table {
     border: black;
 }
@@ -78,4 +77,11 @@ table caption {
 /*Especificidad 012*/
 table tr:nth-child(odd) {
     background-color: #f1f1f1;
+}
+
+/* Para el html incrustado */
+/*Especificidad 002*/
+section > article {
+    border: 0.15em dashed #666;
+    background-color: #fafafa;
 }

@@ -44,7 +44,13 @@ body > p:first-of-type {
 /*Especificidad 001, 001*/
 section, aside {
     padding: 2ex;
-    margin: 2vw 2vw;
+    margin: 2vw;
+}
+
+/*Especificidad 002*/
+section > article {
+    padding: 2ex;
+    margin: 2vw;
 }
 
 /*Especificidad 001*/
