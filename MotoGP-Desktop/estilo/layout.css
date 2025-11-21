@@ -2,6 +2,9 @@
 /* Comentario con las reglas generales TODO:cambiar luego */
 /* Todos los selectores han de tener un comentario con su especificidad*/
 
+
+/* TODO poner código para el SVG y el div del mapa */
+
 /*Especificidad 001*/
 body {
     margin: 0;
@@ -41,12 +44,13 @@ body > p:first-of-type {
     margin: 2ex;
 }
 
-/*Especificidad 001, 001*/
-section, aside {
+/*Especificidad 002, 002*/
+ main > section, main > aside {
     padding: 2ex;
     margin: 2vw;
 }
 
+/* HTML incrustado */
 /*Especificidad 002*/
 section > article {
     padding: 2ex;

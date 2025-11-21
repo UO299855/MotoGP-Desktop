@@ -58,6 +58,19 @@ def parse_circuit(circuit_file : str, relative_to_ground : bool = False, extrude
     #Hallamos la raíz del arbol del esquema del circuito
     circuit_root = ET.parse(circuit_file).getroot()
 
+    #Cada tramo queda definido por dos puntos
+    #En nuestro XML hemos guardado solo el punto final de cada uno
+    #Vamos a concatenarlos
+    coords_queue : list[str] = []
+
+    for origen in circuit_root.findall(".//ns:origen", ns_dict) :
+        #Según nuestro XML Schema, cada tramo tiene un único valor de latitud, de longitud, y de altitud
+        longitud : int = origen.find("./ns:coordenadas/ns:longitud", ns_dict).text
+        latitud : int = origen.find("./ns:coordenadas/ns:latitud", ns_dict).text
+        altitud : int = origen.find("./ns:coordenadas/ns:altitud", ns_dict).text
+        coords_queue.append(f"{longitud},{latitud},{0 if relative_to_ground else altitud}\n")
+        
+
     i : int = 1
     for tramo in circuit_root.findall(".//ns:tramo", ns_dict) :
         #Según nuestro XML Schema, cada tramo tiene un único valor de latitud, de longitud, y de altitud
@@ -66,9 +79,12 @@ def parse_circuit(circuit_file : str, relative_to_ground : bool = False, extrude
         altitud : int = tramo.find("./ns:coordenadas/ns:altitud", ns_dict).text
 
         #Ponemos los nodos en KML
-        coords += f"{longitud},{latitud},{0 if relative_to_ground else altitud}\n"
+
+        coords = f"{longitud},{latitud},{0 if relative_to_ground else altitud}\n"
+        coords_queue.append(coords)
+
         new_kml.addLineString(nombre=f"Tramo {i}",extrude = extrude, tesela= tesela,
-                              listaCoordenadas = coords,
+                              listaCoordenadas = f"{coords_queue.pop(0)} {coords}",
                               modoAltitud = "relativeToGround" if relative_to_ground else "absolute",
                               color = line_color,
                               ancho = line_width)

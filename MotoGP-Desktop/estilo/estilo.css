@@ -79,7 +79,7 @@ table tr:nth-child(odd) {
     background-color: #f1f1f1;
 }
 
-/* Para el html incrustado */
+/* Para el contenido incrustado */
 /*Especificidad 002*/
 section > article {
     border: 0.15em dashed #666;

@@ -1,5 +1,10 @@
 import xml.etree.ElementTree as ET
 import math
+
+#TODO usar viewbox
+#TODO mirar las medidas de fontSize
+#TODO mirar la librería lxml
+#TODO quitarle el estilo al texto para dárselo con CSS
 class Svg(object):
     """
     Genera archivos SVG con rectángulos, círculos, líneas, polilíneas y texto

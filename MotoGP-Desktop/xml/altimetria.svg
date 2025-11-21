@@ -1,56 +1,58 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" version="2.0" width="5507" height="866">
-  <text x="200.0" y="436.5" fontFamily="Verdana" fontSize="1" style="none">I1</text>
-  <text x="355.68" y="454.5" fontFamily="Verdana" fontSize="1" style="none">I2</text>
-  <text x="356.17" y="479.0" fontFamily="Verdana" fontSize="1" style="none">I3</text>
-  <text x="399.59000000000003" y="482.0" fontFamily="Verdana" fontSize="1" style="none">I4</text>
-  <text x="468.0" y="448.50000000000006" fontFamily="Verdana" fontSize="1" style="none">I5</text>
-  <text x="716.98" y="482.0" fontFamily="Verdana" fontSize="1" style="none">I6</text>
-  <text x="717.45" y="505.5" fontFamily="Verdana" fontSize="1" style="none">I7</text>
-  <text x="804.2900000000001" y="474.5" fontFamily="Verdana" fontSize="1" style="none">I8</text>
-  <text x="1000.6200000000001" y="489.00000000000006" fontFamily="Verdana" fontSize="1" style="none">I9</text>
-  <text x="1130.88" y="490.00000000000006" fontFamily="Verdana" fontSize="1" style="none">I10</text>
-  <text x="1174.3000000000002" y="490.00000000000006" fontFamily="Verdana" fontSize="1" style="none">I11</text>
-  <text x="1236.0800000000002" y="495.5" fontFamily="Verdana" fontSize="1" style="none">I12</text>
-  <text x="1373.88" y="505.5" fontFamily="Verdana" fontSize="1" style="none">I13</text>
-  <text x="1504.14" y="497.49999999999994" fontFamily="Verdana" fontSize="1" style="none">I14</text>
-  <text x="1534.66" y="505.00000000000006" fontFamily="Verdana" fontSize="1" style="none">I15</text>
-  <text x="1565.18" y="508.5" fontFamily="Verdana" fontSize="1" style="none">I16</text>
-  <text x="1753.0" y="544.0" fontFamily="Verdana" fontSize="1" style="none">I17</text>
-  <text x="1796.42" y="543.0" fontFamily="Verdana" fontSize="1" style="none">I18</text>
-  <text x="1893.98" y="536.0" fontFamily="Verdana" fontSize="1" style="none">I19</text>
-  <text x="2067.66" y="535.5" fontFamily="Verdana" fontSize="1" style="none">I20</text>
-  <text x="2111.08" y="535.5" fontFamily="Verdana" fontSize="1" style="none">I21</text>
-  <text x="2141.6" y="539.0" fontFamily="Verdana" fontSize="1" style="none">I22</text>
-  <text x="2233.15" y="513.0000000000001" fontFamily="Verdana" fontSize="1" style="none">I23</text>
-  <text x="2301.55" y="520.5" fontFamily="Verdana" fontSize="1" style="none">I24</text>
-  <text x="2370.4500000000003" y="520.5" fontFamily="Verdana" fontSize="1" style="none">I25</text>
-  <text x="2457.2900000000004" y="521.0" fontFamily="Verdana" fontSize="1" style="none">I26</text>
-  <text x="2662.5000000000005" y="478.5" fontFamily="Verdana" fontSize="1" style="none">I27</text>
-  <text x="2706.9600000000005" y="0.0" fontFamily="Verdana" fontSize="1" style="none">I28</text>
-  <text x="2768.8200000000006" y="504.0" fontFamily="Verdana" fontSize="1" style="none">I29</text>
-  <text x="2905.620000000001" y="528.5" fontFamily="Verdana" fontSize="1" style="none">I30</text>
-  <text x="3110.8200000000006" y="517.0" fontFamily="Verdana" fontSize="1" style="none">I31</text>
-  <text x="3141.7100000000005" y="537.5" fontFamily="Verdana" fontSize="1" style="none">I32</text>
-  <text x="3388.8200000000006" y="651.0" fontFamily="Verdana" fontSize="1" style="none">I33</text>
-  <text x="3432.2400000000007" y="624.5" fontFamily="Verdana" fontSize="1" style="none">I34</text>
-  <text x="3596.850000000001" y="609.0" fontFamily="Verdana" fontSize="1" style="none">I35</text>
-  <text x="3640.270000000001" y="587.0" fontFamily="Verdana" fontSize="1" style="none">I36</text>
-  <text x="3702.050000000001" y="574.5" fontFamily="Verdana" fontSize="1" style="none">I37</text>
-  <text x="3920.410000000001" y="548.5" fontFamily="Verdana" fontSize="1" style="none">I38</text>
-  <text x="3951.300000000001" y="549.0" fontFamily="Verdana" fontSize="1" style="none">I39</text>
-  <text x="4078.5600000000013" y="516.0" fontFamily="Verdana" fontSize="1" style="none">I40</text>
-  <text x="4294.390000000001" y="516.0" fontFamily="Verdana" fontSize="1" style="none">I41</text>
-  <text x="4559.020000000001" y="519.5" fontFamily="Verdana" fontSize="1" style="none">I42</text>
-  <text x="4627.930000000001" y="483.0" fontFamily="Verdana" fontSize="1" style="none">I43</text>
-  <text x="4696.830000000001" y="448.00000000000006" fontFamily="Verdana" fontSize="1" style="none">I44</text>
-  <text x="4765.7300000000005" y="428.0" fontFamily="Verdana" fontSize="1" style="none">I45</text>
-  <text x="4796.250000000001" y="450.5" fontFamily="Verdana" fontSize="1" style="none">I46</text>
-  <text x="4826.770000000001" y="449.5" fontFamily="Verdana" fontSize="1" style="none">I47</text>
-  <text x="4870.190000000001" y="445.0" fontFamily="Verdana" fontSize="1" style="none">I48</text>
-  <text x="4993.740000000002" y="499.5" fontFamily="Verdana" fontSize="1" style="none">I49</text>
-  <text x="5024.630000000002" y="501.0" fontFamily="Verdana" fontSize="1" style="none">I50</text>
-  <text x="5055.150000000002" y="501.0" fontFamily="Verdana" fontSize="1" style="none">I51</text>
-  <text x="5306.980000000002" y="411.5" fontFamily="Verdana" fontSize="1" style="none">I52</text>
-  <polyline points="200.0,436.5 355.68,454.5 356.17,479.0 399.59000000000003,482.0 468.0,448.50000000000006 716.98,482.0 717.45,505.5 804.2900000000001,474.5 1000.6200000000001,489.00000000000006 1130.88,490.00000000000006 1174.3000000000002,490.00000000000006 1236.0800000000002,495.5 1373.88,505.5 1504.14,497.49999999999994 1534.66,505.00000000000006 1565.18,508.5 1753.0,544.0 1796.42,543.0 1893.98,536.0 2067.66,535.5 2111.08,535.5 2141.6,539.0 2233.15,513.0000000000001 2301.55,520.5 2370.4500000000003,520.5 2457.2900000000004,521.0 2662.5000000000005,478.5 2706.9600000000005,0.0 2768.8200000000006,504.0 2905.620000000001,528.5 3110.8200000000006,517.0 3141.7100000000005,537.5 3388.8200000000006,651.0 3432.2400000000007,624.5 3596.850000000001,609.0 3640.270000000001,587.0 3702.050000000001,574.5 3920.410000000001,548.5 3951.300000000001,549.0 4078.5600000000013,516.0 4294.390000000001,516.0 4559.020000000001,519.5 4627.930000000001,483.0 4696.830000000001,448.00000000000006 4765.7300000000005,428.0 4796.250000000001,450.5 4826.770000000001,449.5 4870.190000000001,445.0 4993.740000000002,499.5 5024.630000000002,501.0 5055.150000000002,501.0 5306.980000000002,411.5 5306.980000000002,866.0 200.0,866.0 200.0, 436.5" stroke="red" strokeWidth="4" fill="none" />
+<svg xmlns="http://www.w3.org/2000/svg" version="2.0"
+     viewBox="0 0 5507 866"
+     preserveAspectRatio="xMidYMid meet">
+  <text x="200.0" y="436.5">I1</text>
+  <text x="355.68" y="454.5">I2</text>
+  <text x="356.17" y="479.0">I3</text>
+  <text x="399.59000000000003" y="482.0">I4</text>
+  <text x="468.0" y="448.50000000000006">I5</text>
+  <text x="716.98" y="482.0">I6</text>
+  <text x="717.45" y="505.5">I7</text>
+  <text x="804.2900000000001" y="474.5">I8</text>
+  <text x="1000.6200000000001" y="489.00000000000006">I9</text>
+  <text x="1130.88" y="490.00000000000006">I10</text>
+  <text x="1174.3000000000002" y="490.00000000000006">I11</text>
+  <text x="1236.0800000000002" y="495.5">I12</text>
+  <text x="1373.88" y="505.5">I13</text>
+  <text x="1504.14" y="497.49999999999994">I14</text>
+  <text x="1534.66" y="505.00000000000006">I15</text>
+  <text x="1565.18" y="508.5">I16</text>
+  <text x="1753.0" y="544.0">I17</text>
+  <text x="1796.42" y="543.0">I18</text>
+  <text x="1893.98" y="536.0">I19</text>
+  <text x="2067.66" y="535.5">I20</text>
+  <text x="2111.08" y="535.5">I21</text>
+  <text x="2141.6" y="539.0">I22</text>
+  <text x="2233.15" y="513.0000000000001">I23</text>
+  <text x="2301.55" y="520.5">I24</text>
+  <text x="2370.4500000000003" y="520.5">I25</text>
+  <text x="2457.2900000000004" y="521.0">I26</text>
+  <text x="2662.5000000000005" y="478.5">I27</text>
+  <text x="2706.9600000000005" y="0.0">I28</text>
+  <text x="2768.8200000000006" y="504.0">I29</text>
+  <text x="2905.620000000001" y="528.5">I30</text>
+  <text x="3110.8200000000006" y="517.0">I31</text>
+  <text x="3141.7100000000005" y="537.5">I32</text>
+  <text x="3388.8200000000006" y="651.0">I33</text>
+  <text x="3432.2400000000007" y="624.5">I34</text>
+  <text x="3596.850000000001" y="609.0">I35</text>
+  <text x="3640.270000000001" y="587.0">I36</text>
+  <text x="3702.050000000001" y="574.5">I37</text>
+  <text x="3920.410000000001" y="548.5">I38</text>
+  <text x="3951.300000000001" y="549.0">I39</text>
+  <text x="4078.5600000000013" y="516.0">I40</text>
+  <text x="4294.390000000001" y="516.0">I41</text>
+  <text x="4559.020000000001" y="519.5">I42</text>
+  <text x="4627.930000000001" y="483.0">I43</text>
+  <text x="4696.830000000001" y="448.00000000000006">I44</text>
+  <text x="4765.7300000000005" y="428.0">I45</text>
+  <text x="4796.250000000001" y="450.5">I46</text>
+  <text x="4826.770000000001" y="449.5">I47</text>
+  <text x="4870.190000000001" y="445.0">I48</text>
+  <text x="4993.740000000002" y="499.5">I49</text>
+  <text x="5024.630000000002" y="501.0">I50</text>
+  <text x="5055.150000000002" y="501.0">I51</text>
+  <text x="5306.980000000002" y="411.5">I52</text>
+  <polyline vector-effect="non-scaling-stroke" points="200.0,436.5 355.68,454.5 356.17,479.0 399.59000000000003,482.0 468.0,448.50000000000006 716.98,482.0 717.45,505.5 804.2900000000001,474.5 1000.6200000000001,489.00000000000006 1130.88,490.00000000000006 1174.3000000000002,490.00000000000006 1236.0800000000002,495.5 1373.88,505.5 1504.14,497.49999999999994 1534.66,505.00000000000006 1565.18,508.5 1753.0,544.0 1796.42,543.0 1893.98,536.0 2067.66,535.5 2111.08,535.5 2141.6,539.0 2233.15,513.0000000000001 2301.55,520.5 2370.4500000000003,520.5 2457.2900000000004,521.0 2662.5000000000005,478.5 2706.9600000000005,0.0 2768.8200000000006,504.0 2905.620000000001,528.5 3110.8200000000006,517.0 3141.7100000000005,537.5 3388.8200000000006,651.0 3432.2400000000007,624.5 3596.850000000001,609.0 3640.270000000001,587.0 3702.050000000001,574.5 3920.410000000001,548.5 3951.300000000001,549.0 4078.5600000000013,516.0 4294.390000000001,516.0 4559.020000000001,519.5 4627.930000000001,483.0 4696.830000000001,448.00000000000006 4765.7300000000005,428.0 4796.250000000001,450.5 4826.770000000001,449.5 4870.190000000001,445.0 4993.740000000002,499.5 5024.630000000002,501.0 5055.150000000002,501.0 5306.980000000002,411.5 5306.980000000002,866.0 200.0,866.0 200.0, 436.5" stroke="red" strokeWidth="4" fill="none" />
 </svg>

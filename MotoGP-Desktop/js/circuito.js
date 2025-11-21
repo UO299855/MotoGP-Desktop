@@ -1,6 +1,7 @@
 class Circuito {
     #input
     #errorP
+    #article
 
     constructor() {
         this.#comprobarApiFile()        
@@ -45,8 +46,7 @@ class Circuito {
         reader.onload = (event) => {
             this.#processDOM(reader.result)
         }
-        if(file) {
-            console.log(file.type) //TODO quitar
+        if(file && file.type == "text/html") {
             reader.readAsText(file)
             this.#removeErorP()
         } else {
@@ -57,26 +57,29 @@ class Circuito {
     #processDOM(htmlText) {
         //TODO comprobar errores
         // TODO hacer que solo se pueda incrustar un HTML a la vez
-        let article = document.createElement("article")
+        if(this.#article == null) {
+            this.#article = document.createElement("article")
+            $(this.#input).after($(this.#article))
+        } else {
+            this.#article.innerHTML = ""
+        }
         let parsedDocument = new DOMParser().parseFromString(htmlText, "text/html")
         for (let element of parsedDocument.querySelectorAll("section > *")) {
-            article.appendChild(element)
+            this.#article.appendChild(element)
         }
-        $(this.#input).after($(article))
     }  
 }
 
 
 class CargadorSVG {
     #input
+    #section
 
     //  Comprobamos que soporte la API file
     constructor() {
         let section = $("<section></section>").appendTo("main")
         $("<h3>Cargar altimetría del circuito</h3>").appendTo(section)
         if (window.File && window.FileReader && window.FileList && window.Blob)  {
-            //SOPORTA LA API
-            // Pasamos de JQuery a HTML puro
             this.#input = $('<input type="file" accept=".svg"/>').appendTo(section)[0]
             this.#input.addEventListener("change", this.#leerArchivoSVG.bind(this))
         } else {
@@ -96,7 +99,44 @@ class CargadorSVG {
 
 
     #insertarSVG(dataText) {
+        if(this.#section == null) {
+            this.#section = document.createElement("section")
+            $(this.#input).after($(this.#section))
+        } else {
+            this.#section.innerHTML = ""
+        }
         const svgElement = new DOMParser().parseFromString(dataText, 'image/svg+xml').documentElement
-        $(this.#input).after($(svgElement))
+        this.#section.appendChild(svgElement)
+    }
+}
+
+
+class CargadorKML {
+    #input
+    #div
+
+    constructor() {
+        let section = $("<section></section>").appendTo("main")
+        $("<h3>Cargar coordenadas del circuito</h3>").appendTo(section)
+        if (window.File && window.FileReader && window.FileList && window.Blob)  {
+            this.#input = $('<input type="file" accept=".kml"/>').appendTo(section)[0]
+            this.#input.addEventListener("change", this.#leerArchivoKML.bind(this))
+        } else {
+            const errorStr = "Error: parece que su navegador no soporta la funcionalidad necesaria para cargar la altimetría del circuito."
+            $(`<p>${errorStr}</p>`).appendTo(section)
+        }
+    }
+
+    #leerArchivoKML() {
+        let file = this.#input.files[0]
+        let reader = new FileReader()
+        reader.onload = (event) => {
+            this.#insertarCapaKML(reader.result)
+        }
+        reader.readAsText(file)
+    }
+
+    #insertarCapaKML(kmlText) {
+        //TODO una vez tenga la api key
     }
 }

@@ -20,11 +20,13 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"></script>
     <script src="js/circuito.js"></script>
+    <script src="js/plegarNav.js"></script>
 </head>
 
 <body>
     <!-- Datos con el contenido que aparece en el navegador -->
     <header>
+    <button>☰</button>
     <h1><a href="index.html" title="Volver a la página de inicio">MotoGP Desktop</a></h1>
     <nav>
         <a href="index.html" title="Volver al menú de inicio">Inicio</a>
@@ -35,6 +37,9 @@
         <a href="juegos.html" title="Acceder a la plataforma de juegos sobre la competición">Juegos</a>
         <a href="ayuda.html" title="Ir al menú de ayuda del proyecto MotoGP-Desktop">Ayuda</a>
     </nav>
+    <script>
+        new Plegar()
+    </script>
     </header>
     <!--Migas de navegación-->
     <p>Estás en <a href="index.html" title="Volver a la página de inicio">Inicio</a> >> <strong><a href="circuito.html" title="Información sobre el circuito">Circuito</a></strong></p>
@@ -43,6 +48,7 @@
         <script>
             new Circuito()
             new CargadorSVG()
+            new CargadorKML()
         </script>
     </main>
 </body>
