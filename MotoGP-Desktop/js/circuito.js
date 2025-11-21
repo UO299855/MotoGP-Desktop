@@ -56,7 +56,6 @@ class Circuito {
 
     #processDOM(htmlText) {
         //TODO comprobar errores
-        // TODO hacer que solo se pueda incrustar un HTML a la vez
         if(this.#article == null) {
             this.#article = document.createElement("article")
             $(this.#input).after($(this.#article))

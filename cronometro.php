@@ -1,3 +1,45 @@
+<?php
+    session_start();
+
+    class Cronometro {
+        private $tiempo;
+        private $inicio;
+
+        public function __construct() {
+            $this->tiempo = 0;
+        }
+
+        public function arrancar() {
+            // para que lo devuelva como número y no como array
+            // da el resultado en nanosegundos
+            $this->inicio = hrtime(true);
+        }
+
+        public function parar() {
+            $this->tiempo = hrtime(true) - $this->inicio;
+        }
+        
+        public function mostrar()  {
+            $mins = $this->tiempo/(6e10);
+            $seconds = $this->tiempo/(1e9) - 60 * $mins;
+            $tenths = $this->tiempo/1e8 -10*$seconds;
+            echo "<p>" .$mins .":" .$mins .":" .$seconds .".".$tenths ."</p>";
+        }
+    }
+    
+    if(!isset( $_SESSION['cronometro'] ) ) {
+        $_SESSION['cronometro'] = new Cronometro();
+    }
+    $cronometro = $_SESSION['cronometro'];
+
+    if (count($_POST)>0) { 
+        if(isset($_POST['arrancar'])) $cronometro->arrancar();
+        if(isset($_POST['parar'])) $cronometro->parar();
+        if(isset($_POST['mostrar'])) $cronometro->mostrar();
+    }
+
+    
+?>
 <!DOCTYPE HTML>
 
 <html lang="es">
@@ -14,8 +56,6 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" href="multimedia/favicon.ico" type="image/ico"/>
-
-    <script src="js/cronometro.js"></script>
 </head>
 
 <body>
@@ -31,22 +71,14 @@
         <a href="ayuda.html" title="Ir al menú de ayuda del proyecto MotoGP-Desktop">Ayuda</a>
     </nav>
     </header>
-    <p>Estás en <a href="index.html" title="Página principal">Inicio</a>>><a href="juegos.html" title="Menú de juegos">Juegos</a>>><strong>Cronómetro en JavaScript</strong></p>
+    <p>Estás en <a href="index.html" title="Página principal">Inicio</a>>><a href="juegos.html" title="Menú de juegos">Juegos</a>>><strong>Cronómetro en PHP</strong></p>
     <main>
         <h2>Cronómetro</h2>
-        <section>
-            <p>00:00.0</p>
-            <button>Arrancar</button>
-            <button>Parar</button>
-            <button>Reiniciar</button>
-        </section>
-        <script>
-            const crono = new Cronometro();
-            const botones = document.querySelectorAll("button");
-            botones[0].addEventListener("click", crono.arrancar.bind(crono));
-            botones[1].addEventListener("click", crono.parar.bind(crono));
-            botones[2].addEventListener("click", crono.reiniciar.bind(crono));        
-        </script>
+        <form action="#" method="post" name="botones">
+            <input type="submit" name="arrancar" value ="Arrancar"/>
+            <input type="submit" name="parar" value="Parar"/>
+            <input type="submit" name="mostrar" value="Mostrar"/>
+        </form>
     </main>
 </body>
 </html>
