@@ -14,11 +14,23 @@ header {
     background-color: #263e5f;
 }
 
-/*Especifidad 002 */
+/*Especificidad 002*/
+header > section {
+    background-color: inherit;
+}
+
+/*Especificidad 002 */
 header a {
     color:#f4fe7b;
     text-decoration-line: none;
     font-size: 1.1em;
+}
+
+/*Especificidad 002*/
+header button {
+    background-color: #263e5f;
+    color: #f4fe7b;
+    border-color: #f4fe7b;
 }
 
 /*Especifidad 012*/

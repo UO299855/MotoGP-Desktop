@@ -2,7 +2,7 @@
 <xs:schema xmlns="http://www.uniovi.es" elementFormDefault="qualified" targetNamespace="http://www.uniovi.es" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="circuito">
 		<xs:complexType>
-			<xs:sequence>
+			<xs:all>
 				<xs:element ref="nombre"/>
 				<xs:element ref="longitud-circuito" />
 				<xs:element ref="localidad"/>
@@ -19,7 +19,7 @@
 				<xs:element ref="tramos" />
 				<xs:element ref="vencedor" />
 				<xs:element ref="clasificados" />
-			</xs:sequence>
+			</xs:all>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="nombre" type="xs:string" />
@@ -80,11 +80,11 @@
 	</xs:element>
 	<xs:element name="coordenadas">
 		<xs:complexType>
-			<xs:sequence>
+			<xs:all>
 				<xs:element ref="longitud" />
 				<xs:element ref="latitud" />
 				<xs:element ref="altitud" />
-			</xs:sequence>
+			</xs:all>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="tramos">
@@ -96,10 +96,10 @@
 	</xs:element>
 	<xs:element name="tramo">
 		<xs:complexType>
-			<xs:sequence>
+			<xs:all>
 				<xs:element ref="distancia" />
 				<xs:element ref="coordenadas" />
-			</xs:sequence>
+			</xs:all>
 			<xs:attribute name="sector" type="xs:string" use="required" />
 		</xs:complexType>
 	</xs:element>

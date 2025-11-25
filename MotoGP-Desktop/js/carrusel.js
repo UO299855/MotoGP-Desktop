@@ -5,7 +5,7 @@ class  Carrusel {
     #fotos
 
     constructor() {
-        this.#busqueda = "término de búsqueda en Flickr" //TODO cambiar al término real
+        this.#busqueda = "pertamina, circuit"
         this.#actual = 0
         this.#maximo = 4
         this.#fotos = new Array()
@@ -19,7 +19,7 @@ class  Carrusel {
             success: this.#procesarJSONFotografias.bind(this),
             error: this.#handleError,
             data: {
-                tags: "pertamina, circuit",
+                tags: this.#busqueda,
                 tagmode: "all",
                 format: "json"
             }

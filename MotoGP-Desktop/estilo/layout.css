@@ -11,11 +11,19 @@ body {
     padding: 0;
 }
 
-/*Especificidad 001*/
-header {
+
+/*Especificidad 001, 002*/
+header, header > section {
     display: flex;
     flex-direction: row;
     align-items: center;
+    column-gap: 2ex;
+}
+
+
+/*Especificidad 002*/
+header button {
+    display: none;
 }
 
 /*Especificidad 002*/
@@ -25,7 +33,6 @@ header > nav {
     justify-content: space-around;
     /*Aunque afecte a los hijos se especifica en el padre*/ 
     flex-grow: 1;
-    /* usar propiedad GAP de flex*/
 }
 
 /*Especificidad 001*/
@@ -34,8 +41,17 @@ main {
 }
 
 /*Especificidad 003*/
-main section + h2 {
+main section + h3 {
     margin-top: 4ex;
+}
+
+/*Especificidad 013*/
+main > section > h4:first-child {
+    margin-top:0em;
+}
+
+section > ul:last-child, section > p:last-child {
+    margin-bottom : 0em;
 }
 
 /*Especificidad 002*/
@@ -87,10 +103,17 @@ main ul, main ol {
     row-gap: 2ex;
 }
 
+/* Noticias de index.html */
 /*Especificidad 002*/
 p + h3 {
-    /*TODO Revisar, regla para las noticias de index.html*/
     margin-top:4ex
+}
+
+/* Regla para el mapa dinámico TODO revisar*/
+/*Especificidad 003*/
+main > section > div {
+    height: 100vh;
+    width: 100%;
 }
 
 /*Reglas dedicadas a la adaptabilidad */
@@ -104,12 +127,18 @@ p + h3 {
     /*Especificidad 001*/
     header {
         flex-direction: column;
-        padding-bottom: 2ex;
     }
 
     /*Especificidad 002*/
     header > nav {
+        display: none;
         flex-direction: column;
+        padding-bottom: 2ex;
+    }
+    
+    /*Especificidad 002*/
+    header  button {
+        display: block;
     }
 
     /*Especificidad 001*/

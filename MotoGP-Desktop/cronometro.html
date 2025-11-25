@@ -16,11 +16,15 @@
     <link rel="icon" href="multimedia/favicon.ico" type="image/ico"/>
 
     <script src="js/cronometro.js"></script>
+    <script src="js/plegarNav.js"></script>
 </head>
 
 <body>
     <header>
-    <h1><a href="index.html" title="Volver a la página de inicio">MotoGP Desktop</a></h1>
+    <section>
+        <button>☰</button>
+        <h1><a href="index.html" title="Volver a la página de inicio">MotoGP Desktop</a></h1>
+    </section>
     <nav>
         <a href="index.html" title="Volver al menú de inicio">Inicio</a>
         <a href="piloto.html" title="Información sobre el piloto (Joan Mir)">Piloto</a>
@@ -30,6 +34,9 @@
         <a href="juegos.html" class="active" title="Acceder a la plataforma de juegos sobre la competición">Juegos</a>
         <a href="ayuda.html" title="Ir al menú de ayuda del proyecto MotoGP-Desktop">Ayuda</a>
     </nav>
+    <script>
+        new Plegar()
+    </script>
     </header>
     <p>Estás en <a href="index.html" title="Página principal">Inicio</a>>><a href="juegos.html" title="Menú de juegos">Juegos</a>>><strong>Cronómetro en JavaScript</strong></p>
     <main>
@@ -42,7 +49,7 @@
         </section>
         <script>
             const crono = new Cronometro();
-            const botones = document.querySelectorAll("button");
+            const botones = document.querySelectorAll("main button");
             botones[0].addEventListener("click", crono.arrancar.bind(crono));
             botones[1].addEventListener("click", crono.parar.bind(crono));
             botones[2].addEventListener("click", crono.reiniciar.bind(crono));        

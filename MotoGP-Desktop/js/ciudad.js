@@ -62,6 +62,7 @@ class Ciudad {
      * @returns [degrees, minutes, seconds]
      */
     #parseCoords(coords) {
+        //TODO leer cómo tenemos que hacerlo en el guion (por si hay una función ya hecha para esto)
         const degs = Math.trunc(coords)
         const mins = 60*(Math.abs(coords - degs)) //Usamos Math.abs para que mins y secs sean positivos
         const secs = 60 * (mins - Math.trunc(mins))
@@ -80,12 +81,12 @@ class Ciudad {
         // Como ahora usamos letras para determinar el signo de los grados,
         // usamos Math.abs en degsLat y degsLong
         let parrafo = document.createElement("p")
-        parrafo.textContent = `Está localizada en las coordenadas ${Math.abs(degsLat)}°${minsLat}'${secsLat}''${letraLat} ${Math.abs(degsLong)}°${minsLong}'${secsLong}''${letraLong}`
+        parrafo.textContent = `Está localizada en las coordenadas ${Math.abs(degsLat)}°${minsLat}'${secsLat}''${letraLat} ${Math.abs(degsLong)}°${minsLong}'${secsLong}''${letraLong}.`
         document.querySelector("main").lastChild.appendChild(parrafo)
     }
 
-    
-    
+// Métodos relativos a consultar la API de meteorología    
+
     getMeteorologiaCarrera() {
         const url = "https://archive-api.open-meteo.com/v1/archive"
         $.ajax({
@@ -102,20 +103,26 @@ class Ciudad {
                 timezone: "Asia/Singapore" //Es la misma que la de Indonesia para la región del circuito
             },
             success: this.#procesarJSONCarrera.bind(this),
-            error: () => {console.log("no se ha podido cargar el JSON")} //TODO
+            error: () => {
+                const title = "Información sobre la carrera"
+                const errorMsg = "No se ha podido cargar la información sobre la carrera."
+                $(`<h3>${title}</h3><section><h4>Error</h4><p>${errorMsg}</p></section>`).appendTo($("main"))
+            }
         })
     }
 
     /**
      * La carrera tuvo lugar el día 5 de octubre de 2025 de 15:00 a 16:00 hora GMT+8
+     * Usamos "after" para asegurarnos de que los contenidos se insertan adecuadamente en el DOM
      */
     #procesarJSONCarrera(data) {
-        //TODO refactorizar con 'after' en lugar de unir al main
-        $("<h2> Información meteorológica de la carrera </h2>").appendTo($("main"))
+        const header = $("<h3> Información meteorológica de la carrera </h3>")
+        header.appendTo($("main"))
 
         //Procesamos las magnitudes diarias
-        let dailySection = $("<section></section>").appendTo($("main"))
-        $("<h3>Información global del día</h3>").appendTo(dailySection)
+        let dailySection = $("<section></section>")
+        header.after(dailySection)
+        $("<h4>Información global del día</h4>").appendTo(dailySection)
         let dailyList = $("<ul></ul>").appendTo(dailySection)
         let sunrise = $("<li></li>")
         sunrise.text(`Salida del sol: ${new Date(data.daily.sunrise[0]).toLocaleTimeString("es-ES", {hour12: false, hour:"2-digit", minute:"2-digit"})} (${data.timezone_abbreviation})`)
@@ -125,11 +132,12 @@ class Ciudad {
         sunset.appendTo(dailyList)
 
         //Procesamos las magnitudes por horas
-        this.#tablaDatosCarrera(data, $(`<section><h3>Información por horas (${data.timezone_abbreviation})</h3></section>`).appendTo($("main")))
+        let hourlySection = $(`<section><h4>Información por horas (${data.timezone_abbreviation})</h4></section>`)
+        dailySection.after(hourlySection)
+        this.#tablaDatosCarrera(data, hourlySection)
     }
 
     #tablaDatosCarrera(data, section) {
-        //TODO refactorizar con 'after' en lugar de unir al main
         const params = {
             "apparent_temperature" : "Temperatura ambiente",
             "rain" : "Lluvia",
@@ -138,7 +146,7 @@ class Ciudad {
             "wind_direction_10m" : "Dirección del viento",
             "wind_speed_10m" : "Velocidad del viento"
         }
-        const hours = [14, 15, 16]
+        const hours = [15]
 
         let table = $("<table></table>").appendTo(section)
         let headRow = $("<tr></tr>").appendTo(table)
@@ -174,55 +182,47 @@ class Ciudad {
                 timezone: "Asia/Singapore" //Es la misma que la de Indonesia para la región del circuito
             },
             success: this.#procesarJSONEntrenos.bind(this),
-            error: () => {console.log("no se ha podido cargar el JSON")} //TODO
+            error: () => {
+                const title = "Información sobre los entrenamientos"
+                const errorMsg = "No se ha podido cargar la información sobre los entrenamientos."
+                $(`<h3>${title}</h3><section><h4>Error</h4><p>${errorMsg}</p></section>`).appendTo($("main"))
+            }
         })
     }
 
     #procesarJSONEntrenos(data) {
-        let header = $(`<h2>Información sobre los entrenamientos</h2>`).appendTo($("main"))
-        let section = ($("<section></section>"))
-        header.after(section)
-        let h3 = ($("<h3>Promedios por horas para los días de entrenamiento</h3>")).appendTo(section)
-        const dayTimes = [[15, 16], [9, 19], [8, 15]]
+        console.log(data)
+        let header = $(`<h3>Información sobre los entrenamientos</h3>`).appendTo($("main"))
+        const dayTimes = [[15, 16], [9, 19], [8, 15]] //Franjas horarias para cada día (hora de Indonesia)
         const params = {
             "temperature_2m": "Temperatura",
             "relative_humidity_2m": "Humedad relativa",
             "rain" : "Lluvia",
             "wind_speed_10m" : "Velocidad del viento"
         }
-        let table = $("<table></table>")
 
-        //Cabeceras de la tabla
-        let headerRow = $("<tr></tr>").appendTo(table)
-        $(`<th id='magnitud_entreno' scope='col'>Magnitud/Fecha</th>`).appendTo(headerRow)
-        headerRow.appendTo(table)
-        let dayHeaders = []
-        for (let day in dayTimes) { // Usamos in para sacar los índices, no los arrays
-            // Sacamos las fechas del JSON
-            dayHeaders[day] = new Date(data.hourly.time[24*day]).toLocaleDateString("es-ES", {"day": "2-digit", "month" : "2-digit"})
-            $(`<th id='dia_${dayHeaders[day].replaceAll("/", "_")}' scope='col'>${dayHeaders[day]}</th>`).appendTo(headerRow)
-        }
-
-        //Entradas con datos
-        for (let key in params) {
-            let row = $("<tr></tr>").appendTo(table)
-            //Magnitud a medir
-            $(`<th id='${params[key].replaceAll(" ", "_")}_entreno' scope='row' headers='magnitud_entreno'>${params[key]} (${data.hourly_units[key]})</th>`).appendTo(row)
-            for(let day in dayTimes) {
-                let sum = 0
-                let bound = dayTimes[day][1] + 24 * day
-                // Hacemos la media de la magnitud en la franja horaria del día
-                for(let i = dayTimes[day][0] + 24 * day; i <= bound; i++) {
-                    sum += data.hourly[key][i]
-                }
-                //Promedio con dos decimales
-                let average = (sum/(dayTimes[day][1] - dayTimes[day][0])).toFixed(2)
-                //Unimos la fila
-                $(`<td headers='${params[key].replaceAll(" ", "_")}_entreno dia_${dayHeaders[day].replaceAll("/", "_")}'>${average}</td>`).appendTo(row)
+        //  Información para cada día de entreno
+        for (let day = dayTimes.length - 1; day >= 0; day--) {
+            let section = $("<section></section>")
+            header.after(section)
+            // Sacamos las fecha del JSON
+            let dayDate = new Date(data.hourly.time[24*day]).toLocaleDateString("es-ES", {"day": "numeric", "month" : "long"})
+            $(`<h4>${dayDate}</h4>`).appendTo(section)
+            let list = $("<ul></ul>").appendTo(section)
+            for(let key in params) {
+                const units = data.hourly_units[key]
+                let average = this.#promedioEntrenos(data, key, dayTimes[day][0] + 24 * day, dayTimes[day][1] + 24 * day)
+                $(`<li>${params[key]}: ${average}${units}</li>`).appendTo(list)
             }
         }
+    }
 
-        //Insertamos la tabla una vez rellena
-        h3.after(table)
+    // Promedio con dos decimales
+    #promedioEntrenos(data, key, startIndex, endIndex) {
+        let sum = 0
+        for(let i = startIndex; i <= endIndex; i++) {
+            sum += data.hourly[key][i]
+        }
+        return (sum/(endIndex - startIndex + 1)).toFixed(2)
     }
 }

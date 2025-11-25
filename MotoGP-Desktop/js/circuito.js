@@ -136,6 +136,35 @@ class CargadorKML {
     }
 
     #insertarCapaKML(kmlText) {
-        //TODO una vez tenga la api key
+        if(this.#div == null) {
+            this.#div = document.createElement("div")
+            $(this.#input).after($(this.#div))
+        } else {
+            this.#div.innerHTML = ""
+        }
+        const map = new google.maps.Map(this.#div, {
+            zoom: 8,
+            center: { lat: 43.3619, lng: -5.8494 }, // Centro aproximado de Asturias
+        });
+
+        const asturiasPath = [
+            { lat: 43.3603, lng: -5.8448 }, // Oviedo
+            { lat: 43.3500, lng: -5.1333 }, // Cangas de Onís
+            { lat: 43.5420, lng: -5.6624 }, // Gijón
+            { lat: 43.5566, lng: -5.9215 }, // Avilés  
+            { lat: 43.5443, lng: -6.5379 }, // Luarca
+            { lat: 43.3603, lng: -5.8448 }, // Oviedo
+        ];
+
+        const polyline = new google.maps.Polyline({
+            path: asturiasPath,
+            geodesic: true,
+            strokeColor: "#0000FF",
+            strokeOpacity: 0.8,
+            strokeWeight: 4,
+        });
+
+        polyline.setMap(map);
+    
     }
 }
