@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor de Coordenadas</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input, textarea { width: 100%; margin-top: 10px; }
+        button { margin-top: 15px; padding: 10px; }
+    </style>
+</head>
+
+<body>
+
+    <h2>Conversor de coordenadas a grados decimales</h2>
+
+    <label>Introduce coordenadas:</label>
+    <input id="coordInput" type="text" placeholder='Ej: 8°53\'44"S 116°18\'13"E'>
+
+    <button onclick="convertir()">Convertir</button>
+
+    <h3>Latitud:</h3>
+    <textarea id="latOutput" rows="1" readonly></textarea>
+
+    <h3>Longitud:</h3>
+    <textarea id="lonOutput" rows="1" readonly></textarea>
+
+    <script>
+        function dmsToDecimal(g, m, s, dir) {
+            let dec = Number(g) + Number(m)/60 + Number(s)/3600;
+            if (dir === "S" || dir === "W") dec *= -1;
+            return dec;
+        }
+
+        function convertir() {
+            const input = document.getElementById("coordInput").value.trim();
+
+            // Expresión regular para capturar: grados, minutos, segundos y dirección
+            const regex = /(\d+)°(\d+)'(\d+)"([NSEW])/g;
+            const partes = [...input.matchAll(regex)];
+
+            if (partes.length !== 2) {
+                alert("Formato inválido. Usa por ejemplo: 8°53'44\"S 116°18'13\"E");
+                return;
+            }
+
+            // Latitud (primera parte)
+            const [_, g1, m1, s1, dir1] = partes[0];
+            // Longitud (segunda parte)
+            const [__, g2, m2, s2, dir2] = partes[1];
+
+            const lat = dmsToDecimal(g1, m1, s1, dir1);
+            const lon = dmsToDecimal(g2, m2, s2, dir2);
+
+            document.getElementById("latOutput").value = lat;
+            document.getElementById("lonOutput").value = lon;
+        }
+    </script>
+
+</body>
+</html>
