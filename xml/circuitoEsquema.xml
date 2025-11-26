@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<circuito xsi:schemaLocation="http://www.uniovi.es circuito.xsd"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.uniovi.es">
+    <nombre>Pertamina Mandalika Circuit</nombre>
+    <longitud-circuito unidades="metros">4301</longitud-circuito>
+    <localidad>Baturiti</localidad>
+    <pais>Indonesia</pais>
+    <anchura-media unidades="metros">15</anchura-media>
+    <fecha>2025-10-05</fecha>
+    <hora>09:00:00</hora>
+    <vueltas>27</vueltas>
+    <patrocinador>Pertamina</patrocinador>
+    <referencias>
+        <referencia>https://www.motogp.com/es/calendar/2025/event/indonesia/c4def1f2-c288-4eab-9461-7acda49e765a?tab=circuit-info</referencia>
+        <referencia>https://es.wikipedia.org/wiki/Circuito_Urbano_Internacional_de_Mandalika</referencia>
+        <referencia>Referencia 3</referencia>
+    </referencias>
+    <fotografias>
+        <fotografia>Foto 1</fotografia>
+        <fotografia>Foto 2</fotografia>
+        <fotografia>Foto 3</fotografia>
+    </fotografias>
+    <videos>
+        <video>multimedia/circuito/video1.mp4</video>
+        <video>multimedia/circuito/video2.mp4</video>        
+    </videos>
+    <origen>
+        <coordenadas>
+            <latitud unidades = "grados">-8.895555555555555</latitud>
+            <longitud unidades = "grados" >116.30361111111111</longitud>
+            <altitud unidades="metros">9.14</altitud>
+        </coordenadas>
+    </origen>
+    <vencedor nombre = "Fermín Aldeguer">
+        <tiempo-victoria unidades="segundos">PT2467.651S</tiempo-victoria>
+    </vencedor>
+    <clasificados>
+        <clasificado puesto="1" puntos="545">Marc Marquez</clasificado>
+        <clasificado puesto="2" puntos="362">Alex Marquez</clasificado>
+        <clasificado puesto="3" puntos="274">Francesco Bagnaia</clasificado>
+    </clasificados>
+    <tramos>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.895656518635604</latitud>
+                <longitud unidades="grados">116.30371432947197</longitud>
+                <altitud unidades="metros">9.15</altitud>
+            </coordenadas>
+            <distancia unidades="metros">129.50</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.895338520556606</latitud>
+                <longitud unidades="grados">116.30484750317663</longitud>
+                <altitud unidades="metros">8.43</altitud>
+            </coordenadas>
+            <distancia unidades="metros">308.23</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894587195876298</latitud>
+                <longitud unidades="grados">116.30754607415531</longitud>
+                <altitud unidades="metros">8.66</altitud>
+            </coordenadas>
+            <distancia unidades="metros">33.28</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894506000738957</latitud>
+                <longitud unidades="grados">116.30783744095004</longitud>
+                <altitud unidades="metros">8.34</altitud>
+            </coordenadas>
+            <distancia unidades="metros">18.72</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894461503716514</latitud>
+                <longitud unidades="grados">116.30800169309674</longitud>
+                <altitud unidades="metros">8.68</altitud>
+            </coordenadas>
+            <distancia unidades="metros">15.11</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894481317746894</latitud>
+                <longitud unidades="grados">116.3081375907318</longitud>
+                <altitud unidades="metros">8.35</altitud>
+            </coordenadas>
+            <distancia unidades="metros">20.02</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894547432842202</latitud>
+                <longitud unidades="grados">116.30830707650301</longitud>
+                <altitud unidades="metros">8.28</altitud>
+            </coordenadas>
+            <distancia unidades="metros">13.81</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89463335346602</latitud>
+                <longitud unidades="grados">116.3083981296769</longitud>
+                <altitud unidades="metros">8.07</altitud>
+            </coordenadas>
+            <distancia unidades="metros">15.14</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.8947449984732</latitud>
+                <longitud unidades="grados">116.30847784104657</longitud>
+                <altitud unidades="metros">7.57</altitud>
+            </coordenadas>
+            <distancia unidades="metros">15.34</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89487991703092</latitud>
+                <longitud unidades="grados">116.3085102432023</longitud>
+                <altitud unidades="metros">7.95</altitud>
+            </coordenadas>
+            <distancia unidades="metros">31.32</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.895162878028287</latitud>
+                <longitud unidades="grados">116.30852049181601</longitud>
+                <altitud unidades="metros">8.09</altitud>
+            </coordenadas>
+            <distancia unidades="metros">77.55</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.895863793092374</latitud>
+                <longitud unidades="grados">116.30853897032216</longitud>
+                <altitud unidades="metros">8.01</altitud>
+            </coordenadas>
+            <distancia unidades="metros">85.65</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89663759180553</latitud>
+                <longitud unidades="grados">116.30857092611183</longitud>
+                <altitud unidades="metros">7.59</altitud>
+            </coordenadas>
+            <distancia unidades="metros">15.82</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896775584305715</latitud>
+                <longitud unidades="grados">116.30853310950124</longitud>
+                <altitud unidades="metros">7.49</altitud>
+            </coordenadas>
+            <distancia unidades="metros">13.67</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896879698879118</latitud>
+                <longitud unidades="grados">116.30846606510221</longitud>
+                <altitud unidades="metros">7.24</altitud>
+            </coordenadas>
+            <distancia unidades="metros">19.96</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896976838733764</latitud>
+                <longitud unidades="grados">116.30831313887035</longitud>
+                <altitud unidades="metros">7.7</altitud>
+            </coordenadas>
+            <distancia unidades="metros">44.09</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896999193833452</latitud>
+                <longitud unidades="grados">116.30791291840086</longitud>
+                <altitud unidades="metros">7.49</altitud>
+            </coordenadas>
+            <distancia unidades="metros">13.61</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.897055795779323</latitud>
+                <longitud unidades="grados">116.3078029996143</longitud>
+                <altitud unidades="metros">7.37</altitud>
+            </coordenadas>
+            <distancia unidades="metros">52.67</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89747402621282</latitud>
+                <longitud unidades="grados">116.307574018774</longitud>
+                <altitud unidades="metros">7.5</altitud>
+            </coordenadas>
+            <distancia unidades="metros">16.42</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.897622445405801</latitud>
+                <longitud unidades="grados">116.30757388561813</longitud>
+                <altitud unidades="metros">7.37</altitud>
+            </coordenadas>
+            <distancia unidades="metros">11.62</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.897718537687823</latitud>
+                <longitud unidades="grados">116.30761649857652</longitud>
+                <altitud unidades="metros">7.24</altitud>
+            </coordenadas>
+            <distancia unidades="metros">68.95</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.898209394820412</latitud>
+                <longitud unidades="grados">116.30800294311342</longitud>
+                <altitud unidades="metros">7.33</altitud>
+            </coordenadas>
+            <distancia unidades="metros">79.33</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.898660367360378</latitud>
+                <longitud unidades="grados">116.30856380388093</longitud>
+                <altitud unidades="metros">7.39</altitud>
+            </coordenadas>
+            <distancia unidades="metros">51.27</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89895608635463</latitud>
+                <longitud unidades="grados">116.30892276437476</longitud>
+                <altitud unidades="metros">7.25</altitud>
+            </coordenadas>
+            <distancia unidades="metros">21.29</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89913764292227</latitud>
+                <longitud unidades="grados">116.3089871399946</longitud>
+                <altitud unidades="metros">7.07</altitud>
+            </coordenadas>
+            <distancia unidades="metros">60.51</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.899684429769096</latitud>
+                <longitud unidades="grados">116.30900643306092</longitud>
+                <altitud unidades="metros">6.66</altitud>
+            </coordenadas>
+            <distancia unidades="metros">64.55</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.900267905769027</latitud>
+                <longitud unidades="grados">116.30901992705128</longitud>
+                <altitud unidades="metros">6.4</altitud>
+            </coordenadas>
+            <distancia unidades="metros">74.12</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.900938045968175</latitud>
+                <longitud unidades="grados">116.30902804202606</longitud>
+                <altitud unidades="metros">6.47</altitud>
+            </coordenadas>
+            <distancia unidades="metros">28.28</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.901159951616748</latitud>
+                <longitud unidades="grados">116.30890027146205</longitud>
+                <altitud unidades="metros">6.51</altitud>
+            </coordenadas>
+            <distancia unidades="metros">46.38</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.901477394876679</latitud>
+                <longitud unidades="grados">116.30862480234595</longitud>
+                <altitud unidades="metros">6.5</altitud>
+            </coordenadas>
+            <distancia unidades="metros">76.43</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.901997099875544</latitud>
+                <longitud unidades="grados">116.30816678904796</longitud>
+                <altitud unidades="metros">6.51</altitud>
+            </coordenadas>
+            <distancia unidades="metros">75.31</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902499346499113</latitud>
+                <longitud unidades="grados">116.30770442904799</longitud>
+                <altitud unidades="metros">6.59</altitud>
+            </coordenadas>
+            <distancia unidades="metros">18.46</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902563563202776</latitud>
+                <longitud unidades="grados">116.30754948264627</longitud>
+                <altitud unidades="metros">6.56</altitud>
+            </coordenadas>
+            <distancia unidades="metros">17.49</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902583352614727</latitud>
+                <longitud unidades="grados">116.3073917282835</longitud>
+                <altitud unidades="metros">6.55</altitud>
+            </coordenadas>
+            <distancia unidades="metros">46.47</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902588699313824</latitud>
+                <longitud unidades="grados">116.30696928467808</longitud>
+                <altitud unidades="metros">6.46</altitud>
+            </coordenadas>
+            <distancia unidades="metros">32.22</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902638765525964</latitud>
+                <longitud unidades="grados">116.30668066969986</longitud>
+                <altitud unidades="metros">6.72</altitud>
+            </coordenadas>
+            <distancia unidades="metros">36.12</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902761056912084</latitud>
+                <longitud unidades="grados">116.30637620596235</longitud>
+                <altitud unidades="metros">6.98</altitud>
+            </coordenadas>
+            <distancia unidades="metros">28.03</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.90291666327937</latitud>
+                <longitud unidades="grados">116.30617510454823</longitud>
+                <altitud unidades="metros">6.93</altitud>
+            </coordenadas>
+            <distancia unidades="metros">29.66</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.903110793767922</latitud>
+                <longitud unidades="grados">116.30598904206767</longitud>
+                <altitud unidades="metros">6.82</altitud>
+            </coordenadas>
+            <distancia unidades="metros">90.51</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.9037477215183</latitud>
+                <longitud unidades="grados">116.30547241097719</longitud>
+                <altitud unidades="metros">6.88</altitud>
+            </coordenadas>
+            <distancia unidades="metros">60.64</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.904025895967493</latitud>
+                <longitud unidades="grados">116.30499728279244</longitud>
+                <altitud unidades="metros">6.77</altitud>
+            </coordenadas>
+            <distancia unidades="metros">82.76</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.904384640174712</latitud>
+                <longitud unidades="grados">116.30433697255592</longitud>
+                <altitud unidades="metros">6.64</altitud>
+            </coordenadas>
+            <distancia unidades="metros">100.90</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.904820211921631</latitud>
+                <longitud unidades="grados">116.30353090396358</longitud>
+                <altitud unidades="metros">7.32</altitud>
+            </coordenadas>
+            <distancia unidades="metros">69.17</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.905116931664125</latitud>
+                <longitud unidades="grados">116.3029773391496</longitud>
+                <altitud unidades="metros">13.76</altitud>
+            </coordenadas>
+            <distancia unidades="metros">47.74</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.905320662016123</latitud>
+                <longitud unidades="grados">116.30259466537632</longitud>
+                <altitud unidades="metros">6.88</altitud>
+            </coordenadas>
+            <distancia unidades="metros">16.42</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.905355693279361</latitud>
+                <longitud unidades="grados">116.30244960086299</longitud>
+                <altitud unidades="metros">6.75</altitud>
+            </coordenadas>
+            <distancia unidades="metros">17.02</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.905321114945423</latitud>
+                <longitud unidades="grados">116.30229880841284</longitud>
+                <altitud unidades="metros">6.77</altitud>
+            </coordenadas>
+            <distancia unidades="metros">16.51</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.905234928688444</latitud>
+                <longitud unidades="grados">116.30217621896168</longitud>
+                <altitud unidades="metros">6.9</altitud>
+            </coordenadas>
+            <distancia unidades="metros">15.19</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.905117458919037</latitud>
+                <longitud unidades="grados">116.30210470246351</longitud>
+                <altitud unidades="metros">6.53</altitud>
+            </coordenadas>
+            <distancia unidades="metros">39.01</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+            <latitud unidades="grados">-8.904764765063746</latitud>
+            <longitud unidades="grados">116.30209818474265</longitud>
+            <altitud unidades="metros">6.85</altitud>
+            </coordenadas>
+            <distancia unidades="metros">112.73</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.903746989871394</latitud>
+                <longitud unidades="grados">116.30215265827724</longitud>
+                <altitud unidades="metros">7.81</altitud>
+            </coordenadas>
+            <distancia unidades="metros">88.17</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902951102651741</latitud>
+                <longitud unidades="grados">116.30219896595224</longitud>
+                <altitud unidades="metros">4.3</altitud>
+            </coordenadas>
+            <distancia unidades="metros">9.87</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902862160957412</latitud>
+                <longitud unidades="grados">116.30220601462833</longitud>
+                <altitud unidades="metros">4.3</altitud>
+            </coordenadas>
+            <distancia unidades="metros">12.28</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902754993694586</latitud>
+                <longitud unidades="grados">116.3022353264675</longitud>
+                <altitud unidades="metros">4.32</altitud>
+            </coordenadas>
+            <distancia unidades="metros">19.59</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902622893870415</latitud>
+                <longitud unidades="grados">116.3023540365698</longitud>
+                <altitud unidades="metros">4.63</altitud>
+            </coordenadas>
+            <distancia unidades="metros">25.15</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902523083478087</latitud>
+                <longitud unidades="grados">116.3025594936675</longitud>
+                <altitud unidades="metros">6.17</altitud>
+            </coordenadas>
+            <distancia unidades="metros">74.47</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.90228343245306</latitud>
+                <longitud unidades="grados">116.30319223475846</longitud>
+                <altitud unidades="metros">6.16</altitud>
+            </coordenadas>
+            <distancia unidades="metros">33.65</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902175337867973</latitud>
+                <longitud unidades="grados">116.30347820326125</longitud>
+                <altitud unidades="metros">5.32</altitud>
+            </coordenadas>
+            <distancia unidades="metros">19.46</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.902110048351076</latitud>
+                <longitud unidades="grados">116.30364245938614</longitud>
+                <altitud unidades="metros">5.24</altitud>
+            </coordenadas>
+            <distancia unidades="metros">26.76</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.90195398927078</latitud>
+                <longitud unidades="grados">116.30382833346783</longitud>
+                <altitud unidades="metros">5.17</altitud>
+            </coordenadas>
+            <distancia unidades="metros">20.51</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.9018007499933</latitud>
+                <longitud unidades="grados">116.30393331337535</longitud>
+                <altitud unidades="metros">5.87</altitud>
+            </coordenadas>
+            <distancia unidades="metros">23.27</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.901603945921622</latitud>
+                <longitud unidades="grados">116.30400817757993</longitud>
+                <altitud unidades="metros">6.13</altitud>
+            </coordenadas>
+            <distancia unidades="metros">16.65</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.9014535683377</latitud>
+                <longitud unidades="grados">116.30401447727434</longitud>
+                <altitud unidades="metros">5.85</altitud>
+            </coordenadas>
+            <distancia unidades="metros">21.04</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.901263385307516</latitud>
+                <longitud unidades="grados">116.30400847157449</longitud>
+                <altitud unidades="metros">5.88</altitud>
+            </coordenadas>
+            <distancia unidades="metros">24.68</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.901041260462677</latitud>
+                <longitud unidades="grados">116.30398686630207</longitud>
+                <altitud unidades="metros">6.13</altitud>
+            </coordenadas>
+            <distancia unidades="metros">40.25</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.900678756276122</latitud>
+                <longitud unidades="grados">116.30395414628964</longitud>
+                <altitud unidades="metros">6.46</altitud>
+            </coordenadas>
+            <distancia unidades="metros">37.83</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.90033772934774</latitud>
+                <longitud unidades="grados">116.30392765259285</longitud>
+                <altitud unidades="metros">6.31</altitud>
+            </coordenadas>
+            <distancia unidades="metros">40.46</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.899974022538203</latitud>
+                <longitud unidades="grados">116.3038880552524</longitud>
+                <altitud unidades="metros">6.72</altitud>
+            </coordenadas>
+            <distancia unidades="metros">60.79</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.899427024140778</latitud>
+                <longitud unidades="grados">116.30383380157735</longitud>
+                <altitud unidades="metros">6.26</altitud>
+            </coordenadas>
+            <distancia unidades="metros">28.75</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+            <latitud unidades   ="grados">-8.899169143473202</latitud>
+                <longitud unidades="grados">116.3038008118989</longitud>
+                <altitud unidades="metros">5.99</altitud>
+            </coordenadas>
+            <distancia unidades="metros">20.60</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.899000010552768</latitud>
+                <longitud unidades="grados">116.30372228267686</longitud>
+                <altitud unidades="metros">6.05</altitud>
+            </coordenadas>
+            <distancia unidades="metros">13.20</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.898910917081892</latitud>
+                <longitud unidades="grados">116.30364246678164</longitud>
+                <altitud unidades="metros">6.44</altitud>
+            </coordenadas>
+            <distancia unidades="metros">15.90</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.898826674609865</latitud>
+                <longitud unidades="grados">116.30352528432036</longitud>
+                <altitud unidades="metros">6.77</altitud>
+            </coordenadas>
+            <distancia unidades="metros">22.76</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89876851861294</latitud>
+                <longitud unidades="grados">116.30332681421561</longitud>
+                <altitud unidades="metros">6.83</altitud>
+            </coordenadas>
+            <distancia unidades="metros">34.87</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89875312855365</latitud>
+                <longitud unidades="grados">116.30301015634706</longitud>
+                <altitud unidades="metros">6.84</altitud>
+            </coordenadas>
+            <distancia unidades="metros">40.31</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.898688897531983</latitud>
+                <longitud unidades="grados">116.30264938770688</longitud>
+                <altitud unidades="metros">6.89</altitud>
+            </coordenadas>
+            <distancia unidades="metros">35.98</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.898566828236795</latitud>
+                <longitud unidades="grados">116.30234616686704</longitud>
+                <altitud unidades="metros">6.86</altitud>
+            </coordenadas>
+            <distancia unidades="metros">32.67</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.898402908067169</latitud>
+                <longitud unidades="grados">116.30209911915153</longitud>
+                <altitud unidades="metros">6.78</altitud>
+            </coordenadas>
+            <distancia unidades="metros">46.54</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.8980936615295</latitud>
+                <longitud unidades="grados">116.3018121522586</longitud>
+                <altitud unidades="metros">6.86</altitud>
+            </coordenadas>
+            <distancia unidades="metros">20.49</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.897946727615349</latitud>
+                <longitud unidades="grados">116.30169866556889</longitud>
+                <altitud unidades="metros">7.29</altitud>
+            </coordenadas>
+            <distancia unidades="metros">35.09</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.897683805134847</latitud>
+                <longitud unidades="grados">116.3015201708256</longitud>
+                <altitud unidades="metros">6.79</altitud>
+            </coordenadas>
+            <distancia unidades="metros">45.01</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.897351912900035</latitud>
+                <longitud unidades="grados">116.30128329592048</longitud>
+                <altitud unidades="metros">6.82</altitud>
+            </coordenadas>
+            <distancia unidades="metros">49.57</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896980448297924</latitud>
+                <longitud unidades="grados">116.30103105636385</longitud>
+                <altitud unidades="metros">6.48</altitud>
+            </coordenadas>
+            <distancia unidades="metros">58.33</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89654234249491</latitud>
+                <longitud unidades="grados">116.30073580324455</longitud>
+                <altitud unidades="metros">6.86</altitud>
+            </coordenadas>
+            <distancia unidades="metros">31.45</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896292264862566</latitud>
+                <longitud unidades="grados">116.30059961613995</longitud>
+                <altitud unidades="metros">7.16</altitud>
+            </coordenadas>
+            <distancia unidades="metros">30.04</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896032318456534</latitud>
+                <longitud unidades="grados">116.30052057807757</longitud>
+                <altitud unidades="metros">7.53</altitud>
+            </coordenadas>
+            <distancia unidades="metros">31.97</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.895745217893534</latitud>
+                <longitud unidades="grados">116.30048671921139</longitud>
+                <altitud unidades="metros">7.44</altitud>
+            </coordenadas>
+            <distancia unidades="metros">30.50</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89547000323553</latitud>
+                <longitud unidades="grados">116.30050454822538</longitud>
+                <altitud unidades="metros">7.8</altitud>
+            </coordenadas>
+            <distancia unidades="metros">28.66</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.895215003465992</latitud>
+                <longitud unidades="grados">116.30055082265721</longitud>
+                <altitud unidades="metros">7.99</altitud>
+            </coordenadas>
+            <distancia unidades="metros">25.75</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89499883286922</latitud>
+                <longitud unidades="grados">116.30063785065875</longitud>
+                <altitud unidades="metros">7.95</altitud>
+            </coordenadas>
+            <distancia unidades="metros">21.65</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89482687205431</latitud>
+                <longitud unidades="grados">116.30073182215784</longitud>
+                <altitud unidades="metros">8.2</altitud>
+            </coordenadas>
+            <distancia unidades="metros">17.31</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894693023096451</latitud>
+                <longitud unidades="grados">116.30081344923087</longitud>
+                <altitud unidades="metros">8.44</altitud>
+            </coordenadas>
+            <distancia unidades="metros">12.68</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894602140923283</latitud>
+                <longitud unidades="grados">116.30088377637657</longitud>
+                <altitud unidades="metros">8.37</altitud>
+            </coordenadas>
+            <distancia unidades="metros">14.19</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894526914086754</latitud>
+                <longitud unidades="grados">116.3009882876363</longitud>
+                <altitud unidades="metros">8.75</altitud>
+            </coordenadas>
+            <distancia unidades="metros">9.45</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894531734098635</latitud>
+                <longitud unidades="grados">116.30107406852204</longitud>
+                <altitud unidades="metros">8.51</altitud>
+            </coordenadas>
+            <distancia unidades="metros">11.36</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894556337222028</latitud>
+                <longitud unidades="grados">116.30117437760765</longitud>
+                <altitud unidades="metros">8.33</altitud>
+            </coordenadas>
+            <distancia unidades="metros">12.50</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894623391203567</latitud>
+                <longitud unidades="grados">116.30126584375557</longitud>
+                <altitud unidades="metros">8.34</altitud>
+            </coordenadas>
+            <distancia unidades="metros">9.72</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894693329820683</latitud>
+                <longitud unidades="grados">116.30131941056624</longitud>
+                <altitud unidades="metros">8.43</altitud>
+            </coordenadas>
+            <distancia unidades="metros">14.28</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.894819556778486</latitud>
+                <longitud unidades="grados">116.30134656752307</longitud>
+                <altitud unidades="metros">8.4</altitud>
+            </coordenadas>
+            <distancia unidades="metros">15.34</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89495822569637</latitud>
+                <longitud unidades="grados">116.30135072133578</longitud>
+                <altitud unidades="metros">7.98</altitud>
+            </coordenadas>
+            <distancia unidades="metros">61.81</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89551293571607</latitud>
+                <longitud unidades="grados">116.30128260019973</longitud>
+                <altitud unidades="metros">7.71</altitud>
+            </coordenadas>
+            <distancia unidades="metros">54.60</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896003710868627</latitud>
+                <longitud unidades="grados">116.30122897196418</longitud>
+                <altitud unidades="metros">6.99</altitud>
+            </coordenadas>
+            <distancia unidades="metros">21.60</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896177876415294</latitud>
+                <longitud unidades="grados">116.30131780268414</longitud>
+                <altitud unidades="metros">7.69</altitud>
+            </coordenadas>
+            <distancia unidades="metros">13.45</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896245293666212</latitud>
+                <longitud unidades="grados">116.30141961903786</longitud>
+                <altitud unidades="metros">7.2</altitud>
+            </coordenadas>
+            <distancia unidades="metros">16.91</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896243464854692</latitud>
+                <longitud unidades="grados">116.30157330537912</longitud>
+                <altitud unidades="metros">7.49</altitud>
+            </coordenadas>
+            <distancia unidades="metros">59.72</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.896107741745027</latitud>
+                <longitud unidades="grados">116.30209879255318</longitud>
+                <altitud unidades="metros">6.92</altitud>
+            </coordenadas>
+            <distancia unidades="metros">84.39</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89590340305783</latitud>
+                <longitud unidades="grados">116.30283802416545</longitud>
+                <altitud unidades="metros">7.23</altitud>
+            </coordenadas>
+            <distancia unidades="metros">66.43</distancia>
+        </tramo>
+        <tramo sector="S1">
+            <coordenadas>
+                <latitud unidades="grados">-8.89574106229179</latitud>
+                <longitud unidades="grados">116.30341949272497</longitud>
+                <altitud unidades="metros">8.79</altitud>
+            </coordenadas>
+            <distancia unidades="metros">33.82</distancia>
+        </tramo>
+    </tramos>
+ </circuito>

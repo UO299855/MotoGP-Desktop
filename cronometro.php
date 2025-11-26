@@ -56,11 +56,16 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" href="multimedia/favicon.ico" type="image/ico"/>
+
+    <script src="js/plegarNav.js"></script>
 </head>
 
 <body>
     <header>
-    <h1><a href="index.html" title="Volver a la página de inicio">MotoGP Desktop</a></h1>
+    <section>
+        <button>☰</button>
+        <h1><a href="index.html" title="Volver a la página de inicio">MotoGP Desktop</a></h1>
+    </section>
     <nav>
         <a href="index.html" title="Volver al menú de inicio">Inicio</a>
         <a href="piloto.html" title="Información sobre el piloto (Joan Mir)">Piloto</a>
@@ -70,6 +75,9 @@
         <a href="juegos.html" class="active" title="Acceder a la plataforma de juegos sobre la competición">Juegos</a>
         <a href="ayuda.html" title="Ir al menú de ayuda del proyecto MotoGP-Desktop">Ayuda</a>
     </nav>
+    <script>
+        new Plegar()
+    </script>
     </header>
     <p>Estás en <a href="index.html" title="Página principal">Inicio</a>>><a href="juegos.html" title="Menú de juegos">Juegos</a>>><strong>Cronómetro en PHP</strong></p>
     <main>
