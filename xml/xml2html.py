@@ -73,17 +73,31 @@ class CircuitProcessor:
     
     def process_references(self, circuit_root : ET.Element, html : Html):
         section : ET.Element = ET.SubElement(html.main, "section")
-        ET.SubElement(section, "h3").text="Más información"
+        ET.SubElement(section, "h3").text="Referencias consultadas"
         list : ET.Element = ET.SubElement(section, "ol")
+        i : int = 1
         for referencia in circuit_root.findall(".//ns:referencia", self.ns_dict):
-            entry : ET.Element = ET.SubElement(list, "li")
-            entry.text = referencia.text
+            link : ET.Element = ET.SubElement(ET.SubElement(list, "li"), "a")
+            link.text = f"Referencia {i}"
+            link.set("href", referencia.text or "")
+            i += 1
 
+    def process_videos(self, circuit_root : ET.Element, html : Html):
+        section : ET.Element = ET.SubElement(html.main, "section")
+        ET.SubElement(section, "h3").text="Vídeos del circuito"
+        for video_ref in circuit_root.findall(".//ns:video", self.ns_dict):
+            video : ET.Element = ET.SubElement(section, "video")
+            video.set("controls", "controls") # el atributo es booleano, podemos poner cualquier valor a modo de "verdadero"
+            video.set("preload", "auto")
+            source : ET.Element = ET.SubElement(video, "source")
+            source.set("src", f"../{video_ref.text}")
+            source.set("type", "video/mp4")
 
     def main(self, input_file : str, output_file : str, html_title : str):
         circuit_root : ET.Element = ET.parse(input_file).getroot()
         html : Html = Html(html_title)
         self.process_main_info(circuit_root, html)
+        self.process_videos(circuit_root, html)
         self.process_references(circuit_root, html)
         html.write(output_file)
 
