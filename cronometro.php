@@ -10,8 +10,8 @@
         }
 
         public function arrancar() {
-            // para que lo devuelva como número y no como array
             // da el resultado en nanosegundos
+            // usamos true que lo devuelva como número y no como array
             $this->inicio = hrtime(true);
         }
 
@@ -19,11 +19,15 @@
             $this->tiempo = hrtime(true) - $this->inicio;
         }
         
-        public function mostrar()  {
-            $mins = $this->tiempo/(6e10);
-            $seconds = $this->tiempo/(1e9) - 60 * $mins;
-            $tenths = $this->tiempo/1e8 -10*$seconds;
-            echo "<p>" .$mins .":" .$mins .":" .$seconds .".".$tenths ."</p>";
+        public function mostrar() {
+            $nanos = $this->tiempo;
+            // Usamos _ para que sean float
+            $mins = intdiv($nanos, 60_000_000_000);
+            $nanos -= $mins * 60_000_000_000;
+            $seconds = $nanos / 1_000_000_000;
+
+            // Formato mm:ss.s
+            return sprintf("%02d:%04.1f", $mins, $seconds);
         }
     }
     
@@ -31,11 +35,11 @@
         $_SESSION['cronometro'] = new Cronometro();
     }
     $cronometro = $_SESSION['cronometro'];
-
+    $mensaje = "00:00.0";
     if (count($_POST)>0) { 
         if(isset($_POST['arrancar'])) $cronometro->arrancar();
         if(isset($_POST['parar'])) $cronometro->parar();
-        if(isset($_POST['mostrar'])) $cronometro->mostrar();
+        if(isset($_POST['mostrar'])) $mensaje = $cronometro->mostrar();
     }
 
     
@@ -71,7 +75,7 @@
         <a href="piloto.html" title="Información sobre el piloto (Joan Mir)">Piloto</a>
         <a href="circuito.html" title="Información sobre el circuito">Circuito</a>
         <a href="meteorologia.html" title="Información sobre la meteorología del circuito">Meteorología</a>
-        <a href="clasificaciones.html" title="Acceder a las clasificaciones de la competición">Clasificaciones</a>
+        <a href="clasificaciones.php" title="Acceder a las clasificaciones de la competición">Clasificaciones</a>
         <a href="juegos.html" class="active" title="Acceder a la plataforma de juegos sobre la competición">Juegos</a>
         <a href="ayuda.html" title="Ir al menú de ayuda del proyecto MotoGP-Desktop">Ayuda</a>
     </nav>
@@ -82,11 +86,18 @@
     <p>Estás en <a href="index.html" title="Página principal">Inicio</a>>><a href="juegos.html" title="Menú de juegos">Juegos</a>>><strong>Cronómetro en PHP</strong></p>
     <main>
         <h2>Cronómetro</h2>
-        <form action="#" method="post" name="botones">
-            <input type="submit" name="arrancar" value ="Arrancar"/>
-            <input type="submit" name="parar" value="Parar"/>
-            <input type="submit" name="mostrar" value="Mostrar"/>
-        </form>
+        <section>
+            <p>
+                <?php
+                    echo $mensaje;
+                ?>
+            </p>
+            <form action="#" method="post" name="botones">
+                <input type="submit" name="arrancar" value ="Arrancar"/>
+                <input type="submit" name="parar" value="Parar"/>
+                <input type="submit" name="mostrar" value="Mostrar"/>
+            </form>
+        </section>
     </main>
 </body>
 </html>

@@ -14,9 +14,9 @@ class Html:
         ET.SubElement(head, "meta", name="description", content="Información sobre el circuito guardada en un html auxiliar")
         ET.SubElement(head, "meta", name="keywords", content="circuito,moto,información")
         ET.SubElement(head, "meta", name="viewport", content="width=device-width, initial-scale=1.0")
-        ET.SubElement(head, "link", rel="stylesheet", type="text/css", href="estilo/estilo.css")
-        ET.SubElement(head, "link", rel="stylesheet", type="text/css", href="estilo/layout.css")
-        ET.SubElement(head, "link", rel="icon", type="image/ico", href="multimedia/favicon.ico")
+        ET.SubElement(head, "link", rel="stylesheet", type="text/css", href="../estilo/estilo.css")
+        ET.SubElement(head, "link", rel="stylesheet", type="text/css", href="../estilo/layout.css")
+        ET.SubElement(head, "link", rel="icon", type="image/ico", href="../multimedia/favicon.ico")
 
     def __create_body(self):
         self.body : ET.Element = ET.SubElement(self.root, "body")
@@ -50,7 +50,7 @@ class CircuitProcessor:
         return tag_name.replace("-", " ").strip().capitalize()
 
 
-    def process_main_info(self, circuit_root : ET.ElementTree, html : Html):
+    def process_main_info(self, circuit_root : ET.Element, html : Html):
         section : ET.Element = ET.SubElement(html.body, "section")
         ET.SubElement(section, "h2").text="Características generales"
         u_list : ET.Element = ET.SubElement(section, "ul")
@@ -67,7 +67,7 @@ class CircuitProcessor:
 
 
     def main(self, input_file : str, output_file : str):
-        circuit_root : ET.ElementTree = ET.parse(input_file).getroot()
+        circuit_root : ET.Element = ET.parse(input_file).getroot()
         html : Html = Html()
         self.process_main_info(circuit_root, html)
         html.write(output_file)
