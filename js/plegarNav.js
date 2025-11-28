@@ -1,6 +1,8 @@
 class Plegar {
     #button
     #nav
+    #visible
+    
     constructor() {
         this.#nav = document.querySelector("header > nav")
         this.#button = document.querySelector("header button")

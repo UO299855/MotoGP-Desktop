@@ -9,21 +9,19 @@
             $winner = $xml->vencedor['nombre'];
             $timeRaw = (string)$xml->{'vencedor'}->{'tiempo-victoria'};
 
-            // Convertir PTxxxxS a segundos
             preg_match('/PT([\d\.]+)S/', $timeRaw, $m);
             $seconds = floatval($m[1]);
 
             $minutes = floor($seconds / 60);
             $remaining = $seconds - $minutes * 60;
 
-            echo "Ganador: $winner\n";
-            echo "Tiempo: {$minutes} min " . number_format($remaining, 3) . " s\n\n";
+            echo "<h3>Ganador: $winner</h3>";
+            echo "<p>Tiempo: {$minutes} min " . number_format($remaining, 3) . " s</p>";
 
-            // Clasificación
-            echo "Clasificación:\n";
+            echo "<h3>Clasificación</h3>";
             $i = 1;
             foreach ($xml->clasificados->clasificado as $pilot) {
-                echo "{$i}º - $pilot\n";
+                echo "<p>{$i}º - $pilot\n</p>";
                 $i++;
             }
         }
