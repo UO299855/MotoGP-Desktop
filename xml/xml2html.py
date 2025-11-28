@@ -2,32 +2,36 @@ import xml.etree.ElementTree as ET
 
 class Html:
 
-    def __create_head(self):
+    def __create_head(self, title:str):
         """
         Crea el elemento "head" con los correspondientes atributos
             Enlaza las hojas de estilos utilizadas
         """
         head : ET.Element = ET.SubElement(self.root, "head")
         ET.SubElement(head, "meta", charset="UTF-8")
-        ET.SubElement(head, "title").text="MotoGP-Información-Circuito"
+        ET.SubElement(head, "title").text=f"MotoGP-f{title}"
         ET.SubElement(head, "meta", name="author", content="Javier Ortín Rodenas")
-        ET.SubElement(head, "meta", name="description", content="Información sobre el circuito guardada en un html auxiliar")
+        ET.SubElement(head, "meta", name="description", content=f"{title}")
         ET.SubElement(head, "meta", name="keywords", content="circuito,moto,información")
         ET.SubElement(head, "meta", name="viewport", content="width=device-width, initial-scale=1.0")
         ET.SubElement(head, "link", rel="stylesheet", type="text/css", href="../estilo/estilo.css")
         ET.SubElement(head, "link", rel="stylesheet", type="text/css", href="../estilo/layout.css")
         ET.SubElement(head, "link", rel="icon", type="image/ico", href="../multimedia/favicon.ico")
 
-    def __create_body(self):
-        self.body : ET.Element = ET.SubElement(self.root, "body")
-        ET.SubElement(self.body, "h1").text = "Información sobre el circuito"
+    def __create_main(self, title : str):
+        body : ET.Element = ET.SubElement(self.root, "body")
+        self.main : ET.Element = ET.SubElement(body, "main")
+        ET.SubElement(self.main, "h2").text = title
 
 
-    def __init__(self):
+
+    def __init__(self, title : str):
         self.root : ET.Element = ET.Element("html", lang="es")
-        self.__create_head()
-        self.__create_body()
+        self.__create_head(title)
+        self.__create_main(title)
 
+    def get_main(self) -> ET.Element :
+        return self.main
 
     def write(self, output_file : str):
         """
@@ -41,6 +45,9 @@ class Html:
 
 class CircuitProcessor:
 
+    def __init__(self, ns_dict : dict[str,str]) :
+        self.ns_dict : dict[str,str] = ns_dict
+
     def __format_node_tag(self, tag : str):
         """
         Formatea el tag de un nodo para hacerlo más legible
@@ -51,8 +58,8 @@ class CircuitProcessor:
 
 
     def process_main_info(self, circuit_root : ET.Element, html : Html):
-        section : ET.Element = ET.SubElement(html.body, "section")
-        ET.SubElement(section, "h2").text="Características generales"
+        section : ET.Element = ET.SubElement(html.main, "section")
+        ET.SubElement(section, "h3").text="Características generales"
         u_list : ET.Element = ET.SubElement(section, "ul")
         for node in circuit_root.findall("./*"):
             #Saltamos los nodos sin texto
@@ -63,15 +70,23 @@ class CircuitProcessor:
             if node.get("unidades"):
                 li_content += f" {node.get("unidades")}"
             ET.SubElement(u_list, "li").text = li_content
-        
+    
+    def process_references(self, circuit_root : ET.Element, html : Html):
+        section : ET.Element = ET.SubElement(html.main, "section")
+        ET.SubElement(section, "h3").text="Más información"
+        list : ET.Element = ET.SubElement(section, "ol")
+        for referencia in circuit_root.findall(".//ns:referencia", self.ns_dict):
+            entry : ET.Element = ET.SubElement(list, "li")
+            entry.text = referencia.text
 
 
-    def main(self, input_file : str, output_file : str):
+    def main(self, input_file : str, output_file : str, html_title : str):
         circuit_root : ET.Element = ET.parse(input_file).getroot()
-        html : Html = Html()
+        html : Html = Html(html_title)
         self.process_main_info(circuit_root, html)
+        self.process_references(circuit_root, html)
         html.write(output_file)
 
 
 if __name__ == "__main__":
-    CircuitProcessor().main("circuitoEsquema.xml", "infoCircuito.html")
+    CircuitProcessor({"ns": "http://www.uniovi.es"}).main("circuitoEsquema.xml", "infoCircuito.html", "Información sobre el circuito")

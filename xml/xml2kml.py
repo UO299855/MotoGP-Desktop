@@ -19,7 +19,7 @@ class Kml(object):
         placemark : ET.Element = ET.SubElement(self.doc,'Placemark')
         ET.SubElement(placemark,'name').text = nombre
         ET.SubElement(placemark,'description').text = descripcion
-        punto : ET.element = ET.SubElement(placemark,'Point')
+        punto : ET.Element = ET.SubElement(placemark,'Point')
         ET.SubElement(punto,'coordinates').text = '{},{},{}'.format(long,lat,alt)
         ET.SubElement(punto,'altitudeMode').text = modoAltitud
 
