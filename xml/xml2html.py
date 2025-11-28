@@ -68,7 +68,7 @@ class CircuitProcessor:
                 continue
             li_content : str = f"{self.__format_node_tag(node.tag)}: {node.text}"
             if node.get("unidades"):
-                li_content += f" {node.get("unidades")}"
+                li_content += f" {node.get('unidades')}"
             ET.SubElement(u_list, "li").text = li_content
     
     def process_references(self, circuit_root : ET.Element, html : Html):
@@ -93,10 +93,20 @@ class CircuitProcessor:
             source.set("src", f"../{video_ref.text}")
             source.set("type", "video/mp4")
 
+    def process_images(self, circuit_root : ET.Element, html : Html):
+        section : ET.Element = ET.SubElement(html.main, "section")
+        ET.SubElement(section, "h3").text="Galería de fotos del circuito"
+        for img_ref in circuit_root.findall(".//ns:video", self.ns_dict):
+            img : ET.Element = ET.SubElement(section, "img")
+            img.set("src", img_ref)
+            #TODO poner alt
+
+
     def main(self, input_file : str, output_file : str, html_title : str):
         circuit_root : ET.Element = ET.parse(input_file).getroot()
         html : Html = Html(html_title)
         self.process_main_info(circuit_root, html)
+        self.process_images(circuit_root, html)
         self.process_videos(circuit_root, html)
         self.process_references(circuit_root, html)
         html.write(output_file)
