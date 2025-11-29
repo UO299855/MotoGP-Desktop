@@ -11,7 +11,7 @@ body {
 
 /*Especificidad 001 */
 header {
-    background-color: #263e5f;
+    background-color: #000000;
 }
 
 /*Especificidad 002*/
@@ -23,12 +23,12 @@ header > section {
 header a {
     color:#f4fe7b;
     text-decoration-line: none;
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 /*Especificidad 002*/
 header button {
-    background-color: #263e5f;
+    background-color: #000000;
     color: #f4fe7b;
     border-color: #f4fe7b;
 }
@@ -45,8 +45,9 @@ header button:hover {
 
 /*Especificidad 013 */
 header > nav > a.active {
-    color:#ee843d;
+    color: #ff6600;
     font-weight: bold;
+    font-size: 1.3em;
 }
 
 /*Especificidad 023 */

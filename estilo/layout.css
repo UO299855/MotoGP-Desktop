@@ -11,6 +11,10 @@ body {
     padding: 0;
 }
 
+/*Especificidad 001*/
+header h1 {
+    margin-left: 2ex;
+}
 
 /*Especificidad 001, 002*/
 header, header > section {
@@ -121,6 +125,10 @@ main > section > div {
     /*Especificidad 012*/
     body > p:first-of-type {
         display: none;
+    }
+
+    header > section > h1, header > section > button{
+        margin-left: 0em;
     }
 
     /*Especificidad 001*/
