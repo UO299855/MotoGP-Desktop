@@ -127,28 +127,32 @@ main > section > div {
         display: none;
     }
 
-    header > section > h1, header > section > button{
+    header > h1, header > button{
         margin-left: 0em;
     }
 
     /*Especificidad 001*/
     header {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     /*Especificidad 002*/
     header > nav {
         flex-direction: column;
+        align-items: center;
         padding-bottom: 2ex;
+        width: 100vw;
     }
 
     /*Especificidad 014*/
-    header > section:has(button[aria-expanded="true"]) ~ nav {
+    button[aria-expanded="true"] ~ nav {
         display: flex;
     }
 
-    /*Especificidad 014*/
-    header > section:has(button[aria-expanded="false"]) ~ nav {
+    /*Especificidad 012*/
+    button[aria-expanded="false"] ~ nav {
         display: none;
     }
     
