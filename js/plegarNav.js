@@ -1,10 +1,8 @@
 class Plegar {
     #button
-    #nav
     #expanded
     
     constructor() {
-        this.#nav = document.querySelector("header > nav")
         this.#button = document.querySelector("header button")
         this.#button.addEventListener("click", this.#toggle.bind(this))
         // Garantizamos la adaptabilidad si se redimensiona la ventana
@@ -18,7 +16,7 @@ class Plegar {
     /** Muestra u oculta el menú de navegación (nav del header) al pulsar el botón*/
     #toggle() {
         this.#expanded = !this.#expanded
-        this.#nav.setAttribute("aria-expanded", this.#expanded)
+        this.#button.setAttribute("aria-expanded", this.#expanded)
     }
 
     /** Muestra u oculta el menú de navegación al redimensionar la ventana */

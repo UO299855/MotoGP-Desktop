@@ -35,7 +35,12 @@ header button {
 
 /*Especificidad 012*/
 header a:hover {
-    color : #bec75e;
+    color : #D0D78E;
+}
+
+header button:hover {
+    color : #D0D78E;
+    border-color : #D0D78E;
 }
 
 /*Especificidad 013 */
@@ -44,14 +49,19 @@ header > nav > a.active {
     font-weight: bold;
 }
 
-/*Especificidad 023, 011 */
-header > nav > a.active:hover, a:hover {
+/*Especificidad 023 */
+header > nav > a.active:hover {
     color:#c0692e;
 }
 
 /*Especificidad 002*/ 
- a {
-    color: #11538D;
+a {
+    color: #0f426f;
+}
+
+/*Especificidad 011*/
+a:hover {
+    color: #144c7c
 }
 
 /*Especificidad 002*/

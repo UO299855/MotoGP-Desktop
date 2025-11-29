@@ -47,7 +47,7 @@ class  Carrusel {
     }
     
     #mostrarFotografias() {
-        $("main").append("<article><h2>Imágenes del circuito de Pertamina Mandalika</h2><img/></article>") 
+        $("main").prepend("<article><h2>Imágenes del circuito de Pertamina Mandalika</h2><img/></article>") 
         this.#cambiarFotografias()
         setInterval(this.#cambiarFotografias.bind(this), 3000)
     }

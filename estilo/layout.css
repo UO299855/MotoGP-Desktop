@@ -134,13 +134,13 @@ main > section > div {
         padding-bottom: 2ex;
     }
 
-    /*Especificidad 012*/
-    header > nav[aria-expanded="true"] {
+    /*Especificidad 014*/
+    header > section:has(button[aria-expanded="true"]) ~ nav {
         display: flex;
     }
 
-    /*Especificidad 012*/
-    header > nav[aria-expanded="false"] {
+    /*Especificidad 014*/
+    header > section:has(button[aria-expanded="false"]) ~ nav {
         display: none;
     }
     
