@@ -130,9 +130,18 @@ main > section > div {
 
     /*Especificidad 002*/
     header > nav {
-        display: none;
         flex-direction: column;
         padding-bottom: 2ex;
+    }
+
+    /*Especificidad 012*/
+    header > nav[aria-expanded="true"] {
+        display: flex;
+    }
+
+    /*Especificidad 012*/
+    header > nav[aria-expanded="false"] {
+        display: none;
     }
     
     /*Especificidad 002*/
