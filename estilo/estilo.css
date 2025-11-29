@@ -33,7 +33,7 @@ header button {
     border-color: #f4fe7b;
 }
 
-/*Especifidad 012*/
+/*Especificidad 012*/
 header a:hover {
     color : #bec75e;
 }
@@ -44,14 +44,14 @@ header > nav > a.active {
     font-weight: bold;
 }
 
-/*Especificidad 023 */
+/*Especificidad 023, 011 */
 header > nav > a.active:hover, a:hover {
     color:#c0692e;
 }
 
 /*Especificidad 002*/ 
  a {
-    color: #1e88e5;
+    color: #11538D;
 }
 
 /*Especificidad 002*/
