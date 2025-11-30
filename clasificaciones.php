@@ -6,24 +6,38 @@
         }
 
         private function clasificaciones($xml) {
-            $winner = $xml->vencedor['nombre'];
-            $timeRaw = (string)$xml->{'vencedor'}->{'tiempo-victoria'};
+            $vencedor = $xml->vencedor['nombre'];
+            $duracion = $xml->{'vencedor'}->{'tiempo-victoria'};
 
-            preg_match('/PT([\d\.]+)S/', $timeRaw, $m);
-            $seconds = floatval($m[1]);
-
+            // Empieza por "PT" sigue con un número y acaba en "S"
+            // Capturamos las coincidencias de patrones en $matches
+            // Ponemos paréntesis para capturar el número por separado
+            preg_match('/PT(\d+(\.\d+)?)S/', $duracion, $matches);
+            
+            // $matches[0] tiene el texto completo, y $matches[1] el primer subpatrón entre paréntesis
+            $seconds = floatval($matches[1]); // Pasamos de string a float
             $minutes = floor($seconds / 60);
             $remaining = $seconds - $minutes * 60;
+            echo "<section><h3>Ganador de la carrera: $vencedor</h3>";
+            echo "<p>Tiempo: {$minutes}min " .number_format($remaining, 3) ."s</p></section>";
 
-            echo "<h3>Ganador: $winner</h3>";
-            echo "<p>Tiempo: {$minutes} min " . number_format($remaining, 3) . " s</p>";
 
-            echo "<h3>Clasificación</h3>";
+            echo "<section><h3>Clasificación global</h3><ol>";
+            $resultadosPilotos = [];
             $i = 1;
-            foreach ($xml->clasificados->clasificado as $pilot) {
-                echo "<p>{$i}º - $pilot\n</p>";
+
+            // Ordenamos los pilotos por puesto en caso de que no lo estén en el XML
+            foreach ($xml->clasificados->clasificado as $piloto) {
+                $puntos = $piloto["puntos"];
+                $resultado = "$piloto: $puntos puntos";
+                $resultadosPilotos[$i] = $resultado;
                 $i++;
             }
+            // Pasamos a lista ordenada en HTML
+            foreach ($resultadosPilotos as $resultado) {
+                echo "<li>$resultado</li>";
+            }
+            echo "</ol></section>";
         }
 
         public function consultar() {
@@ -51,13 +65,12 @@
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
-    <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <title>MotoGP-Clasificaciones</title>
 
     <meta name="author" content="Javier Ortín Rodenas"/>
-    <meta name="description" content="Información sobre la clasificación de los pilotos que forman parte de la competición"/> <!--Cambiar si fuese necesario-->
-    <meta name="keywords" content="clasificación,puntuación,pilotos,moto,premio,competición"/> <!--Cambiar si fuese necesario-->
+    <meta name="description" content="Clasificación de los pilotos inmediatamente después de la carrera de Indonesia"/>
+    <meta name="keywords" content="clasificación,puntuación,pilotos,moto,premio,competición,pertamina,mandalika,Indonesia"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
@@ -86,10 +99,9 @@
     <!--Migas de navegación-->
     <p>Estás en <a href="index.html" title="Volver a la página de inicio">Inicio</a> >> <strong><a href="clasificaciones.php" title="Información sobre las clasificaciones">Clasificaciones</a></strong></p>
     <main>
-        <h2>Clasificaciones de los pilotos tras la carrera de indonesia</h2>
+        <h2>Clasificaciones de los pilotos tras la carrera de Indonesia</h2>
         
         <?php
-            //TODO eliminar (es una prueba)
             echo (new Clasificacion())->consultar();
         ?>
     </main>

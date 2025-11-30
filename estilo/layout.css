@@ -12,11 +12,11 @@ body {
 }
 
 /*Especificidad 001*/
-header h1 {
+h1 {
     margin-left: 2ex;
 }
 
-/*Especificidad 001, 002*/
+/*Especificidad 001*/
 header, header > section {
     display: flex;
     flex-direction: row;
