@@ -191,7 +191,6 @@ class Ciudad {
     }
 
     #procesarJSONEntrenos(data) {
-        console.log(data)
         let header = $(`<h3>Información sobre los entrenamientos</h3>`).appendTo($("main"))
         const dayTimes = [[15, 16], [9, 19], [8, 15]] //Franjas horarias para cada día (hora de Indonesia)
         const params = {

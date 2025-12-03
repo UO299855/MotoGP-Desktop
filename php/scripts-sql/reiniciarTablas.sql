@@ -7,10 +7,11 @@ CREATE TABLE `uo299855_db`.`usuarios` (
     profesion VARCHAR(255) NOT NULL,
     edad INT NOT NULL,
     genero ENUM('masculino', 'femenino', 'otro') NOT NULL,
-    pericia_informatica ENUM('muy baja', 'baja', 'media', 'alta', 'informatico') NOT NULL,
+    pericia_informatica INT NOT NULL,
 
     CONSTRAINT PK_USUARIOS PRIMARY KEY(id),
-    CONSTRAINT CHECK_EDAD CHECK(edad BETWEEN 0 AND 120)
+    CONSTRAINT CHECK_EDAD CHECK(edad BETWEEN 0 AND 120),
+    CONSTRAINT CHECK_PERICIA CHECK(pericia_informatica BETWEEN 0 AND 10)
 );
 
 CREATE TABLE `uo299855_db`.`resultados_test` (
