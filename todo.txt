@@ -10,3 +10,8 @@ Generar gráficamente el árbol DOM de los XML (tanto con xml2svg.exe como con e
 Modificar campos del xml para dar soporte a alt, title... en <img> <video> y <a>
 
 Eliminar carpeta 00mio una vez terminada la parte de XML
+
+Cambiar el procesamiento del JSON de entrenamientos para que haga las medias con el día entrenamientos
+Revisar la accesibilidad de las tablas
+
+Poner una validación mínima de campos para el formulario

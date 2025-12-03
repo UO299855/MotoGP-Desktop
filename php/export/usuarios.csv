@@ -1,2 +1,5 @@
 id;profesion;edad;genero;pericia_informatica
-1;estudiante;20;masculino;9
+1;"diseñador gráfico";56;masculino;2
+2;estudiante;20;masculino;8
+3;Ingeniero;25;masculino;5
+4;Ocupa;12;femenino;3

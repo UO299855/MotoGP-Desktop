@@ -58,6 +58,7 @@
                 while($table = $tables->fetch_array()) {
                     $this->exportTable($table[0]) ;
                 }
+                echo "<p>Base de datos exportada exitosamente.</p>";
             } else {
                 echo "<p>La base de datos no dispone de tablas para exportar.</p>";
             }
