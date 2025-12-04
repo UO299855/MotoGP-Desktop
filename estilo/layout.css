@@ -139,6 +139,11 @@ h2 ~ form {
     align-items: baseline;
 }
 
+form > textarea {
+    height:auto;
+    width: 100%;
+}
+
 /*Reglas dedicadas a la adaptabilidad */
 @media screen and (min-width: 320px) and (max-width: 799px) {
 

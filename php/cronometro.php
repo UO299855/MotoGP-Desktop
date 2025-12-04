@@ -29,5 +29,9 @@
             // Formato mm:ss.s
             return sprintf("%02d:%04.1f", $mins, $seconds);
         }
+
+        public function getTiempo() {
+            return $this->tiempo;
+        }
     }
 ?>

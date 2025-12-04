@@ -16,3 +16,4 @@ Revisar la accesibilidad de las tablas
 
 Poner una validación mínima de campos para el formulario
 Filtrar los usuarios existentes por pericia informática 10
+Poner todos los labels con IDs

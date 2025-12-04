@@ -15,6 +15,7 @@
         }
 
         public function proceed() {
+            if(isset($_POST["endSurvey"])) return $this->endSurvey();
             if(isset($_SESSION["cronometroTest"])) return $this->showUsabilitySurvey();
             if(count($_POST) == 0) return $this->showUserForm();
             if(isset($_POST["beginTest"])) return $this->beginTest();
@@ -28,18 +29,17 @@
                 echo "<p>Error al conectarse a la base de datos</p>";
                 return;
             }
-            $query = "select id from usuarios where exists(
-	                select tipo from dispositivos where not EXISTS(
-                        select * from resultados_test where id_usuario = id and dispositivo = tipo
-                    )
-                );";
+            $query = "SELECT ID, TIPO FROM usuarios, dispositivos WHERE PERICIA_INFORMATICA = 10 AND (ID, TIPO) NOT IN (
+	                    SELECT id_usuario, dispositivo from resultados_test where id_usuario = id and dispositivo = tipo
+                    );";
             $availableUsers = $db->query($query);
             if($availableUsers->num_rows > 0) {
                 echo '<form action="#" method="post" name="usuarioExistente">';
-                echo '<label>Escoja un identificador: <select name="existingUserID">';
+                echo '<label>Escoja la combinación de identificador y dispositivo que corresponda: <select name="existingUserID">';
                 while($user = $availableUsers->fetch_array()) {
                     $id = $user[0];
-                    echo '<option value="'.$id .'">Usuario ' .$id .'</option>';
+                    $device = $user[1];
+                    echo sprintf('<option value="%s-%s">Usuario %s - %s</option>', $id, $device, $id, $device);
                 }
                 echo "</select></label>";
                 echo '<input type="submit" name="usuarioExistente" value="Continuar con usuario existente"/>';
@@ -70,6 +70,7 @@
             $preparedQuery->execute();
             if( $preparedQuery->affected_rows > 0) {
                 $_SESSION["currentUserID"] = $db->insert_id;
+                $_SESSION["currentDevice"] = $_POST["dispositivo"];
                 $success = true;
             }
             $db->close();
@@ -78,7 +79,9 @@
         }
 
         private function chooseExistingUser() {
-            $_SESSION["currentUserID"] = $_POST["existingUserID"];
+            $tokens = explode("-",$_POST["existingUserID"]);
+            $_SESSION["currentUserID"] = $tokens[0];
+            $_SESSION["currentDevice"] = $tokens[1];
             $this->showAwaitingScreen();
         }
 
@@ -96,6 +99,54 @@
             include "forms/survey.html";
         }
 
+        private function checkPostKey($key) {
+            if(isset($_POST[$key])) return $_POST[ $key ];
+            return null;
+        }
+
+        private function endSurvey() {
+            $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+            if($db->connect_errno) {
+                echo "<p> Error al registrar sus respuestas. Vuelva a intentarlo.</p>";
+                return $this->showUsabilitySurvey();
+            }
+            $success = false;
+            $query = "INSERT INTO `respuestas_test`(`id_usuario`, `dispositivo`, `VUELTAS`,
+                `AÑO_NACIMIENTO_MIR`, `EQUIPO_MIR`, `HEMISFERIO`, `GANADOR_INDONESIA`,
+                `AÑO_VICTORIA_MIR`, `GRADOS_CIRCUITO`, `NUM_CARTAS`, `LIDER_CLASIFICACION`,
+                `VICTORIAS_MIR_2024`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);";
+            $preparedQuery = $db->prepare($query);
+            $types = "isiisssidisi";
+            $params = [
+                $_SESSION["currentUserID"],
+                $_SESSION["currentDevice"],
+                $this->checkPostKey("vueltas"),
+                $this->checkPostKey("nacimientoMir"),
+                $this->checkPostKey("equipoMir"),
+                $this->checkPostKey("hemisferio"),
+                $this->checkPostKey("ganadorIndonesia"),
+                $this->checkPostKey("añoGanadorMir"),
+                $this->checkPostKey("temperaturaCircuito"),
+                $this->checkPostKey("numeroCartas"),
+                $this->checkPostKey("liderClasificacion"),
+                $this->checkPostKey("victoriasMir")
+            ];
+            $preparedQuery->bind_param( $types,...$params);
+            $preparedQuery->execute();
+            if( $preparedQuery->affected_rows > 0) {
+                $_SESSION["currentUserID"] = $db->insert_id;
+                $success = true;
+            }
+            $db->close();
+            if($success) return $this->askUserFeedback();
+            echo "<p>Error al registrar sus respuestas. Por favor, inténtelo de nuevo.</p>";
+            return $this->showUsabilitySurvey();
+        }
+
+        private function askUserFeedback() {
+            $_SESSION["cronometroTest"]->parar();
+            include "forms/feedback.html";
+        }
     }
 ?>
 

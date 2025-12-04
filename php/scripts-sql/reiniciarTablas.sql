@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS `uo299855_db`.`respuestas_test`;
 DROP TABLE IF EXISTS `uo299855_db`.`observaciones_test`;
 DROP TABLE IF EXISTS `uo299855_db`.`resultados_test`;
 DROP TABLE IF EXISTS `uo299855_db`.`dispositivos`;
@@ -41,7 +42,7 @@ CREATE TABLE `uo299855_db`.`observaciones_test` (
     comentarios TEXT,
 
     
-    CONSTRAINT PK_OBSERVACIONES PRIMARY KEY(id_usuario),
+    CONSTRAINT PK_OBSERVACIONES PRIMARY KEY(id_usuario, dispositivo),
     CONSTRAINT FK_OBSERVACIONES_USUARIOS FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     CONSTRAINT FK_OBSERVACIONES_DISPOSITIVOS FOREIGN KEY(dispositivo) REFERENCES dispositivos(tipo)
 );
@@ -62,7 +63,7 @@ CREATE TABLE `uo299855_db`.`respuestas_test` (
     VICTORIAS_MIR_2024 INT,
 
     
-    CONSTRAINT PK_RESPUESTAS PRIMARY KEY(id_usuario),
+    CONSTRAINT PK_RESPUESTAS PRIMARY KEY(id_usuario, dispositivo),
     CONSTRAINT FK_RESPUESTAS_USUARIOS FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     CONSTRAINT FK_RESPUESTAS_DISPOSITIVOS FOREIGN KEY(dispositivo) REFERENCES dispositivos(tipo)
 );
