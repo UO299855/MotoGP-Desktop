@@ -454,8 +454,8 @@
         <tiempo-victoria unidades="segundos">2467.651</tiempo-victoria>
     </vencedor>
     <clasificados>
-        <clasificado puesto="1" puntos="545">Marc Marquez</clasificado>
-        <clasificado puesto="2" puntos="362">Alex Marquez</clasificado>
+        <clasificado puesto="1" puntos="545">Marc Márquez</clasificado>
+        <clasificado puesto="2" puntos="362">Alex Márquez</clasificado>
         <clasificado puesto="3" puntos="274">Francesco Bagnaia</clasificado>
     </clasificados>
  </circuito>

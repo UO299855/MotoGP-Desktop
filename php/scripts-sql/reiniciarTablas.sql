@@ -37,10 +37,34 @@ CREATE TABLE `uo299855_db`.`resultados_test` (
 
 CREATE TABLE `uo299855_db`.`observaciones_test` (
     id_usuario INT NOT NULL,
+    dispositivo ENUM('ordenador', 'tablet', 'telefono') NOT NULL,
     comentarios TEXT,
 
+    
     CONSTRAINT PK_OBSERVACIONES PRIMARY KEY(id_usuario),
-    CONSTRAINT FK_OBSERVACIONES FOREIGN KEY(id_usuario) REFERENCES usuarios(id)
+    CONSTRAINT FK_OBSERVACIONES_USUARIOS FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
+    CONSTRAINT FK_OBSERVACIONES_DISPOSITIVOS FOREIGN KEY(dispositivo) REFERENCES dispositivos(tipo)
+);
+
+CREATE TABLE `uo299855_db`.`respuestas_test` (
+    id_usuario INT NOT NULL,
+    dispositivo ENUM('ordenador', 'tablet', 'telefono') NOT NULL,
+
+    VUELTAS INT,
+    AÑO_NACIMIENTO_MIR INT,
+    EQUIPO_MIR VARCHAR(255),
+    HEMISFERIO ENUM("norte", "sur"),
+    GANADOR_INDONESIA VARCHAR(255),
+    AÑO_VICTORIA_MIR INT,
+    GRADOS_CIRCUITO DECIMAL,
+    NUM_CARTAS INT,
+    LIDER_CLASIFICACION VARCHAR(255),
+    VICTORIAS_MIR_2024 INT,
+
+    
+    CONSTRAINT PK_RESPUESTAS PRIMARY KEY(id_usuario),
+    CONSTRAINT FK_RESPUESTAS_USUARIOS FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
+    CONSTRAINT FK_RESPUESTAS_DISPOSITIVOS FOREIGN KEY(dispositivo) REFERENCES dispositivos(tipo)
 );
 
 

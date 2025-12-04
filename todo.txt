@@ -15,3 +15,4 @@ Cambiar el procesamiento del JSON de entrenamientos para que haga las medias con
 Revisar la accesibilidad de las tablas
 
 Poner una validación mínima de campos para el formulario
+Filtrar los usuarios existentes por pericia informática 10

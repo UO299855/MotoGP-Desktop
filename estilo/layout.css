@@ -120,6 +120,18 @@ main > section > div {
 }
 
 /*Especificidad 002*/
+form label {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2ex;
+}
+
+/*Especificidad 002*/
+form > h3{
+    margin-bottom: 0em;
+}
+
+/*Especificidad 002*/
 h2 ~ form {
     display: flex;
     flex-direction: column;
