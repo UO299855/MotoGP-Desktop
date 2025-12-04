@@ -7,14 +7,18 @@
         private $password;
         private $database;
 
+        private $completed;
+
         public function __construct() {
             $this->host = "localhost";
             $this->user = "DBUSER2025";
             $this->password = "DBPSWD2025";
             $this->database = "UO299855_DB";
+            $this->completed = true;
         }
 
         public function proceed() {
+            if(isset($_POST["sendFeedback"])) return $this->logTestResults();
             if(isset($_POST["endSurvey"])) return $this->endSurvey();
             if(isset($_SESSION["cronometroTest"])) return $this->showUsabilitySurvey();
             if(count($_POST) == 0) return $this->showUserForm();
@@ -101,6 +105,7 @@
 
         private function checkPostKey($key) {
             if(isset($_POST[$key])) return $_POST[ $key ];
+            $this->completed=false;
             return null;
         }
 
@@ -147,6 +152,17 @@
             $_SESSION["cronometroTest"]->parar();
             include "forms/feedback.html";
         }
+
+        private function logTestResults() {
+            $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+            if($db->connect_errno) {
+                echo "<p> Error al registrar sus respuestas. Vuelva a intentarlo.</p>";
+                return $this->askUserFeedback();
+            }
+            $query = "INSERT INTO `resultados_test`(`id_usuario`, `dispositivo`, `tiempo`, `completada`, `comentarios`, `propuestas`, `valoracion`) VALUES (?,?,?,?,?,?,?)";
+
+            $db->close();
+        }
     }
 ?>
 
@@ -169,7 +185,11 @@
     <h1>Pruebas de usabilidad</h1>
     <main>
         <?php
-           (new Test())->proceed();
+            if(!isset($_SESSION["test"])) {
+                $_SESSION["test"] = new Test();
+            } else {
+                $_SESSION["test"]->proceed();
+            }
         ?>
     </main>
 </body>
