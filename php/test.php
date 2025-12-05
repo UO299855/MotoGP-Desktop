@@ -18,7 +18,8 @@
         }
 
         public function proceed() {
-            if(isset($_POST["sendFeedback"])) return $this->logTestResults();
+            if(isset($_POST["sendObservations"])) return $this->logObservations();
+            if(isset($_POST["sendFeedback"])) return $this->logFeedback();
             if(isset($_POST["endSurvey"])) return $this->endSurvey();
             if(isset($_SESSION["cronometroTest"])) return $this->showUsabilitySurvey();
             if(count($_POST) == 0) return $this->showUserForm();
@@ -139,7 +140,6 @@
             $preparedQuery->bind_param( $types,...$params);
             $preparedQuery->execute();
             if( $preparedQuery->affected_rows > 0) {
-                $_SESSION["currentUserID"] = $db->insert_id;
                 $success = true;
             }
             $db->close();
@@ -153,16 +153,65 @@
             include "forms/feedback.html";
         }
 
-        private function logTestResults() {
+        private function logFeedback() {
+            $errorMessage = "<p>Error al registrar su valoración. Por favor, inténtelo de nuevo.</p>";
             $db = new mysqli($this->host, $this->user, $this->password, $this->database);
             if($db->connect_errno) {
-                echo "<p> Error al registrar sus respuestas. Vuelva a intentarlo.</p>";
+                echo $errorMessage;
                 return $this->askUserFeedback();
             }
+            $success = false;
             $query = "INSERT INTO `resultados_test`(`id_usuario`, `dispositivo`, `tiempo`, `completada`, `comentarios`, `propuestas`, `valoracion`) VALUES (?,?,?,?,?,?,?)";
-
+            $preparedQuery = $db->prepare($query);
+            $tiempo = $_SESSION["cronometroTest"]->getTiempo();
+            var_dump($_SESSION["currentUserID"], $_SESSION["currentDevice"]);
+            $preparedQuery->bind_param("isibssi", $_SESSION["currentUserID"], $_SESSION["currentDevice"],
+                $tiempo, $this->completed, $_POST["comentarios"], $_POST["propuestas"], $_POST["valoracion"]);
+            $preparedQuery->execute();
+            if( $preparedQuery->affected_rows > 0) {
+                $success = true;
+            }
             $db->close();
+            if($success)
+                return $this->askModObservations();
+            echo $errorMessage;
+            return $this->askUserFeedback();
         }
+
+        private function askModObservations() {
+            include "forms/observations.html";
+        }
+
+        private function logObservations() {
+            $errorMessage = "<p>Error al registrar sus observaciones. Por favor, inténtelo de nuevo.</p>";
+            $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+            if($db->connect_errno) {
+                echo $errorMessage;
+                return $this->askModObservations();
+            }
+            $success = false;
+            $query = "INSERT INTO `observaciones_test`(`id_usuario`, `dispositivo`, `comentarios`) VALUES (?,?,?)";
+            $preparedQuery = $db->prepare($query);
+            $preparedQuery->bind_param("iss", $_SESSION["currentUserID"], $_SESSION["currentDevice"], $_POST["observaciones"]);
+            $preparedQuery->execute();
+            if( $preparedQuery->affected_rows > 0) {
+                $success = true;
+            }
+            $db->close();
+            if($success)
+                return $this->showFinalScreen();
+            echo $errorMessage;
+            return $this->askModObservations();
+        }
+
+        private function showFinalScreen() {
+            unset($_SESSION["currentUserID"]);
+            unset($_SESSION["currentDevice"]);
+            unset($_SESSION["cronometroTest"]);
+            unset($_SESSION["test"]);            
+            include "forms/completed.html";
+        }
+
     }
 ?>
 
@@ -187,9 +236,8 @@
         <?php
             if(!isset($_SESSION["test"])) {
                 $_SESSION["test"] = new Test();
-            } else {
-                $_SESSION["test"]->proceed();
             }
+            $_SESSION["test"]->proceed();
         ?>
     </main>
 </body>

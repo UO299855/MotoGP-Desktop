@@ -40,7 +40,6 @@ CREATE TABLE `uo299855_db`.`observaciones_test` (
     id_usuario INT NOT NULL,
     dispositivo ENUM('ordenador', 'tablet', 'telefono') NOT NULL,
     comentarios TEXT,
-
     
     CONSTRAINT PK_OBSERVACIONES PRIMARY KEY(id_usuario, dispositivo),
     CONSTRAINT FK_OBSERVACIONES_USUARIOS FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
