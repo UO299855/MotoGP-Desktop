@@ -164,7 +164,6 @@
             $query = "INSERT INTO `resultados_test`(`id_usuario`, `dispositivo`, `tiempo`, `completada`, `comentarios`, `propuestas`, `valoracion`) VALUES (?,?,?,?,?,?,?)";
             $preparedQuery = $db->prepare($query);
             $tiempo = $_SESSION["cronometroTest"]->getTiempo();
-            var_dump($_SESSION["currentUserID"], $_SESSION["currentDevice"]);
             $preparedQuery->bind_param("isibssi", $_SESSION["currentUserID"], $_SESSION["currentDevice"],
                 $tiempo, $this->completed, $_POST["comentarios"], $_POST["propuestas"], $_POST["valoracion"]);
             $preparedQuery->execute();

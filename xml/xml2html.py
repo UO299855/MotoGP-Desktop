@@ -96,9 +96,9 @@ class CircuitProcessor:
     def process_images(self, circuit_root : ET.Element, html : Html):
         section : ET.Element = ET.SubElement(html.main, "section")
         ET.SubElement(section, "h3").text="Galería de fotos del circuito"
-        for img_ref in circuit_root.findall(".//ns:video", self.ns_dict):
+        for img_ref in circuit_root.findall(".//ns:fotografia", self.ns_dict):
             img : ET.Element = ET.SubElement(section, "img")
-            img.set("src", img_ref)
+            img.set("src", img_ref.text)
             #TODO poner alt
 
 

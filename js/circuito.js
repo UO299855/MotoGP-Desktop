@@ -10,10 +10,10 @@ class Circuito {
     #comprobarApiFile() {
         let section = $("<section></section>").appendTo("main")
         $("<h3>Cargar información del circuito</h3>").appendTo(section)
-        if (window.File && window.FileReader && window.FileList && window.Blob)  {
-            //SOPORTA LA API
-            // Pasamos de JQuery a HTML puro
-            this.#input = $('<input type="file" accept=".html"/>').appendTo(section)[0]
+        if (window.File && window.FileReader && window.FileList)  {
+            const label = $('<label for="cargarHTML">Seleccionar HTML del circuito</label>').appendTo(section)
+            this.#input = $('<input id="cargarHTML" type="file" accept=".html"/>')[0]
+            label.after($(this.#input))
             this.#input.addEventListener("change", this.#leerArchivoHTML.bind(this))
         } else {
             const errorStr = "Error: parece que su navegador no soporta la funcionalidad necesaria para poder cargar información sobre el circuito."
@@ -79,7 +79,10 @@ class CargadorSVG {
         let section = $("<section></section>").appendTo("main")
         $("<h3>Cargar altimetría del circuito</h3>").appendTo(section)
         if (window.File && window.FileReader && window.FileList && window.Blob)  {
-            this.#input = $('<input type="file" accept=".svg"/>').appendTo(section)[0]
+            const label = $('<label for="cargarSVG">Seleccionar SVG de altimetría</label>').appendTo(section)
+            this.#input = $('<input id="cargarSVG" type="file" accept=".svg"/>')[0]
+            label.after($(this.#input))
+
             this.#input.addEventListener("change", this.#leerArchivoSVG.bind(this))
         } else {
             const errorStr = "Error: parece que su navegador no soporta la funcionalidad necesaria para cargar la altimetría del circuito."
@@ -117,8 +120,10 @@ class CargadorKML {
     constructor() {
         let section = $("<section></section>").appendTo("main")
         $("<h3>Cargar coordenadas del circuito</h3>").appendTo(section)
-        if (window.File && window.FileReader && window.FileList && window.Blob)  {
-            this.#input = $('<input type="file" accept=".kml"/>').appendTo(section)[0]
+        if (window.File && window.FileReader && window.FileList)  {
+            const label = $('<label for="cargarKML">Seleccionar KML de planimetría</label>').appendTo(section)
+            this.#input = $('<input id="cargarKML" type="file" accept=".kml"/>')[0]
+            label.after($(this.#input))
             this.#input.addEventListener("change", this.#leerArchivoKML.bind(this))
         } else {
             const errorStr = "Error: parece que su navegador no soporta la funcionalidad necesaria para cargar la altimetría del circuito."

@@ -132,7 +132,7 @@ class Ciudad {
         sunset.appendTo(dailyList)
 
         //Procesamos las magnitudes por horas
-        let hourlySection = $(`<section><h4>Información por horas (${data.timezone_abbreviation})</h4></section>`)
+        let hourlySection = $(`<section><h4>Información a la hora de la carrera</h4></section>`)
         dailySection.after(hourlySection)
         this.#tablaDatosCarrera(data, hourlySection)
     }
@@ -146,23 +146,15 @@ class Ciudad {
             "wind_direction_10m" : "Dirección del viento",
             "wind_speed_10m" : "Velocidad del viento"
         }
-        const hours = [15]
+        const hour = 15 //hora de la carrera en la hora local (GMT+8)
 
         let table = $("<table></table>").appendTo(section)
-        let headRow = $("<tr></tr>").appendTo(table)
-        $("<th id='magnitud_carrera' scope='col'>Magnitud</th>").appendTo(headRow)
-
-        for(let hour of hours) {
-            $(`<th id='${hour}h' scope='col'>${hour}h</th>`).appendTo(headRow)
-        }
 
         for(let key in params) {
             let row = $("<tr></tr>").appendTo(table)
             let value = params[key]
-            $(`<th id='${value.replaceAll(" ", "_")}_carrera' scope='row' headers='magnitud_carrera'>${value} (${data.hourly_units[key]})</th>`).appendTo(row)
-            for(let hour of hours) {
-                $(`<td headers='${value.replaceAll(" ", "_")}_carrera ${hour}h'>${data.hourly[key][hour]}</td>`).appendTo(row)
-            }
+            $(`<th id='${value.replaceAll(" ", "_")}_carrera' scope='row'>${value} (${data.hourly_units[key]})</th>`).appendTo(row)
+            $(`<td headers='${value.replaceAll(" ", "_")}_carrera'>${data.hourly[key][hour]}</td>`).appendTo(row)            
         }
     }  
 
@@ -191,8 +183,8 @@ class Ciudad {
     }
 
     #procesarJSONEntrenos(data) {
+        console.log(data)
         let header = $(`<h3>Información sobre los entrenamientos</h3>`).appendTo($("main"))
-        const dayTimes = [[15, 16], [9, 19], [8, 15]] //Franjas horarias para cada día (hora de Indonesia)
         const params = {
             "temperature_2m": "Temperatura",
             "relative_humidity_2m": "Humedad relativa",
@@ -201,16 +193,16 @@ class Ciudad {
         }
 
         //  Información para cada día de entreno
-        for (let day = dayTimes.length - 1; day >= 0; day--) {
+        for (let day = 2; day >= 0; day--) {
             let section = $("<section></section>")
             header.after(section)
-            // Sacamos las fecha del JSON
+            // Sacamos las fecha del JSON "en castellano"
             let dayDate = new Date(data.hourly.time[24*day]).toLocaleDateString("es-ES", {"day": "numeric", "month" : "long"})
             $(`<h4>${dayDate}</h4>`).appendTo(section)
             let list = $("<ul></ul>").appendTo(section)
             for(let key in params) {
                 const units = data.hourly_units[key]
-                let average = this.#promedioEntrenos(data, key, dayTimes[day][0] + 24 * day, dayTimes[day][1] + 24 * day)
+                let average = this.#promedioEntrenos(data, key, 24 * day, 24 * day + 23)
                 $(`<li>${params[key]}: ${average}${units}</li>`).appendTo(list)
             }
         }

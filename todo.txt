@@ -3,7 +3,6 @@ It's very difficult to do todo esto
 
 Tengo que hacer la memoria con los cambios de la versión con xml y con dtd
 Tengo que revisar que los scripts corran bien desde línea de comandos
-Tengo que comprobar que los xml tienen todos los campos requeridos
 Tengo que poner fotos y vídeos como referencias a local
 Generar gráficamente el árbol DOM de los XML (tanto con xml2svg.exe como con el PDF de opera)
 
@@ -11,10 +10,9 @@ Modificar campos del xml para dar soporte a alt, title... en <img> <video> y <a>
 
 Eliminar carpeta 00mio una vez terminada la parte de XML
 
-Cambiar el procesamiento del JSON de entrenamientos para que haga las medias con el día entrenamientos
+Revisar que se cargue primero la info de la carrera y luego la de los entrenos
 Revisar la accesibilidad de las tablas
 
 Poner una validación mínima de campos para el formulario
-Filtrar los usuarios existentes por pericia informática 10
 Poner todos los labels con IDs
 Refactorizar las clase test para hacer un único método "run prepared statement"

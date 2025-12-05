@@ -17,9 +17,9 @@ xmlns="http://www.uniovi.es">
         <referencia>https://www.gt-world-challenge-asia.com/event/74/pertamina-mandalika-international-circuit</referencia>
     </referencias>
     <fotografias>
-        <fotografia>Foto 1</fotografia>
-        <fotografia>Foto 2</fotografia>
-        <fotografia>Foto 3</fotografia>
+        <fotografia>multimedia/circuito/panorama.jpg</fotografia>
+        <fotografia>multimedia/circuito/caballito.jpg</fotografia>
+        <fotografia>multimedia/circuito/mir.jpg</fotografia>
     </fotografias>
     <videos>
         <video>multimedia/circuito/video1.mp4</video>

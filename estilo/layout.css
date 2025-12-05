@@ -139,8 +139,14 @@ h2 ~ form {
     align-items: baseline;
 }
 
+/*Especificidad 002*/
 form > textarea {
     height:auto;
+    width: 100%;
+}
+
+/* Para las imágenes del HTML del circuito incrustado */
+section article img {
     width: 100%;
 }
 
