@@ -8,6 +8,7 @@
         private $database;
 
         private $completed;
+        private $tiempo;
 
         public function __construct() {
             $this->host = "localhost";
@@ -23,9 +24,9 @@
             if(isset($_POST["endSurvey"])) return $this->endSurvey();
             if(isset($_SESSION["cronometroTest"])) return $this->showUsabilitySurvey();
             if(count($_POST) == 0) return $this->showUserForm();
-            if(isset($_POST["beginTest"])) return $this->beginTest();
             if(isset($_POST["registrarUsuario"])) return $this->registerNewUser();
             if(isset($_POST["usuarioExistente"])) return $this->chooseExistingUser();
+            if(isset($_POST["beginTest"])) return $this->beginTest();
         }
 
         private function showAvailableUsers() {
@@ -150,6 +151,8 @@
 
         private function askUserFeedback() {
             $_SESSION["cronometroTest"]->parar();
+
+            $this->tiempo = $_SESSION["cronometroTest"]->getTiempo();
             include "forms/feedback.html";
         }
 
@@ -163,9 +166,9 @@
             $success = false;
             $query = "INSERT INTO `resultados_test`(`id_usuario`, `dispositivo`, `tiempo`, `completada`, `comentarios`, `propuestas`, `valoracion`) VALUES (?,?,?,?,?,?,?)";
             $preparedQuery = $db->prepare($query);
-            $tiempo = $_SESSION["cronometroTest"]->getTiempo();
-            $preparedQuery->bind_param("isibssi", $_SESSION["currentUserID"], $_SESSION["currentDevice"],
-                $tiempo, $this->completed, $_POST["comentarios"], $_POST["propuestas"], $_POST["valoracion"]);
+            //TODO revisar por qué cronometra mal
+            $preparedQuery->bind_param("isisssi", $_SESSION["currentUserID"], $_SESSION["currentDevice"],
+                $this->tiempo, $this->completed, $_POST["comentarios"], $_POST["propuestas"], $_POST["valoracion"]);
             $preparedQuery->execute();
             if( $preparedQuery->affected_rows > 0) {
                 $success = true;
