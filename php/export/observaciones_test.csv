@@ -1,2 +1,3 @@
 id_usuario;dispositivo;comentarios
 1;ordenador;"El usuario encontró bien la información en la web, salvo el orden cronológico de los equipos del piloto"
+1;tablet;"Test realizado con la tablet de la Escuela, luego el JS no funcionaba adecuadamente. Además, la media query del guion no garantizaba la adaptabilidad en este caso."

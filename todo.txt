@@ -16,3 +16,7 @@ Revisar la accesibilidad de las tablas
 Poner una validación mínima de campos para el formulario
 Poner todos los labels con IDs
 Refactorizar las clase test para hacer un único método "run prepared statement"
+
+Llamar desde carrera a entrenos para que se inserten en orden
+Ponerle un label al selector de usuarios existentes
+Poner selector de CSS para los labels mal hechos
