@@ -1,6 +1,6 @@
 <?php
-    include "cronometro.php"; 
-    //La clase cronómetro ya inicia la sesión, no es necesario hacerlo de nuevo
+   include "cronometro.php"; 
+   session_start();
     class Test {
         private $host;
         private $user;
@@ -8,7 +8,6 @@
         private $database;
 
         private $completed;
-        private $tiempo;
 
         public function __construct() {
             $this->host = "localhost";
@@ -22,11 +21,32 @@
             if(isset($_POST["sendObservations"])) return $this->logObservations();
             if(isset($_POST["sendFeedback"])) return $this->logFeedback();
             if(isset($_POST["endSurvey"])) return $this->endSurvey();
-            if(isset($_SESSION["cronometroTest"])) return $this->showUsabilitySurvey();
             if(count($_POST) == 0) return $this->showUserForm();
             if(isset($_POST["registrarUsuario"])) return $this->registerNewUser();
             if(isset($_POST["usuarioExistente"])) return $this->chooseExistingUser();
             if(isset($_POST["beginTest"])) return $this->beginTest();
+            if(isset($_SESSION["cronometroTest"])) return $this->showUsabilitySurvey();
+        }
+
+        /*
+        * Intenta preparar y ejecutar un prepared statement
+        * Devuelve true si afecta a la base de datos o false en caso contrario
+        */
+        private function runPreparedStatement($query, $dataTypes, $params, &$insertID = null) {
+            $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+            if ($db->connect_errno) {
+                echo "<p>Error al conectarse a la base de datos.</p>";
+                return $this->showUserForm();
+            }
+            $preparedQuery = $db->prepare($query);
+            $preparedQuery->bind_param( $dataTypes,...$params);
+            $preparedQuery->execute();
+            $success = $preparedQuery->affected_rows > 0;
+            if($success && $insertID !== null) {
+                $insertID = $db->insert_id;
+            }
+            $db->close();
+            return $success;
         }
 
         private function showAvailableUsers() {
@@ -41,7 +61,7 @@
             $availableUsers = $db->query($query);
             if($availableUsers->num_rows > 0) {
                 echo '<form action="#" method="post" name="usuarioExistente">';
-                echo '<label>Escoja la combinación de identificador y dispositivo que corresponda: <select name="existingUserID">';
+                echo '<label for="existingUserID">Escoja la combinación de identificador y dispositivo que corresponda: <select id="existingUserID" name="existingUserID">';
                 while($user = $availableUsers->fetch_array()) {
                     $id = $user[0];
                     $device = $user[1];
@@ -64,24 +84,17 @@
         }
      
         private function registerNewUser() {
-            $success = false;
-            $db = new mysqli($this->host, $this->user, $this->password, $this->database);
-            if ($db->connect_errno) {
-                echo "<p>Error al conectarse a la base de datos</p>";
-                return $this->showUserForm();
-            }
             $query = "INSERT INTO USUARIOS (`profesion`, `edad`, `genero`, `pericia_informatica`) VALUES (?,?,?,?)";
-            $preparedQuery = $db->prepare($query);
-            $preparedQuery->bind_param("sisi", $_POST["profesion"], $_POST["edad"], $_POST["genero"], $_POST["pericia"]);
-            $preparedQuery->execute();
-            if( $preparedQuery->affected_rows > 0) {
-                $_SESSION["currentUserID"] = $db->insert_id;
+            $types = "sisi";
+            $params = [$_POST["profesion"], $_POST["edad"], $_POST["genero"], $_POST["pericia"]];
+            $newID = -1;
+            if($this->runPreparedStatement($query, $types, $params, $newID)) {
+                $_SESSION["currentUserID"] = $newID;
                 $_SESSION["currentDevice"] = $_POST["dispositivo"];
-                $success = true;
-            }
-            $db->close();
-            if(!$success) return $this->showUserForm();
-            $this->showAwaitingScreen();
+                $this->showAwaitingScreen();
+            } else {
+                $this->showUserForm();
+            }        
         }
 
         private function chooseExistingUser() {
@@ -98,6 +111,7 @@
         private function beginTest() {
             $_SESSION["cronometroTest"] = new Cronometro();
             $_SESSION["cronometroTest"]->arrancar();
+            unset($_POST["beginTest"]);
             $this->showUsabilitySurvey();
         }
 
@@ -112,17 +126,10 @@
         }
 
         private function endSurvey() {
-            $db = new mysqli($this->host, $this->user, $this->password, $this->database);
-            if($db->connect_errno) {
-                echo "<p> Error al registrar sus respuestas. Vuelva a intentarlo.</p>";
-                return $this->showUsabilitySurvey();
-            }
-            $success = false;
             $query = "INSERT INTO `respuestas_test`(`id_usuario`, `dispositivo`, `VUELTAS`,
                 `AÑO_NACIMIENTO_MIR`, `EQUIPO_MIR`, `HEMISFERIO`, `GANADOR_INDONESIA`,
                 `AÑO_VICTORIA_MIR`, `GRADOS_CIRCUITO`, `NUM_CARTAS`, `LIDER_CLASIFICACION`,
                 `VICTORIAS_MIR_2024`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);";
-            $preparedQuery = $db->prepare($query);
             $types = "isiisssidisi";
             $params = [
                 $_SESSION["currentUserID"],
@@ -136,48 +143,33 @@
                 $this->checkPostKey("temperaturaCircuito"),
                 $this->checkPostKey("numeroCartas"),
                 $this->checkPostKey("liderClasificacion"),
-                $this->checkPostKey("victoriasMir")
-            ];
-            $preparedQuery->bind_param( $types,...$params);
-            $preparedQuery->execute();
-            if( $preparedQuery->affected_rows > 0) {
-                $success = true;
+                $this->checkPostKey("victoriasMir")];
+             
+            if($this->runPreparedStatement($query, $types, $params)) {
+                $_SESSION["cronometroTest"]->parar();
+                $this->askUserFeedback();
+            } else {
+                echo "<p>Error al registrar sus respuestas. Por favor, inténtelo de nuevo.</p>";
+                return $this->showUsabilitySurvey();
             }
-            $db->close();
-            if($success) return $this->askUserFeedback();
-            echo "<p>Error al registrar sus respuestas. Por favor, inténtelo de nuevo.</p>";
-            return $this->showUsabilitySurvey();
         }
 
         private function askUserFeedback() {
-            $_SESSION["cronometroTest"]->parar();
-
-            $this->tiempo = $_SESSION["cronometroTest"]->getTiempo();
             include "forms/feedback.html";
         }
 
         private function logFeedback() {
-            $errorMessage = "<p>Error al registrar su valoración. Por favor, inténtelo de nuevo.</p>";
-            $db = new mysqli($this->host, $this->user, $this->password, $this->database);
-            if($db->connect_errno) {
-                echo $errorMessage;
-                return $this->askUserFeedback();
-            }
-            $success = false;
             $query = "INSERT INTO `resultados_test`(`id_usuario`, `dispositivo`, `tiempo`, `completada`, `comentarios`, `propuestas`, `valoracion`) VALUES (?,?,?,?,?,?,?)";
-            $preparedQuery = $db->prepare($query);
-            //TODO revisar por qué cronometra mal
-            $preparedQuery->bind_param("isisssi", $_SESSION["currentUserID"], $_SESSION["currentDevice"],
-                $this->tiempo, $this->completed, $_POST["comentarios"], $_POST["propuestas"], $_POST["valoracion"]);
-            $preparedQuery->execute();
-            if( $preparedQuery->affected_rows > 0) {
-                $success = true;
+            $types = "isisssi";
+            $params = [$_SESSION["currentUserID"], $_SESSION["currentDevice"], $_SESSION["cronometroTest"]->getTiempo(),
+                $this->completed, $_POST["comentarios"], $_POST["propuestas"], $_POST["valoracion"]];
+            echo "<p>" .$_SESSION["cronometroTest"]->getTiempo() ."</p>";
+            if( $this->runPreparedStatement($query, $types, $params)) {
+                $this->askModObservations();
+            } else {
+                echo "<p>Error al registrar su valoración. Por favor, inténtelo de nuevo.</p>";
+                $this->askUserFeedback();
             }
-            $db->close();
-            if($success)
-                return $this->askModObservations();
-            echo $errorMessage;
-            return $this->askUserFeedback();
         }
 
         private function askModObservations() {
@@ -185,25 +177,16 @@
         }
 
         private function logObservations() {
-            $errorMessage = "<p>Error al registrar sus observaciones. Por favor, inténtelo de nuevo.</p>";
-            $db = new mysqli($this->host, $this->user, $this->password, $this->database);
-            if($db->connect_errno) {
-                echo $errorMessage;
-                return $this->askModObservations();
-            }
-            $success = false;
             $query = "INSERT INTO `observaciones_test`(`id_usuario`, `dispositivo`, `comentarios`) VALUES (?,?,?)";
-            $preparedQuery = $db->prepare($query);
-            $preparedQuery->bind_param("iss", $_SESSION["currentUserID"], $_SESSION["currentDevice"], $_POST["observaciones"]);
-            $preparedQuery->execute();
-            if( $preparedQuery->affected_rows > 0) {
-                $success = true;
+            $types = "iss";
+            $params = [$_SESSION["currentUserID"], $_SESSION["currentDevice"], $_POST["observaciones"]];
+            
+            if( $this->runPreparedStatement($query, $types, $params)) {
+                $this->showFinalScreen();
+            } else {
+                echo "<p>Error al registrar sus observaciones. Por favor, inténtelo de nuevo.</p>";
+                $this->askModObservations();
             }
-            $db->close();
-            if($success)
-                return $this->showFinalScreen();
-            echo $errorMessage;
-            return $this->askModObservations();
         }
 
         private function showFinalScreen() {

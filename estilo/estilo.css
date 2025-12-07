@@ -38,6 +38,16 @@ header a:hover {
     color : #D0D78E;
 }
 
+/*TODO borrar luego, es para comprobar que todos los labels tienen el "for" bien puesto */
+input:not([id]), 
+input[id=""]
+label:not([for]), 
+label[for=""],
+label > input {
+  color: darkorchid;
+  background : black;
+}
+
 header button:hover {
     color : #D0D78E;
     border-color : #D0D78E;

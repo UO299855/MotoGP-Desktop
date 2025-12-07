@@ -1,5 +1,6 @@
 <?php 
     include("php/cronometro.php");
+    session_start();
 
     if(!isset( $_SESSION['cronometro'] ) ) {
         $_SESSION['cronometro'] = new Cronometro();

@@ -1,5 +1,2 @@
 id_usuario;dispositivo;tiempo;completada;comentarios;propuestas;valoracion
-1;ordenador;2147483647;1;"Dificultad al saber cual era el equipo actual del piloto";"Poner los años en los que estuvo en cada equipo";10
-1;tablet;2147483647;1;"Muy poca separación entre los elementos del menú de navegación en la versión tablet
-
-";"Mejorar media query para el menu de navegacion";10
+1;telefono;38491048200;1;;;1

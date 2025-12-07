@@ -24,7 +24,7 @@ CREATE TABLE `uo299855_db`.`dispositivos` (
 CREATE TABLE `uo299855_db`.`resultados_test` (
     id_usuario INT NOT NULL,
     dispositivo ENUM('ordenador', 'tablet', 'telefono') NOT NULL,
-    tiempo INT NOT NULL,
+    tiempo BIGINT NOT NULL,
     completada BOOLEAN NOT NULL,
     comentarios TEXT,
     propuestas TEXT,
