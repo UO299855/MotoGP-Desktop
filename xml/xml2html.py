@@ -79,7 +79,7 @@ class CircuitProcessor:
         for referencia in circuit_root.findall(".//ns:referencia", self.ns_dict):
             link : ET.Element = ET.SubElement(ET.SubElement(list, "li"), "a")
             link.text = f"Referencia {i}"
-            link.set("href", referencia.text or "")
+            link.set("href", referencia.text)
             i += 1
 
     def process_videos(self, circuit_root : ET.Element, html : Html):

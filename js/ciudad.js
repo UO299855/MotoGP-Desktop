@@ -135,6 +135,9 @@ class Ciudad {
         let hourlySection = $(`<section><h4>Información a la hora de la carrera</h4></section>`)
         dailySection.after(hourlySection)
         this.#tablaDatosCarrera(data, hourlySection)
+
+        //Llamamos desde aquí a procesar entrenamientos para que se inserten siempre en orden
+        this.getMeteorologiaEntrenos()
     }
 
     #tablaDatosCarrera(data, section) {

@@ -120,7 +120,7 @@
         }
 
         private function checkPostKey($key) {
-            if(isset($_POST[$key])) return $_POST[ $key ];
+            if(isset($_POST[$key]) && !ctype_space($_POST[$key])) return $_POST[$key];
             $this->completed=false;
             return null;
         }

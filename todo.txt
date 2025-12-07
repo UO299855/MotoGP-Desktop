@@ -8,17 +8,7 @@ Generar gráficamente el árbol DOM de los XML (tanto con xml2svg.exe como con e
 
 Modificar campos del xml para dar soporte a alt, title... en <img> <video> y <a>
 
-Eliminar carpeta 00mio una vez terminada la parte de XML
-
-Revisar que se cargue primero la info de la carrera y luego la de los entrenos
 Revisar la accesibilidad de las tablas
-
-Poner una validación mínima de campos para el formulario
-
-Llamar desde carrera a entrenos para que se inserten en orden
 
 Comprobar posibles errores con los DOM parser
 Bajar niveles de encabezados
-Implementar la planimetría
-
-Quitar 'or ""' de los archivos python
