@@ -18,12 +18,12 @@
         }
 
         public function proceed() {
+            if(isset($_POST["registrarUsuario"])) return $this->registerNewUser();
+            if(isset($_POST["usuarioExistente"])) return $this->chooseExistingUser();
+            if(count($_POST) == 0 || !isset($_SESSION["currentUserID"])) return $this->showUserForm();
             if(isset($_POST["sendObservations"])) return $this->logObservations();
             if(isset($_POST["sendFeedback"])) return $this->logFeedback();
             if(isset($_POST["endSurvey"])) return $this->endSurvey();
-            if(count($_POST) == 0) return $this->showUserForm();
-            if(isset($_POST["registrarUsuario"])) return $this->registerNewUser();
-            if(isset($_POST["usuarioExistente"])) return $this->chooseExistingUser();
             if(isset($_POST["beginTest"])) return $this->beginTest();
             if(isset($_SESSION["cronometroTest"])) return $this->showUsabilitySurvey();
         }
@@ -161,9 +161,8 @@
         private function logFeedback() {
             $query = "INSERT INTO `resultados_test`(`id_usuario`, `dispositivo`, `tiempo`, `completada`, `comentarios`, `propuestas`, `valoracion`) VALUES (?,?,?,?,?,?,?)";
             $types = "isisssi";
-            $params = [$_SESSION["currentUserID"], $_SESSION["currentDevice"], $_SESSION["cronometroTest"]->getTiempo(),
+            $params = [$_SESSION["currentUserID"], $_SESSION["currentDevice"], $_SESSION["cronometroTest"]->getMillis(),
                 $this->completed, $_POST["comentarios"], $_POST["propuestas"], $_POST["valoracion"]];
-            echo "<p>" .$_SESSION["cronometroTest"]->getMillis() ."</p>";
             if( $this->runPreparedStatement($query, $types, $params)) {
                 $this->askModObservations();
             } else {
@@ -193,7 +192,8 @@
             unset($_SESSION["currentUserID"]);
             unset($_SESSION["currentDevice"]);
             unset($_SESSION["cronometroTest"]);
-            unset($_SESSION["test"]);            
+            unset($_SESSION["test"]);
+            unset($_POST);
             include "forms/completed.html";
         }
 
@@ -213,7 +213,6 @@
 
     <link rel="stylesheet" type="text/css" href="../estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="../estilo/layout.css" />
-    <link rel="icon" href="../multimedia/favicon.ico" type="image/ico"/>
 </head>
 <body>
     <h1>Pruebas de usabilidad</h1>

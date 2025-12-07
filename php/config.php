@@ -82,7 +82,6 @@
 
     <link rel="stylesheet" type="text/css" href="../estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="../estilo/layout.css" />
-    <link rel="icon" href="../multimedia/favicon.ico" type="image/ico"/>
 </head>
 <body>
     <h1>Configuración de las pruebas de usabilidad</h1>
