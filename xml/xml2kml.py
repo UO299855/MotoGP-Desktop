@@ -10,11 +10,10 @@ class Kml(object):
     """
     def __init__(self):
         "Crea el elemento raíz y el espacio de nombres"
-
         self.raiz : ET.Element = ET.Element('kml', xmlns="http://www.opengis.net/kml/2.2")
         self.doc  : ET.Element = ET.SubElement(self.raiz,"Document")
 
-    def addPlacemark(self,nombre : str, descripcion : str, long : int, lat : int , alt : int, modoAltitud : str):
+    def addPlacemark(self, nombre : str, descripcion : str, long : int, lat : int , alt : int, modoAltitud : str):
         "Añade un elemento <Placemark> con puntos <Point>"
         placemark : ET.Element = ET.SubElement(self.doc,'Placemark')
         ET.SubElement(placemark,'name').text = nombre
@@ -23,13 +22,11 @@ class Kml(object):
         ET.SubElement(punto,'coordinates').text = '{},{},{}'.format(long,lat,alt)
         ET.SubElement(punto,'altitudeMode').text = modoAltitud
 
-    def addLineString(self,nombre,extrude,tesela, listaCoordenadas, modoAltitud, color, ancho):
+    def addLineString(self,nombre,listaCoordenadas, modoAltitud, color, ancho):
         "Añade un elemento <Placemark> con líneas <LineString>"
         ET.SubElement(self.doc,'name').text = nombre
         pm = ET.SubElement(self.doc,'Placemark')
         ls = ET.SubElement(pm, 'LineString')
-        ET.SubElement(ls,'extrude').text = extrude
-        ET.SubElement(ls,'tessellation').text = tesela
         ET.SubElement(ls,'coordinates').text = listaCoordenadas
         ET.SubElement(ls,'altitudeMode').text = modoAltitud
         estilo = ET.SubElement(pm, 'Style')
@@ -48,53 +45,51 @@ class Kml(object):
         arbol.write(nombreArchivoKML, encoding='utf-8', xml_declaration=True)
 
 
-def parse_circuit(circuit_file : str, relative_to_ground : bool = False, extrude : str = "1", tesela : str = "1", line_color : str = "#ff0000ff", line_width : str = "5") -> Kml:
-    #Creamos el KML que vamos a manipular
-    new_kml : Kml = Kml()
+class CircuitProcessor:
+    def parse_circuit(self, circuit_file : str, relative_to_ground : bool = False, extrude : str = "1", tesela : str = "1", line_color : str = "#ff0000ff", line_width : str = "5") -> Kml:
+        #Creamos el KML que vamos a manipular
+        new_kml : Kml = Kml()
 
-    #Fijamos el diccionario de dominios para hacer más legible el código
-    ns_dict : dict[str, str] = {"ns": "http://www.uniovi.es"}
+        #Fijamos el diccionario de dominios para hacer más legible el código
+        ns_dict : dict[str, str] = {"ns": "http://www.uniovi.es"}
 
-    #Hallamos la raíz del arbol del esquema del circuito
-    circuit_root = ET.parse(circuit_file).getroot()
+        #Hallamos la raíz del arbol del esquema del circuito
+        circuit_root = ET.parse(circuit_file).getroot()
 
-    #Cada tramo queda definido por dos puntos
-    #En nuestro XML hemos guardado solo el punto final de cada uno
-    #Vamos a concatenarlos
-    coords_queue : list[str] = []
-
-    for origen in circuit_root.findall(".//ns:origen", ns_dict) :
-        #Según nuestro XML Schema, cada tramo tiene un único valor de latitud, de longitud, y de altitud
-        longitud : int = origen.find("./ns:coordenadas/ns:longitud", ns_dict).text
-        latitud : int = origen.find("./ns:coordenadas/ns:latitud", ns_dict).text
-        altitud : int = origen.find("./ns:coordenadas/ns:altitud", ns_dict).text
-        coords_queue.append(f"{longitud},{latitud},{0 if relative_to_ground else altitud}\n")
         
+        coords_origen :str = ""
+        for origen in circuit_root.findall(".//ns:origen", ns_dict) :
+            #Según nuestro XML Schema, cada tramo tiene un único valor de latitud, de longitud, y de altitud
+            longitud : int = origen.find("./ns:coordenadas/ns:longitud", ns_dict).text
+            latitud : int = origen.find("./ns:coordenadas/ns:latitud", ns_dict).text
+            altitud : int = origen.find("./ns:coordenadas/ns:altitud", ns_dict).text
+            coord_altitud = 0 if relative_to_ground else altitud
+            modo_altitud = "relativeToGround" if relative_to_ground else "absolute"
+            coords_origen = (f"{longitud},{latitud},{coord_altitud}\n")
+            new_kml.addPlacemark("Origen", "Punto de partida del circuito", longitud, latitud, coord_altitud, modo_altitud)
+        coords : str = coords_origen
 
-    i : int = 1
-    for tramo in circuit_root.findall(".//ns:tramo", ns_dict) :
-        #Según nuestro XML Schema, cada tramo tiene un único valor de latitud, de longitud, y de altitud
-        longitud : int = tramo.find("./ns:coordenadas/ns:longitud", ns_dict).text
-        latitud : int = tramo.find("./ns:coordenadas/ns:latitud", ns_dict).text
-        altitud : int = tramo.find("./ns:coordenadas/ns:altitud", ns_dict).text
-
-        #Ponemos los nodos en KML
-
-        coords = f"{longitud},{latitud},{0 if relative_to_ground else altitud}\n"
-        coords_queue.append(coords)
-
-        new_kml.addLineString(nombre=f"Tramo {i}",extrude = extrude, tesela= tesela,
-                              listaCoordenadas = f"{coords_queue.pop(0)} {coords}",
-                              modoAltitud = "relativeToGround" if relative_to_ground else "absolute",
-                              color = line_color,
-                              ancho = line_width)
-        i+=1
-    return new_kml
+        for tramo in circuit_root.findall(".//ns:tramo", ns_dict) :
+            #Según nuestro XML Schema, cada tramo tiene un único valor de latitud, de longitud, y de altitud
+            longitud : int = tramo.find("./ns:coordenadas/ns:longitud", ns_dict).text
+            latitud : int = tramo.find("./ns:coordenadas/ns:latitud", ns_dict).text
+            altitud : int = tramo.find("./ns:coordenadas/ns:altitud", ns_dict).text
+            coords += f"{longitud},{latitud},{0 if relative_to_ground else altitud}\n"
+            
+        coords += coords_origen
+        new_kml.addLineString(nombre=f"Planimetría del circuito",
+                            listaCoordenadas = coords,
+                            modoAltitud = "relativeToGround" if relative_to_ground else "absolute",
+                            color = line_color,
+                            ancho = line_width)
+        return new_kml
         
 #TODO revisar rutas absolutas
 def main():
-    "Aplica el procedimiento al archivo del trabajo"
-    parse_circuit("circuitoEsquema.xml").escribir("circuitoEsquema.kml")
+    """
+    Aplica el procedimiento al archivo del trabajo
+    """
+    CircuitProcessor().parse_circuit("circuitoEsquema.xml").escribir("circuito.kml")
 
 if __name__ == "__main__":
     main()

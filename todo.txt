@@ -20,3 +20,5 @@ Llamar desde carrera a entrenos para que se inserten en orden
 Comprobar posibles errores con los DOM parser
 Bajar niveles de encabezados
 Implementar la planimetría
+
+Quitar 'or ""' de los archivos python

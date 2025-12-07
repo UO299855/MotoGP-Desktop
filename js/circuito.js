@@ -147,29 +147,43 @@ class CargadorKML {
         } else {
             this.#div.innerHTML = ""
         }
+
+        const nameSpace = "http://www.opengis.net/kml/2.2"
+        const nsResolver = prefix => nameSpace;
+        let parsedDocument = new DOMParser().parseFromString(kmlText, "application/xml")
+        const origen = parsedDocument.evaluate("//ns:Placemark/ns:Point/ns:coordinates",
+            parsedDocument, nsResolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
+        console.log(origen)
+        const origen_coords = origen.textContent.split(",")
+
         const map = new google.maps.Map(this.#div, {
-            zoom: 8,
-            center: { lat: 43.3619, lng: -5.8494 }, // Centro aproximado de Asturias
-        });
+            zoom: 16,
+            center: {
+                lng : parseFloat(origen_coords[0].trim()),
+                lat : parseFloat(origen_coords[1].trim())
+        }})
+        
+        const lineStringIterator = parsedDocument.evaluate("//ns:LineString/ns:coordinates", parsedDocument,
+            nsResolver, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null)
 
-        const asturiasPath = [
-            { lat: 43.3603, lng: -5.8448 }, // Oviedo
-            { lat: 43.3500, lng: -5.1333 }, // Cangas de Onís
-            { lat: 43.5420, lng: -5.6624 }, // Gijón
-            { lat: 43.5566, lng: -5.9215 }, // Avilés  
-            { lat: 43.5443, lng: -6.5379 }, // Luarca
-            { lat: 43.3603, lng: -5.8448 }, // Oviedo
-        ];
-
-        const polyline = new google.maps.Polyline({
-            path: asturiasPath,
+        let coords;
+        while(coords = lineStringIterator.iterateNext()) {
+            let path = []
+            const lines = coords.textContent.trim().split("\n")
+            for(let line of lines) {
+                const tokens = line.split(",")
+                path.push({
+                    lng : parseFloat(tokens[0].trim()),
+                    lat : parseFloat(tokens[1].trim())
+                })
+            }
+            const polyline = new google.maps.Polyline({
+            path: path,
             geodesic: true,
             strokeColor: "#0000FF",
             strokeOpacity: 0.8,
-            strokeWeight: 4,
-        });
-
-        polyline.setMap(map);
-    
+            strokeWeight: 4})
+            polyline.setMap(map)
+        }
     }
 }
