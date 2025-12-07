@@ -163,7 +163,7 @@
             $types = "isisssi";
             $params = [$_SESSION["currentUserID"], $_SESSION["currentDevice"], $_SESSION["cronometroTest"]->getTiempo(),
                 $this->completed, $_POST["comentarios"], $_POST["propuestas"], $_POST["valoracion"]];
-            echo "<p>" .$_SESSION["cronometroTest"]->getTiempo() ."</p>";
+            echo "<p>" .$_SESSION["cronometroTest"]->getMillis() ."</p>";
             if( $this->runPreparedStatement($query, $types, $params)) {
                 $this->askModObservations();
             } else {

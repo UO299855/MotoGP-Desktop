@@ -131,6 +131,13 @@ form > h3{
     margin-bottom: 0em;
 }
 
+/* Regla para los selectores de archivos de circuito.js */
+/*Especificidad 012*/
+label + input[type="file"] {
+    display: block;
+    margin-top:2ex;
+}
+
 /*Especificidad 002*/
 h2 ~ form {
     display: flex;

@@ -28,8 +28,8 @@
             return sprintf("%02d:%04.1f", $mins, $seconds);
         }
 
-        public function getTiempo() {
-            return $this->tiempo;
+        public function getMillis() {
+            return intdiv($this->tiempo, 1_000);
         }
     }
 ?>
