@@ -15,13 +15,10 @@ class Svg(object):
         "Crea el elemento raíz, el espacio de nombres y la versión"
         self.raiz = ET.Element('svg', xmlns="http://www.w3.org/2000/svg", version="2.0")
 
-    def adjustWidth(self, width:str):
-        'Ajusta el ancho del "lienzo" visible del SVG'
-        self.raiz.set("width", width)
     
-    def adjustHeight(self, height:str):
-        'Ajusta el alto del "lienzo" visible del SVG'
-        self.raiz.set("height", height)
+    def adjustArea(self, width:str, height:str):
+        self.raiz.set("viewBox", f"0 0 {width} {height}")
+        self.raiz.set("preserveAspectRatio", "xMidYMid meet")
 
     def addLine(self,x1,y1,x2,y2,stroke,strokeWidth):
         "Añade un elemento line"
@@ -102,8 +99,9 @@ def parse_circuit(circuit_file : str, x_scale = 1, y_scale = 1) -> Svg:
 
     #Escala el SVG para que quepa entero
     #Usamos la función "techo" para redondear siempre hacia arriba
-    new_svg.adjustWidth(str(math.ceil(last_x + first_x))) #la componente X ya está escalada
-    new_svg.adjustHeight(str(math.ceil(y_scale * h_max))) #h_max en cambio no
+    #la componente X ya está escalada
+    #h_max en cambio no
+    new_svg.adjustArea(str(math.ceil(last_x + first_x)), str(math.ceil(y_scale * h_max))) 
     return new_svg
 
 
