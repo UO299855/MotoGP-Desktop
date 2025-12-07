@@ -14,8 +14,9 @@ Revisar que se cargue primero la info de la carrera y luego la de los entrenos
 Revisar la accesibilidad de las tablas
 
 Poner una validación mínima de campos para el formulario
-Poner todos los labels con IDs
-Refactorizar las clase test para hacer un único método "run prepared statement"
 
 Llamar desde carrera a entrenos para que se inserten en orden
-Ponerle un label al selector de usuarios existentes
+
+Comprobar posibles errores con los DOM parser
+Bajar niveles de encabezados
+Implementar la planimetría
