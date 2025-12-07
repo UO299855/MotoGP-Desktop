@@ -29,7 +29,7 @@
         }
 
         public function getMillis() {
-            return intdiv($this->tiempo, 1_000);
+            return intdiv($this->tiempo, 1_000_000);
         }
     }
 ?>

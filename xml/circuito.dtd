@@ -15,9 +15,9 @@
 <!ELEMENT videos (video+)> <!-- Galería de vídeos (entre 1 y 3)-->
 <!ELEMENT video (#PCDATA)>
 <!ELEMENT origen (coordenadas)>
-<!ELEMENT coordenadas (longitud, latitud, altitud)> <!-- Punto de origen (latitud, longitud, altitud)-->
+<!ELEMENT coordenadas (latitud, longitud, altitud)> <!-- Punto de origen (latitud, longitud, altitud)-->
 <!ELEMENT tramos (tramo+)>
-<!ELEMENT tramo (distancia, coordenadas)>
+<!ELEMENT tramo (coordenadas, distancia)>
 <!ELEMENT distancia (#PCDATA)>
 
 <!ELEMENT longitud (#PCDATA)>

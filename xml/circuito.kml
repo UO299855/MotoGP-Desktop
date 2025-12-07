@@ -3,7 +3,7 @@
   <Document>
     <Placemark>
       <name>Origen</name>
-      <description>Punto de partida del ircuito</description>
+      <description>Punto de partida del circuito</description>
       <Point>
         <coordinates>116.30361111111111,-8.895555555555555,9.14</coordinates>
         <altitudeMode>absolute</altitudeMode>

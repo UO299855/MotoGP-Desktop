@@ -24,9 +24,9 @@ class Svg(object):
         x2=x2,
         y2=y2)
 
-    def addPolyline(self,points):
+    def addPolyline(self,points, color="red"):
         "Añade un elemento polyline"
-        ET.SubElement(self.raiz,'polyline', points=points)
+        ET.SubElement(self.raiz,'polyline', points=points, fill="none", stroke=color)
 
     def addText(self,texto,x,y,fontFamily,fontSize,style):
         "Añade un elemento texto"
