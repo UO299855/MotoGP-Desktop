@@ -5,8 +5,8 @@ Tengo que hacer la memoria con los cambios de la versión con xml y con dtd
 Tengo que revisar que los scripts corran bien desde línea de comandos
 Tengo que poner fotos y vídeos como referencias a local
 Generar gráficamente el árbol DOM de los XML (tanto con xml2svg.exe como con el PDF de opera)
-
-Modificar campos del xml para dar soporte a alt, title... en <img> <video> y <a>
+poner enlaces útiles para las referencias en el XML
+Revisar que las dos versiones del XML sean iguales
 
 Revisar la accesibilidad de las tablas
 

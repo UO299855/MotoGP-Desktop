@@ -84,11 +84,6 @@ picture {
 }
 
 /*Especificidad 001*/
-video {
-    margin : 0 auto;
-}
-
-/*Especificidad 001*/
 table {
     width : 100%;
 }
@@ -158,8 +153,9 @@ form > textarea {
 }
 
 /* Para las imágenes del HTML del circuito incrustado */
-section article img {
-    width: 100%;
+/*Especificidad 003, 003*/
+section article img, section article video {
+    width: 100%;    
 }
 
 /*Reglas dedicadas a la adaptabilidad */

@@ -17,13 +17,13 @@ xmlns="http://www.uniovi.es">
         <referencia>https://www.gt-world-challenge-asia.com/event/74/pertamina-mandalika-international-circuit</referencia>
     </referencias>
     <fotografias>
-        <fotografia>multimedia/circuito/panorama.jpg</fotografia>
-        <fotografia>multimedia/circuito/caballito.jpg</fotografia>
-        <fotografia>multimedia/circuito/mir.jpg</fotografia>
+        <fotografia descripcion="Vista arérea del circuito de Pertamina Mandalika">multimedia/circuito/panorama.jpg</fotografia>
+        <fotografia descripcion="Diego Moreira haciendo un caballito en el circuito">multimedia/circuito/caballito.jpg</fotografia>
+        <fotografia descripcion="Joan Mir en el circuito Pertamina Mandalika durante la temporada 2025">multimedia/circuito/mir.jpg</fotografia>
     </fotografias>
     <videos>
-        <video>multimedia/circuito/video1.mp4</video>
-        <video>multimedia/circuito/video2.mp4</video>        
+        <video descripcion="Fermín Aldeguer celebra su victoria en el Gran Premio de Indonesia 2025">multimedia/circuito/vencedor.mp4</video>
+        <video descripcion="Vista en primera persona de una vuelta al circuito">multimedia/circuito/pov.mp4</video>        
     </videos>
     <origen>
         <coordenadas>

@@ -54,7 +54,15 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="referencia" type="xs:string" />
+	<xs:element name="referencia">
+    <xs:complexType>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="titulo" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+	</xs:element>
 	<xs:element name="fotografias">
 		<xs:complexType>
 			<xs:sequence>
@@ -62,7 +70,15 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="fotografia" type="xs:string" />
+	<xs:element name="fotografia">
+    <xs:complexType>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="descripcion" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+	</xs:element>
 	<xs:element name="videos">
 		<xs:complexType>
 			<xs:sequence>
@@ -70,7 +86,15 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="video" type="xs:string" />
+	<xs:element name="video">
+    <xs:complexType>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="descripcion" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+	</xs:element>
 	<xs:element name="origen">
 		<xs:complexType>
 			<xs:sequence>

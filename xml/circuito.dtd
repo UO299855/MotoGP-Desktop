@@ -26,7 +26,7 @@
 <!ELEMENT vencedor (tiempo-victoria)>
 <!ELEMENT tiempo-victoria (#PCDATA)>
 
-<!--3 primeros clasificados (después de la carreda) en la tabla global, no solo en el circuito de Indonesia -->
+<!--3 primeros clasificados (después de la carrera) en la tabla global, no solo en el circuito de Indonesia -->
 <!ELEMENT clasificados (clasificado+)>
 <!ELEMENT clasificado (#PCDATA)>
 
@@ -41,6 +41,9 @@
 <!ATTLIST clasificado puntos CDATA #REQUIRED>
 <!ATTLIST distancia unidades CDATA #REQUIRED>
 <!ATTLIST tramo sector CDATA #REQUIRED>
+<!ATTLIST fotografia descripcion CDATA #IMPLIED>
+<!ATTLIST video descripcion CDATA #IMPLIED>
+<!ATTLIST referencia titulo CDATA #IMPLIED>
 
 <!-- Entre 1 y 5, en máquina local-->
 <!-- usar unos 28 puntos para los tramos, y clasificarlo según sectores-->

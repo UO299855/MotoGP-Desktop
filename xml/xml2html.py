@@ -90,8 +90,11 @@ class CircuitProcessor:
             video.set("controls", "controls") # el atributo es booleano, podemos poner cualquier valor a modo de "verdadero"
             video.set("preload", "auto")
             source : ET.Element = ET.SubElement(video, "source")
-            source.set("src", f"../{video_ref.text}")
-            source.set("type", "video/mp4")
+            source.set("src", f"{video_ref.text}")
+            extension : str = (video_ref.text or "").split(".")[-1]
+            source.set("type", f"video/{extension}")
+            video.set("alt", video_ref.get("descripcion"))
+            video.set("title", video_ref.get("descripcion"))
 
     def process_images(self, circuit_root : ET.Element, html : Html):
         section : ET.Element = ET.SubElement(html.main, "section")
@@ -99,7 +102,8 @@ class CircuitProcessor:
         for img_ref in circuit_root.findall(".//ns:fotografia", self.ns_dict):
             img : ET.Element = ET.SubElement(section, "img")
             img.set("src", img_ref.text)
-            #TODO poner alt
+            img.set("alt", img_ref.get("descripcion"))
+            img.set("title", img_ref.get("descripcion"))
 
 
     def main(self, input_file : str, output_file : str, html_title : str):
