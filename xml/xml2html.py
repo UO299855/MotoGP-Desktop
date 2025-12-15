@@ -74,13 +74,13 @@ class CircuitProcessor:
     def process_references(self, circuit_root : ET.Element, html : Html):
         section : ET.Element = ET.SubElement(html.main, "section")
         ET.SubElement(section, "h3").text="Referencias consultadas"
-        list : ET.Element = ET.SubElement(section, "ol")
-        i : int = 1
+        list : ET.Element = ET.SubElement(section, "ul")
         for referencia in circuit_root.findall(".//ns:referencia", self.ns_dict):
             link : ET.Element = ET.SubElement(ET.SubElement(list, "li"), "a")
-            link.text = f"Referencia {i}"
+            link.text = referencia.get("titulo")
             link.set("href", referencia.text)
-            i += 1
+            link.set("title", referencia.get("titulo"))
+            
 
     def process_videos(self, circuit_root : ET.Element, html : Html):
         section : ET.Element = ET.SubElement(html.main, "section")
@@ -93,7 +93,6 @@ class CircuitProcessor:
             source.set("src", f"{video_ref.text}")
             extension : str = (video_ref.text or "").split(".")[-1]
             source.set("type", f"video/{extension}")
-            video.set("alt", video_ref.get("descripcion"))
             video.set("title", video_ref.get("descripcion"))
 
     def process_images(self, circuit_root : ET.Element, html : Html):

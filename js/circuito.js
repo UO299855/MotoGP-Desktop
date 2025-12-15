@@ -161,6 +161,7 @@ class CargadorSVG {
             $(this.#input).after($(this.#svgHtmlElement))
         }
         const svgElement = parsedDocument.documentElement
+        svgElement.setAttribute("version", "1.1")
         $(this.#svgHtmlElement).replaceWith(svgElement)
         this.#svgHtmlElement = svgElement
     }

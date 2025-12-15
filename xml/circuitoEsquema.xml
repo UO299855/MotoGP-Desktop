@@ -12,9 +12,9 @@ xmlns="http://www.uniovi.es">
     <vueltas>27</vueltas>
     <patrocinador>Pertamina</patrocinador>
     <referencias>
-        <referencia>https://www.motogp.com/es/calendar/2025/event/indonesia/c4def1f2-c288-4eab-9461-7acda49e765a?tab=circuit-info</referencia>
-        <referencia>https://www.dazn.com/es-ES/news/motor/circuito-pertamina-mandalika-donde-esta-como-es-caracteristicas-como-llegar-fotos-escenario-gp-indonesia-mundial-motogp/1k0kpjd6k9hzd1em3dyu97u7db</referencia>
-        <referencia>https://www.gt-world-challenge-asia.com/event/74/pertamina-mandalika-international-circuit</referencia>
+        <referencia titulo="Página oficial de MotoGP">https://www.motogp.com/es/calendar/2025/event/indonesia/c4def1f2-c288-4eab-9461-7acda49e765a?tab=circuit-info</referencia>
+        <referencia titulo="DAZN motor">https://www.dazn.com/es-ES/news/motor/circuito-pertamina-mandalika-donde-esta-como-es-caracteristicas-como-llegar-fotos-escenario-gp-indonesia-mundial-motogp/1k0kpjd6k9hzd1em3dyu97u7db</referencia>
+        <referencia titulo="Diario de Mallorca">https://www.diariodemallorca.es/deportes/2025/10/03/analisis-circuito-mandalika-curiosidades-122225493.html</referencia>
     </referencias>
     <fotografias>
         <fotografia descripcion="Vista arérea del circuito de Pertamina Mandalika">multimedia/circuito/panorama.jpg</fotografia>
