@@ -48,22 +48,51 @@ class Circuito {
         }
         if(file && file.type == "text/html") {
             reader.readAsText(file)
-            this.#removeErorP()
         } else {
             this.#showErrorP(`Error al leer ${file.name}. Escoja un archivo válido.`)
         }
     }
 
+    #replaceHeader(element, newLevel) {
+        let newHeader = document.createElement(`h${newLevel}`)
+        // Anexamos los hijos en orden
+        while(element.firstChild) {
+            // Según la documentación de Mozilla, al hacer append de un nodo existente, se mueve de su posición antigua a la nueva
+            newHeader.appendChild(element.firstChild)
+        }
+        // No aseguramos de que los atributos son los mismos
+        for (let attribute of element.attributes) {
+            newHeader.setAttribute(attribute.name, attribute.value)
+        }
+        return newHeader
+    }
+
     #processDOM(htmlText) {
-        //TODO comprobar errores
+        let parsedDocument = new DOMParser().parseFromString(htmlText, "text/html")
+        const parseError = parsedDocument.querySelector("parsererror");
+        if(parseError) {
+            this.#showErrorP("El archivo seleccionado contiene HTML no válido. Por favor, seleccione otro archivo.")
+        } else {
+            this.#removeErorP()
+        }
+        const elements = parsedDocument.querySelectorAll("section > *")
+        if(elements.length <= 0) {
+            return this.#showErrorP("El HTML está vacío. Por favor, escoja otro archivo.")
+        }
         if(this.#article == null) {
             this.#article = document.createElement("article")
             $(this.#input).after($(this.#article))
         } else {
             this.#article.innerHTML = ""
         }
-        let parsedDocument = new DOMParser().parseFromString(htmlText, "text/html")
-        for (let element of parsedDocument.querySelectorAll("section > *")) {
+        for (let element of elements) {
+            // Bajamos los niveles de encabezado si fuese necesario
+            const headerMatch = element.tagName.toLowerCase().match(/^h([1-6])$/) // es de la forma hi con i=1,...,6
+            if(headerMatch) {
+                const headerLevel = parseInt(headerMatch[1]) // parseamos el patrón que encaja para tratarlo como entero
+                const newLevel = Math.min(headerLevel + 1, 6)
+                element = this.#replaceHeader(element, newLevel)
+            }
             this.#article.appendChild(element)
         }
     }  
@@ -72,7 +101,9 @@ class Circuito {
 
 class CargadorSVG {
     #input
-    #section
+    #svgHtmlElement
+    #errorP
+
 
     //  Comprobamos que soporte la API file
     constructor() {
@@ -90,6 +121,22 @@ class CargadorSVG {
         }
     }
 
+    #showErrorP(errorStr) {
+        if(this.#errorP == null) {
+            this.#errorP = $(`<p>${errorStr}</p>`)
+            $(this.#input).after(this.#errorP)
+        } else {
+            this.#errorP.text(errorStr)
+        }
+    }
+
+    #removeErorP() {
+        if(this.#errorP != null) {
+                this.#errorP.remove()
+                this.#errorP = null
+        }
+    }
+
     #leerArchivoSVG() {
         let file = this.#input.files[0]
         let reader = new FileReader()
@@ -101,14 +148,21 @@ class CargadorSVG {
 
 
     #insertarSVG(dataText) {
-        if(this.#section == null) {
-            this.#section = document.createElement("section")
-            $(this.#input).after($(this.#section))
+        const parsedDocument = new DOMParser().parseFromString(dataText, 'image/svg+xml')
+        const parseError = parsedDocument.querySelector("parsererror");
+        if(parseError) {
+            return this.#showErrorP("El archivo seleccionado no es un SVG válido. Por favor, seleccione otro archivo.")
         } else {
-            this.#section.innerHTML = ""
+            this.#removeErorP()
         }
-        const svgElement = new DOMParser().parseFromString(dataText, 'image/svg+xml').documentElement
-        this.#section.appendChild(svgElement)
+
+        if(this.#svgHtmlElement == null) {
+            this.#svgHtmlElement = document.createElement("svg")
+            $(this.#input).after($(this.#svgHtmlElement))
+        }
+        const svgElement = parsedDocument.documentElement
+        $(this.#svgHtmlElement).replaceWith(svgElement)
+        this.#svgHtmlElement = svgElement
     }
 }
 

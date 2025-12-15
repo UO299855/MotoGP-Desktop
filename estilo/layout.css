@@ -77,6 +77,12 @@ section > article {
     margin: 2vw;
 }
 
+/* Para el contenido incrustado, da márgenes a encabezados que no sean el primero*/
+/*Especificidad 002*/
+article h4:nth-child(n+2) {
+    margin-top: 2.5em;
+}
+
 /*Especificidad 001*/
 picture {
     display: flex;
