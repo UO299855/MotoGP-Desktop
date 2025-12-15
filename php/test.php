@@ -84,6 +84,11 @@
         }
      
         private function registerNewUser() {
+            if($this->isBlank($_POST["profesion"])) {
+                echo '<p>El campo "Profesión" es obligatorio.</p>';
+                return $this->showUserForm();
+            }
+
             $query = "INSERT INTO USUARIOS (`profesion`, `edad`, `genero`, `pericia_informatica`) VALUES (?,?,?,?)";
             $types = "sisi";
             $params = [$_POST["profesion"], $_POST["edad"], $_POST["genero"], $_POST["pericia"]];
@@ -91,6 +96,7 @@
             if($this->runPreparedStatement($query, $types, $params, $newID)) {
                 $_SESSION["currentUserID"] = $newID;
                 $_SESSION["currentDevice"] = $_POST["dispositivo"];
+                $_SESSION["currentProwess"] = $_POST["pericia"];                
                 $this->showAwaitingScreen();
             } else {
                 $this->showUserForm();
@@ -101,6 +107,7 @@
             $tokens = explode("-",$_POST["existingUserID"]);
             $_SESSION["currentUserID"] = $tokens[0];
             $_SESSION["currentDevice"] = $tokens[1];
+            $_SESSION["currentProwess"] = 10; // El usuario es informático
             $this->showAwaitingScreen();
         }
 
@@ -119,8 +126,14 @@
             include "forms/survey.html";
         }
 
-        private function checkPostKey($key) {
-            if(isset($_POST[$key]) && !ctype_space($_POST[$key])) return $_POST[$key];
+        private function isBlank($string) {
+            if (!isset($string) || $string == null) return true;
+            if (trim($string) === '') return true;
+            return false;
+        }
+
+        private function checkStringAnswer($key) {
+            if(!$this->isBlank($_POST[$key])) return $_POST[$key];
             $this->completed=false;
             return null;
         }
@@ -134,16 +147,16 @@
             $params = [
                 $_SESSION["currentUserID"],
                 $_SESSION["currentDevice"],
-                $this->checkPostKey("vueltas"),
-                $this->checkPostKey("nacimientoMir"),
-                $this->checkPostKey("equipoMir"),
-                $this->checkPostKey("hemisferio"),
-                $this->checkPostKey("ganadorIndonesia"),
-                $this->checkPostKey("añoGanadorMir"),
-                $this->checkPostKey("temperaturaCircuito"),
-                $this->checkPostKey("numeroCartas"),
-                $this->checkPostKey("liderClasificacion"),
-                $this->checkPostKey("victoriasMir")];
+                $this->checkStringAnswer("vueltas"),
+                $this->checkStringAnswer("nacimientoMir"),
+                $this->checkStringAnswer("equipoMir"),
+                $this->checkStringAnswer("hemisferio"),
+                $this->checkStringAnswer("ganadorIndonesia"),
+                $this->checkStringAnswer("añoGanadorMir"),
+                $this->checkStringAnswer("temperaturaCircuito"),
+                $this->checkStringAnswer("numeroCartas"),
+                $this->checkStringAnswer("liderClasificacion"),
+                $this->checkStringAnswer("victoriasMir")];
              
             if($this->runPreparedStatement($query, $types, $params)) {
                 $_SESSION["cronometroTest"]->parar();
@@ -172,7 +185,7 @@
         }
 
         private function askModObservations() {
-            include "forms/observations.html";
+            include "forms/observations.php";
         }
 
         private function logObservations() {
@@ -181,11 +194,22 @@
             $params = [$_SESSION["currentUserID"], $_SESSION["currentDevice"], $_POST["observaciones"]];
             
             if( $this->runPreparedStatement($query, $types, $params)) {
-                $this->showFinalScreen();
+                    if($_SESSION["currentProwess"] != $_POST["correctProwess"]) {
+                        $query = "UPDATE `usuarios` SET `pericia_informatica` = ? WHERE id = ?";
+                        $this->runPreparedStatement($query, "ss", [$_POST["correctProwess"], $_SESSION["currentUserID"]]);
+                    } 
+                    return $this->showFinalScreen();
             } else {
                 echo "<p>Error al registrar sus observaciones. Por favor, inténtelo de nuevo.</p>";
                 $this->askModObservations();
             }
+        }
+
+        public function showProwessSelector() {
+            echo '<p>El nivel de pericia del usuario es el siguiente: ' .$_SESSION["currentProwess"] .'</p>';
+            echo '<p>¿Desea corregirlo en vista de los reultados?</p>';
+            echo '<label for="correctProwess"> Seleccionar pericia </label>';
+            echo '<input type="number" id="correctProwess" name="correctProwess" min="0" max="10" value="' .$_SESSION["currentProwess"] .'"/>';
         }
 
         private function showFinalScreen() {
@@ -193,6 +217,7 @@
             unset($_SESSION["currentDevice"]);
             unset($_SESSION["cronometroTest"]);
             unset($_SESSION["test"]);
+            unset($_SESSION["currentProwess"]);            
             unset($_POST);
             include "forms/completed.html";
         }

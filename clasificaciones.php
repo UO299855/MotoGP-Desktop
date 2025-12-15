@@ -97,7 +97,7 @@
     </script>
     </header>
     <!--Migas de navegación-->
-    <p>Estás en <a href="index.html" title="Volver a la página de inicio">Inicio</a> >> <strong><a href="clasificaciones.php" title="Información sobre las clasificaciones">Clasificaciones</a></strong></p>
+    <p>Estás en <a href="index.html" title="Volver a la página de inicio">Inicio</a> >> <strong>Clasificaciones</strong></p>
     <main>
         <h2>Clasificaciones de los pilotos tras la carrera de Indonesia</h2>
         

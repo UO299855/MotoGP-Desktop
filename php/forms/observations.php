@@ -6,6 +6,9 @@
     <form action="#" method="post" name="observationsForm">
         <label for="observaciones">Observaciones sobre el test:</label>
         <textarea name="observaciones" id="observaciones"></textarea>
+        <?php
+            $_SESSION["test"]->showProwessSelector();
+        ?>
         <input type="submit" name="sendObservations" value="Enviar observaciones"/>
     </form>
 </section>
