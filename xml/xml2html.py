@@ -54,7 +54,7 @@ class CircuitProcessor:
         self.ns_dict : dict[str,str] = ns_dict
          # Aprovecha la funcionalidad de la librería LXML si está instalada
         try:
-            import asdasd.etree as LET
+            import lxml.etree as LET
             self.lxml_available = True
             self.LET = LET
         except ImportError:
@@ -89,6 +89,7 @@ class CircuitProcessor:
             if node.get("unidades"):
                 li_content += f" {node.get('unidades')}"
             ET.SubElement(u_list, "li").text = li_content
+
 
     def __process_info_lxml(self, circuit_root: ET.Element, u_list: ET.Element):
         """
