@@ -37,16 +37,28 @@ class Html:
         """
         Escribe el archivo destino siguiendo el formato HTML
         Utiliza indentación para hacerlo más legible
+        Incluye la declaración DOCTYPE
         """
         arbol = ET.ElementTree(self.root)
         ET.indent(arbol)
-        arbol.write(output_file, method="html", encoding="utf-8")
+        # Escribimos el DOCTYPE y le pasamos el manejador de archivo al 'write' de la librería
+        # La librería espera un archivo binario, de ahí que usemos "wb" y "b" como opciones (sin ellas no funciona)
+        with open(output_file, "wb") as file:
+            file.write(b"<!DOCTYPE html>\n")
+            arbol.write(file, method="html", encoding="utf-8")
 
 
 class CircuitProcessor:
 
     def __init__(self, ns_dict : dict[str,str]) :
         self.ns_dict : dict[str,str] = ns_dict
+         # Aprovecha la funcionalidad de la librería LXML si está instalada
+        try:
+            import asdasd.etree as LET
+            self.lxml_available = True
+            self.LET = LET
+        except ImportError:
+            self.lxml_available = False
 
     def __format_node_tag(self, tag : str):
         """
@@ -57,19 +69,51 @@ class CircuitProcessor:
         return tag_name.replace("-", " ").strip().capitalize()
 
 
-    def process_main_info(self, circuit_root : ET.Element, html : Html):
-        section : ET.Element = ET.SubElement(html.main, "section")
-        ET.SubElement(section, "h3").text="Características generales"
-        u_list : ET.Element = ET.SubElement(section, "ul")
+    def __et_to_lxml(self, node):
+        """
+        Convierte un nodo de ElementTree a otro equivalente de lxml
+        Solo se llama a este método si lxml está disponible
+        """
+        return self.LET.fromstring(ET.tostring(node, "unicode"))
+
+
+    def __process_info_element_tree(self, circuit_root: ET.Element, u_list: ET.Element) -> None:
+        """
+        Procesa los campos con texto directo filtrando por python
+        Hemos de hacerlo así cuando lxml no está presente, pues ElementTree no soporta XPath al completo
+        """
         for node in circuit_root.findall("./*"):
-            #Saltamos los nodos sin texto
-            #ET no soporta todas las expresiones xPath, luego hemos de hacerlo así
             if not node.text or node.text.strip() == "":
                 continue
             li_content : str = f"{self.__format_node_tag(node.tag)}: {node.text}"
             if node.get("unidades"):
                 li_content += f" {node.get('unidades')}"
             ET.SubElement(u_list, "li").text = li_content
+
+    def __process_info_lxml(self, circuit_root: ET.Element, u_list: ET.Element):
+        """
+        Procesa los nodos con texto cuando lxml sí está presente
+        Usa XPath para filtrar elementos con texto directamente
+        """
+        lxml_root = self.__et_to_lxml(circuit_root)
+        
+        # Normalize elimina los espacios en blanco. Así nos aseguramos de que sean vacíos
+        for node in lxml_root.xpath("./*[normalize-space(text()) != '']", ):
+            li_content : str = f"{self.__format_node_tag(node.tag)}: {node.text}"
+            unidades = node.get("unidades")
+            if unidades:
+                li_content += f" {unidades}"
+            ET.SubElement(u_list, "li").text = li_content
+
+    def process_main_info(self, circuit_root: ET.Element, html : Html):
+        section : ET.Element = ET.SubElement(html.main, "section")
+        ET.SubElement(section, "h3").text="Características generales"
+        u_list : ET.Element = ET.SubElement(section, "ul")
+        
+        if self.lxml_available:
+            self.__process_info_lxml(circuit_root, u_list)
+        else:
+            self.__process_info_element_tree(circuit_root, u_list)
     
     def process_references(self, circuit_root : ET.Element, html : Html):
         section : ET.Element = ET.SubElement(html.main, "section")
