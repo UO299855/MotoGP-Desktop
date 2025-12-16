@@ -90,8 +90,6 @@ class CircuitProcessor:
         new_svg.adjustArea(str(math.ceil(last_x + first_x)), str(math.ceil(y_scale * h_max))) 
         return new_svg
 
-
-#TODO revisar rutas de archivo
 def main() -> None:
     CircuitProcessor().parse_circuit("circuitoEsquema.xml", 1, 50).escribir("altimetria.svg")
 

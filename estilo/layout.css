@@ -1,9 +1,5 @@
 /* Javier Ortín Rodenas  UO299855*/
-/* Comentario con las reglas generales TODO:cambiar luego */
 /* Todos los selectores han de tener un comentario con su especificidad*/
-
-
-/* TODO poner código para el SVG y el div del mapa */
 
 /*Especificidad 001*/
 body {
@@ -154,7 +150,6 @@ h2 ~ form {
 
 /*Especificidad 002*/
 form > textarea {
-    height:auto;
     width: 100%;
 }
 
@@ -178,14 +173,14 @@ section article img, section article video {
 
     /*Especificidad 001*/
     header {
-        flex-direction: row;
+        flex-direction: row; /* Hay que redefinir esta propiedad para garantizar la adaptabilidad */
         flex-wrap: wrap;
         justify-content: center;
     }
 
     /*Especificidad 002*/
     header > nav {
-        flex-direction: column;
+        flex-direction: column; /* Hay que redefinir esta propiedad para garantizar la adaptabilidad */
         align-items: center;
         padding-bottom: 2ex;
         width: 100vw;
@@ -203,7 +198,7 @@ section article img, section article video {
     
     /*Especificidad 002*/
     header  button {
-        display: block;
+        display: block; /* Hay que redefinir esta propiedad para garantizar la adaptabilidad */
     }
 
     /*Especificidad 001*/

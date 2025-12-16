@@ -84,7 +84,6 @@ class CircuitProcessor:
                             ancho = line_width)
         return new_kml
         
-#TODO revisar rutas absolutas
 def main():
     """
     Aplica el procedimiento al archivo del trabajo

@@ -1,5 +1,4 @@
 /* Javier Ortín Rodenas  UO299855*/
-/* Comentario con las reglas generales TODO:cambiar luego */
 /* Todos los selectores han de tener un comentario con su especificidad*/
 
 
@@ -7,16 +6,12 @@
 body { 
     font-family: "Tahoma", sans-serif;
     background-color: #f4f4f4;
+    color: #000000;
 }
 
 /*Especificidad 001 */
 header {
     background-color: #000000;
-}
-
-/*Especificidad 002*/
-header > section {
-    background-color: inherit;
 }
 
 /*Especificidad 002 */
@@ -56,7 +51,7 @@ header > nav > a.active:hover {
     color:#c0692e;
 }
 
-/*Especificidad 002*/ 
+/*Especificidad 001*/ 
 a {
     color: #0f426f;
 }
@@ -66,7 +61,7 @@ a:hover {
     color: #144c7c
 }
 
-/*Especificidad 002*/
+/*Especificidad 012*/
 /*Regla para las migas*/
 body > p:first-of-type {
     font-size: 0.8em;
@@ -82,7 +77,7 @@ dt {
     font-weight : bold;
 }
 
-/*Especificidad 002*/
+/*Especificidad 001*/
 aside {
     background-color: #f9f9f9;
 }
@@ -92,7 +87,7 @@ table {
     border: black;
 }
 
-/*Especificidad 001*/
+/*Especificidad 002*/
 table caption {
     font-weight: bold;
     font-size: 1.2em;

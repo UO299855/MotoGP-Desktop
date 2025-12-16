@@ -56,6 +56,7 @@
     <main>
         <h2>Cronómetro</h2>
         <section>
+            <h3>Pulse los botones para manejar el cronómetro</h3>
             <p>
                 <?php
                     echo $mensaje;

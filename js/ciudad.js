@@ -62,7 +62,6 @@ class Ciudad {
      * @returns [degrees, minutes, seconds]
      */
     #parseCoords(coords) {
-        //TODO leer cómo tenemos que hacerlo en el guion (por si hay una función ya hecha para esto)
         const degs = Math.trunc(coords)
         const mins = 60*(Math.abs(coords - degs)) //Usamos Math.abs para que mins y secs sean positivos
         const secs = 60 * (mins - Math.trunc(mins))

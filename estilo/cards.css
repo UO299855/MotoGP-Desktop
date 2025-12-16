@@ -29,7 +29,7 @@ article img {
     height: 100%;
     position: absolute;
     border-radius: 0.5em;
-    background: #1C7CCC;
+    background: #1C7CCC; /* He revisado la advertencia de la CSS y he garantizado que se cumpla el contraste. Se hereda el color de primer plano de body */
     backface-visibility: hidden;
 }
 
