@@ -45,6 +45,7 @@
             if($success && $insertID !== null) {
                 $insertID = $db->insert_id;
             }
+            $preparedQuery->close();
             $db->close();
             return $success;
         }

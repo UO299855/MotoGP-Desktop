@@ -12,12 +12,13 @@
             $this->database = "UO299855_DB";
         }
 
-        public function runSqlScript($path) {
+        public function runSqlScript($path, $verbose = true) {
             $db = new mysqli($this->host, $this->user, $this->password, $this->database);
             if ($db->connect_errno) {
-                echo "<p>Error al conectarse a la base de datos</p>";
-                return;
+                if ($verbose) echo "<p>Error al conectarse a la base de datos</p>";
+                return false;
             }
+            $success = false;
             $sql = file_get_contents($path);
             if ($db->multi_query($sql)) {
                 do {
@@ -26,16 +27,26 @@
                     }
                 } while ($db->next_result());
                 
-                echo "<p>Acción ejecutada correctamente</p>";
+                if ($verbose) echo "<p>Acción ejecutada correctamente</p>";
+                $success = true;
             } else {
-                echo "Error ejecutando script: " . $db->error;
+                if ($verbose) echo "Error ejecutando script: " . $db->error;
             }
             $db->close();
+            return $success;
         }
 
         private function exportTable($tableName) {
             $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+            if($db->connect_errno) {
+                echo "<p>Error al conectarse a la base de datos</p>";
+                return;
+            }
             $csvFile = fopen("export/$tableName.csv", "w");
+            if($csvFile == false) {
+                echo "<p>Error al escribir en el archivo al exportar la tabla " .$tableName ." </p>";
+            }
+
             $results = $db->query("SELECT * FROM $tableName");
             $fieldsInfo = $results->fetch_fields();
             $headers = [];
@@ -53,6 +64,10 @@
 
         public function exportDB() {
             $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+            if($db->connect_errno) {
+                echo "<p>Error al conectarse a la base de datos</p>";
+                return;
+            }
             $tables = $db->query("SHOW TABLES");
             if($tables->num_rows > 0) {
                 while($table = $tables->fetch_array()) {
@@ -63,6 +78,68 @@
                 echo "<p>La base de datos no dispone de tablas para exportar.</p>";
             }
             $db->close();
+        }
+
+        public function importDB() {
+            $directory = "import/";
+            if(!is_dir($directory)) {
+                echo "<p>No se pudo encontrar la carpeta para importar archivos.</p>";
+                return;
+            }
+            $tablesToImport = ["usuarios", "respuestas_test", "resultados_test", "observaciones_test"];
+            $anyPresent = false;
+            foreach ($tablesToImport as $tableName) {
+                $fileName = $directory . $tableName .".csv";
+                if(file_exists($fileName)) {
+                    if(!$anyPresent) {
+                        if(!$this->runSqlScript("scripts-sql/vaciarTablas.sql", false)) {
+                            echo "<p>Error reiniciando la base de datos, no se procederá a importar</p>";
+                            return;
+                        }    
+                        $anyPresent = true;
+                    }
+                    $this->importTable($tableName, $directory);
+                }
+            }
+            if(!$anyPresent) {
+                echo "<p>No hay datos para importar.</p>";
+            }
+        }
+
+
+        private function importTable($tableName, $directory) {
+            $fileName = $directory . $tableName .".csv";
+            $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+            if($db->connect_errno) {
+                echo "<p>Error al conectarse a la base de datos</p>";
+                return;
+            }
+            $csvFile = fopen($fileName, "r");
+            if($csvFile == false) {
+                echo "<p>Error al leer del archivo " .$fileName ." </p>";
+            }
+            preg_match('/import\/(.*).csv/', $fileName,$tableName);
+            $tableName = $tableName[1];
+            $fields = fgetcsv( $csvFile,0,";");
+            $columns = implode(",",$fields);
+            $fieldN = count($fields);
+            $types = str_repeat("s", $fieldN);
+            $placeholders = "(" . str_repeat("?,", $fieldN -1) ."?)";
+            $query = "INSERT INTO `" . $this->database ."`.`" .$tableName ."` ($columns) VALUES $placeholders;";
+            $prepared = $db->prepare($query);
+            // Iteramos por cada fila del CSV
+            while(($entry = fgetcsv( $csvFile,0,";")) != false) {
+                if(count($entry) != $fieldN) {
+                    continue;
+                }
+                $prepared->bind_param($types, ...$entry);
+                $prepared->execute();
+            }
+            $prepared->close();
+
+            fclose($csvFile);
+            $db->close();
+            echo "<p>Se ha importado correctamente desde $fileName.</p>";
         }
     }
 ?>
@@ -92,6 +169,7 @@
                 <input type = 'submit' class='button' name = 'vaciar' value = 'Vaciar base de datos' title="Borra los datos pero mantiene las tablas"/>
                 <input type = 'submit' class='button' name = 'reiniciar' value = 'Reiniciar base de datos' title="Borra y crea de nuevo las tablas"/>
                 <input type = 'submit' class='button' name = 'exportar' value = 'Exportar base de datos' title="Exporta los datos de cada tabla a un archivo CSV"/>
+                <input type = 'submit' class='button' name = 'importar' value = 'Importar base de datos' title="Reinicia las tablas y luego importa desde un CSV"/>
             </form>
             <?php
                 if(count($_POST) > 0) {
@@ -99,6 +177,7 @@
                     if(isset($_POST["vaciar"])) $config->runSqlScript("scripts-sql/vaciarTablas.sql");
                     if(isset($_POST["reiniciar"])) $config->runSqlScript("scripts-sql/reiniciarTablas.sql");
                     if(isset($_POST["exportar"])) $config->exportDB();
+                    if(isset($_POST["importar"])) $config->importDB();                    
                 }
             ?>
         </section>
