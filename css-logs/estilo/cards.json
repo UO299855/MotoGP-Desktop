@@ -1,0 +1,30 @@
+{
+  "cssvalidation": {
+    "uri": "cards.css",
+    "checkedby": "http://www.w3.org/2005/07/css-validator",
+    "csslevel": "css3",
+    "date": "2025-12-19T05:30:23Z",
+    "timestamp": "1766165423444",
+    "validity": true,
+    "result": {
+      "errorcount": 0,
+      "warningcount": 2
+    },
+    "warnings": [
+      {
+        "source": "file://localhost/cards.css",
+        "line": 32,
+        "message": "You have no color set (or color is set to transparent) but you have set a background-color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/cards.css",
+        "line": 32,
+        "message": "You have no color set (or color is set to transparent) but you have set a background-color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-color",
+        "level": 2
+      }
+    ]
+  }
+}

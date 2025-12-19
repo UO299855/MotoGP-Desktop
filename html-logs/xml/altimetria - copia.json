@@ -1,0 +1,59 @@
+{
+  "version": "25.12.19",
+  "messages": [
+    {
+      "type": "error",
+      "lastLine": 1,
+      "lastColumn": 2,
+      "message": "Saw “<?”. Probable cause: Attempt to use an XML processing instruction in HTML. (XML processing instructions are not supported in HTML.)",
+      "extract": "<?xml version='1",
+      "hiliteStart": 1,
+      "hiliteLength": 1
+    },
+    {
+      "type": "error",
+      "lastLine": 2,
+      "firstLine": 1,
+      "lastColumn": 113,
+      "firstColumn": 39,
+      "message": "Start tag seen without seeing a doctype first. Expected “<!DOCTYPE html>”.",
+      "extract": "='utf-8'?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"2.0\" viewBox=\"0 0 4430 688\" preserveAspectRatio=\"xMidYMid meet\">\n  <te",
+      "hiliteStart": 10,
+      "hiliteLength": 114
+    },
+    {
+      "type": "error",
+      "lastLine": 2,
+      "firstLine": 1,
+      "lastColumn": 113,
+      "firstColumn": 39,
+      "message": "Element “head” is missing a required instance of child element “title”.",
+      "extract": "='utf-8'?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"2.0\" viewBox=\"0 0 4430 688\" preserveAspectRatio=\"xMidYMid meet\">\n  <te",
+      "hiliteStart": 10,
+      "hiliteLength": 114
+    },
+    {
+      "type": "error",
+      "lastLine": 2,
+      "firstLine": 1,
+      "lastColumn": 113,
+      "firstColumn": 39,
+      "message": "Bad value “2.0” for attribute “version” on element “svg”.",
+      "extract": "='utf-8'?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"2.0\" viewBox=\"0 0 4430 688\" preserveAspectRatio=\"xMidYMid meet\">\n  <te",
+      "hiliteStart": 10,
+      "hiliteLength": 114
+    },
+    {
+      "type": "info",
+      "lastLine": 2,
+      "firstLine": 1,
+      "lastColumn": 113,
+      "firstColumn": 39,
+      "subType": "warning",
+      "message": "Consider adding a “lang” attribute to the “html” start tag to declare the language of this document.",
+      "extract": "='utf-8'?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"2.0\" viewBox=\"0 0 4430 688\" preserveAspectRatio=\"xMidYMid meet\">\n  <te",
+      "hiliteStart": 10,
+      "hiliteLength": 114
+    }
+  ]
+}

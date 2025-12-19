@@ -1,0 +1,100 @@
+{
+  "cssvalidation": {
+    "uri": "estilo.css",
+    "checkedby": "http://www.w3.org/2005/07/css-validator",
+    "csslevel": "css3",
+    "date": "2025-12-19T05:30:24Z",
+    "timestamp": "1766165424530",
+    "validity": true,
+    "result": {
+      "errorcount": 0,
+      "warningcount": 12
+    },
+    "warnings": [
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 14,
+        "message": "You have no color set (or color is set to transparent) but you have set a background-color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 19,
+        "message": "You have no background-color set (or background-color is set to transparent) but you have set a color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-background-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 33,
+        "message": "You have no background-color set (or background-color is set to transparent) but you have set a color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-background-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 38,
+        "message": "You have no background-color set (or background-color is set to transparent) but you have set a color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-background-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 44,
+        "message": "You have no background-color set (or background-color is set to transparent) but you have set a color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-background-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 51,
+        "message": "You have no background-color set (or background-color is set to transparent) but you have set a color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-background-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 56,
+        "message": "You have no background-color set (or background-color is set to transparent) but you have set a color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-background-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 61,
+        "message": "You have no background-color set (or background-color is set to transparent) but you have set a color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-background-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 72,
+        "message": "You have no color set (or color is set to transparent) but you have set a background-color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 82,
+        "message": "You have no color set (or color is set to transparent) but you have set a background-color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 98,
+        "message": "You have no color set (or color is set to transparent) but you have set a background-color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-color",
+        "level": 2
+      },
+      {
+        "source": "file://localhost/estilo.css",
+        "line": 105,
+        "message": "You have no color set (or color is set to transparent) but you have set a background-color. Make sure that cascading of colors keeps the text reasonably legible.",
+        "type": "no-color",
+        "level": 2
+      }
+    ]
+  }
+}

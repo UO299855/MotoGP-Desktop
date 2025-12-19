@@ -1,0 +1,85 @@
+{
+  "version": "25.12.19",
+  "messages": [
+    {
+      "type": "info",
+      "lastLine": 6,
+      "lastColumn": 28,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "o -->\n    <meta charset=\"UTF-8\" />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 24
+    },
+    {
+      "type": "info",
+      "lastLine": 9,
+      "lastColumn": 56,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "tle>\n\n    <meta name=\"author\" content=\"Javier Ortín Rodenas\"/>\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 52
+    },
+    {
+      "type": "info",
+      "lastLine": 10,
+      "lastColumn": 79,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "as\"/>\n    <meta name=\"description\" content=\"Portal de juegos asociados al proyecto\"/> <!--C",
+      "hiliteStart": 10,
+      "hiliteLength": 75
+    },
+    {
+      "type": "info",
+      "lastLine": 11,
+      "lastColumn": 73,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "io-->\n    <meta name=\"keywords\" content=\"juegos,ocio,moto,premio,competición\"/> <!--C",
+      "hiliteStart": 10,
+      "hiliteLength": 69
+    },
+    {
+      "type": "info",
+      "lastLine": 12,
+      "lastColumn": 75,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "io-->\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\n\n    ",
+      "hiliteStart": 10,
+      "hiliteLength": 71
+    },
+    {
+      "type": "info",
+      "lastLine": 14,
+      "lastColumn": 70,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "0\"/>\n\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"estilo/estilo.css\" />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 66
+    },
+    {
+      "type": "info",
+      "lastLine": 15,
+      "lastColumn": 70,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "s\" />\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"estilo/layout.css\" />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 66
+    },
+    {
+      "type": "info",
+      "lastLine": 16,
+      "lastColumn": 69,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "s\" />\n    <link rel=\"icon\" href=\"multimedia/favicon.ico\" type=\"image/ico\"/>\n\n    ",
+      "hiliteStart": 10,
+      "hiliteLength": 65
+    }
+  ]
+}

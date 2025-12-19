@@ -1,0 +1,36 @@
+{
+  "version": "25.12.19",
+  "messages": [
+    {
+      "type": "error",
+      "lastLine": 1,
+      "lastColumn": 9,
+      "firstColumn": 1,
+      "message": "Start tag seen without seeing a doctype first. Expected “<!DOCTYPE html>”.",
+      "extract": "<section>\n    <",
+      "hiliteStart": 0,
+      "hiliteLength": 9
+    },
+    {
+      "type": "error",
+      "lastLine": 1,
+      "lastColumn": 9,
+      "firstColumn": 1,
+      "message": "Element “head” is missing a required instance of child element “title”.",
+      "extract": "<section>\n    <",
+      "hiliteStart": 0,
+      "hiliteLength": 9
+    },
+    {
+      "type": "info",
+      "lastLine": 1,
+      "lastColumn": 9,
+      "firstColumn": 1,
+      "subType": "warning",
+      "message": "Consider adding a “lang” attribute to the “html” start tag to declare the language of this document.",
+      "extract": "<section>\n    <",
+      "hiliteStart": 0,
+      "hiliteLength": 9
+    }
+  ]
+}
