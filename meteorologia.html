@@ -49,9 +49,13 @@
             let ciudad = new Ciudad("Baturiti", "Indonesia", "baturitiense")
             ciudad.setSecondaryInfo(52345, -8.33333333, 115.166666666)
         </script>
-        <script>
-            $(document.querySelector("h2")).after($(`<h3>${ciudad.getNombre()} (${ciudad.getPais()})</h3>`))
-        </script>
+        <!--Importante: Pongo un encabezado h3 genérico y luego cambio su texto. Antes lo generaba dinámicamente al completo,
+            pero AChecker parece no ejecutar el JS antes de validar. Por tanto, veía el salto de h2 a h4 y lo marcaba como error
+            (aunque en la versión dinámica del HTML no había ningún error).-->
+        <h3>Nombre y país de la ciudad</h3>
+            <script>
+                document.querySelector("h3").textContent = `${ciudad.getNombre()} (${ciudad.getPais()})`
+            </script>
         <section>
             <h4>Información demográfica</h4>
             <script>
@@ -64,6 +68,7 @@
                 ciudad.writeCoords()
                 ciudad.getMeteorologiaCarrera()
                 // Una vez procesada la de la carrera, el objeto ciudad buscará la de los entrenamientos
+                // De este modo, nos aseguramos que siempre se anexen en el mismo orden
             </script>
         </section>
     </main>
