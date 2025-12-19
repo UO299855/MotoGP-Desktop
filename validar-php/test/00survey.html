@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <title>Test de usabilidad</title>
+
+    <meta name="author" content="Javier Ortín Rodenas">
+    <meta name="description" content="Pruebas de usabilidad del proyecto">
+    <meta name="keywords" content="test,control,pruebas,usabilidad">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../estilo/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../estilo/layout.css">
+</head>
+<body>
+    <h1>Pruebas de usabilidad</h1>
+    <main>
+        <section>
+    <h2>Cuestionario de usabilidad</h2>
+    <form action="#" method="post" name="surveyForm">
+        <h3>Pregunta 1</h3>
+        <label for="vueltas">
+            ¿Cuántas vueltas se dan al circuito Pertamina Mandalika?
+        </label>
+        <input type="number" id="vueltas" name="vueltas" min="1" max="200" step="1">
+        <h3>Pregunta 2</h3>
+        <label for="nacimientoMir">
+            ¿En qué año nació el piloto Joan Mir?
+        </label>
+        <input type="number" name="nacimientoMir" id="nacimientoMir" min="1950" max="2025" step="1">
+        <h3>Pregunta 3</h3>
+        <label for="equipoMir">
+            ¿En qué equipo de MotoGP está Joan Mir actualmente?
+        </label>
+        <input type="text" name="equipoMir" id="equipoMir">
+        <h3>Pregunta 4</h3>
+        <label for="hemisferio">
+            ¿En qué hemisferio se encuentra la ciudad de Baturiti?
+        </label>
+        <select name="hemisferio" id="hemisferio">
+            <option value="norte">Norte</option>
+            <option value="sur">Sur</option>
+        </select>           
+        <h3>Pregunta 5</h3>
+        <label for="ganadorIndonesia">
+            ¿Qué piloto ganó la carrera de Indonesia?
+        </label>
+        <input type="text" id="ganadorIndonesia" name="ganadorIndonesia">
+        <h3>Pregunta 6</h3>
+        <label for="añoGanadorMir">
+            ¿En qué año fue Joan Mir ganador de MotoGP?
+        </label>
+        <input type="number" id="añoGanadorMir" name="añoGanadorMir" min="2000" max="2026" step="1">
+        <h3>Pregunta 7</h3>
+        <label for="temperaturaCircuito">
+            A la hora de la carrera de Indonesia, ¿cuál fue la temperatura ambiente en grados centígrados en el circuito?
+        </label>
+            <input type="number" id="temperaturaCircuito" name="temperaturaCircuito" min="0" max="50" step="0.1">
+        <h3>Pregunta 8</h3>
+        <label for="numeroCartas">
+            ¿Cuántas cartas hay en total en el juego de hacer parejas?
+        </label>
+            <input type="number" id="numeroCartas" name="numeroCartas" min="0" max="50" step="1">
+        <h3>Pregunta 9</h3>
+        <label for="liderClasificacion">
+            Al terminar la carrera de Indonesia, ¿qué piloto lideraba la clasificación global?
+        </label>
+        <input type="text" name="liderClasificacion" id="liderClasificacion">
+        <h3>Pregunta 10</h3>
+        <label for="victoriasMir">
+            ¿Cuántas victorias logró Joan Mir en la temporada 2024?
+        </label>        
+        <input type="number" id="victoriasMir" name="victoriasMir" min="0" max="100" step="1">
+        <input type="submit" name="endSurvey" value="Terminar prueba">
+    </form>
+</section>    </main>
+
+</body></html>
