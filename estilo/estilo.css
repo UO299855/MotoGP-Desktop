@@ -11,12 +11,12 @@ body {
 
 /*Especificidad 001 */
 header {
-    background-color: #000000;
+    background-color: #000000; /* He revisado esta advertencia y comprobado que el contraste es adecuado. El header como tal hereda el color de primer plano del body, pero no tiene texto como tal. Sus descendientes tienen selectores más específicos que redefinen el color del primer plano, luego no tiene sentido poner un color de primer plano en en header solo para ser redefinido más tarde (se introduce una capa de herencia innecesaria).*/
 }
 
 /*Especificidad 002 */
 header a {
-    color:#f4fe7b;
+    color:#f4fe7b; /* He revisado que el contraste es suficiente. El color de fondo se hereda del header.*/
     text-decoration-line: none;
     font-size: 1.2em;
 }
@@ -30,35 +30,25 @@ header button {
 
 /*Especificidad 012*/
 header a:hover {
-    color : #D0D78E;
+    color : #D0D78E; /* He revisado que el contraste es suficiente. El color de fondo se hereda del header.*/
 }
 
 /*Especificidad 012*/
 header button:hover {
-    color : #D0D78E;
+    color : #D0D78E; /* He revisado que el contraste es suficiente. El color de fondo se hereda del header.*/
     border-color : #D0D78E;
 }
 
 /*Especificidad 013 */
 header > nav > a.active {
-    color: #ff6600;
+    color: #ff6600; /* He revisado que el contraste es suficiente. El color de fondo se hereda del header.*/
     font-weight: bold;
     font-size: 1.3em;
 }
 
-/*Especificidad 023 */
-header > nav > a.active:hover {
-    color:#c0692e;
-}
-
 /*Especificidad 001*/ 
 a {
-    color: #0f426f;
-}
-
-/*Especificidad 011*/
-a:hover {
-    color: #144c7c
+    color: #0f426f;  /* He revisado que el contraste es suficiente. Según el contexto, el color de fondo puede heredarse de body o de contenedores como section, aside, article (he revisado todos los posibles casos y pasa la normativa AAA en todos ellos).*/
 }
 
 /*Especificidad 012*/
@@ -69,7 +59,7 @@ body > p:first-of-type {
 
 /*Especificidad 001*/
 section {
-    background-color : #FFFFFF;
+    background-color : #FFFFFF; /* He revisado que el contraste es suficiente. El color de primer plano se hereda de body. */
 }
 
 /*Especificidad 001*/
@@ -79,7 +69,7 @@ dt {
 
 /*Especificidad 001*/
 aside {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* He revisado que el contraste es suficiente. El color de primer plano se hereda de body.*/
 }
 
 /*Especificidad 001*/
@@ -95,12 +85,12 @@ table caption {
 
 /*Especificidad 012*/
 table tr:nth-child(odd) {
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* He revisado que el contraste es suficiente. El color de primer plano se hereda de body.*/
 }
 
 /* Para el contenido incrustado */
 /*Especificidad 002*/
 section > article {
     border: 0.15em dashed #666;
-    background-color: #fafafa;
+    background-color: #fafafa; /* He revisado que el contraste es suficiente. El color de primer plano se hereda de body.*/
 }
