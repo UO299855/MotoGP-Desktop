@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE circuito SYSTEM "circuito.dtd">
-<!-- PONER METROS CON TODAS LAS LETRAS-->
  <circuito>
     <nombre>Pertamina Mandalika Circuit</nombre>
     <longitud-circuito unidades="metros">4301</longitud-circuito>
@@ -12,18 +11,18 @@
     <vueltas>27</vueltas>
     <patrocinador>Pertamina</patrocinador>
     <referencias>
-        <referencia>https://www.motogp.com/es/calendar/2025/event/indonesia/c4def1f2-c288-4eab-9461-7acda49e765a?tab=circuit-info</referencia>
-        <referencia>https://es.wikipedia.org/wiki/Circuito_Urbano_Internacional_de_Mandalika</referencia>
-        <referencia>Referencia 3</referencia>
+        <referencia titulo="Página oficial de MotoGP">https://www.motogp.com/es/calendar/2025/event/indonesia/c4def1f2-c288-4eab-9461-7acda49e765a?tab=circuit-info</referencia>
+        <referencia titulo="DAZN motor">https://www.dazn.com/es-ES/news/motor/circuito-pertamina-mandalika-donde-esta-como-es-caracteristicas-como-llegar-fotos-escenario-gp-indonesia-mundial-motogp/1k0kpjd6k9hzd1em3dyu97u7db</referencia>
+        <referencia titulo="Diario de Mallorca">https://www.diariodemallorca.es/deportes/2025/10/03/analisis-circuito-mandalika-curiosidades-122225493.html</referencia>
     </referencias>
     <fotografias>
-        <fotografia>multimedia/circuito/panorama.jpg</fotografia>
-        <fotografia>multimedia/circuito/caballito.jpg</fotografia>
-        <fotografia>multimedia/circuito/mir.jpg</fotografia>
+        <fotografia descripcion="Vista arérea del circuito de Pertamina Mandalika">multimedia/circuito/panorama.jpg</fotografia>
+        <fotografia descripcion="Diego Moreira haciendo un caballito en el circuito">multimedia/circuito/caballito.jpg</fotografia>
+        <fotografia descripcion="Joan Mir en el circuito Pertamina Mandalika durante la temporada 2025">multimedia/circuito/mir.jpg</fotografia>
     </fotografias>
     <videos>
-        <video>multimedia/circuito/video2.mp4</video>
-        <video>multimedia/circuito/video2.mp4</video>        
+        <video descripcion="Fermín Aldeguer celebra su victoria en el Gran Premio de Indonesia 2025">multimedia/circuito/vencedor.mp4</video>
+        <video descripcion="Vista en primera persona de una vuelta al circuito">multimedia/circuito/pov.mp4</video>        
     </videos>
     <origen>
         <coordenadas>

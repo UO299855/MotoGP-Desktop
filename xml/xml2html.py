@@ -98,7 +98,9 @@ class CircuitProcessor:
         """
         lxml_root = self.__et_to_lxml(circuit_root)
         
-        # Normalize elimina los espacios en blanco. Así nos aseguramos de que sean vacíos
+        # Usamos normalize-space para dar un tratamiento de espacios en blanco adecuado ("  " para a ser " ")
+        # Además, si un nodo contiene solo este tipo de caracteres en su texto, se considerará vacío por nuestro programa
+        # pues esta expresión XPATH no lo seleccionaría
         for node in lxml_root.xpath("./*[normalize-space(text()) != '']", ):
             li_content : str = f"{self.__format_node_tag(node.tag)}: {node.text}"
             unidades = node.get("unidades")

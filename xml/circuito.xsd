@@ -32,10 +32,11 @@
 			</xs:simpleContent>
 		</xs:complexType>
 	</xs:element>
+	<xs:element name="tiempo-victoria" type="xs:duration" />
 	<xs:element name="anchura-media">
 		<xs:complexType>
 			<xs:simpleContent>
-				<xs:extension base="xs:string">
+				<xs:extension base="xs:positiveInteger">
 					<xs:attribute name="unidades" type="xs:string" use="required" />
 				</xs:extension>
 			</xs:simpleContent>
@@ -43,7 +44,7 @@
 	</xs:element>
 	<xs:element name="fecha" type="xs:date" />
 	<xs:element name="hora" type="xs:time" />
-	<xs:element name="vueltas" type="xs:integer" />
+	<xs:element name="vueltas" type="xs:positiveInteger" />
 	<xs:element name="localidad" type="xs:string" />
 	<xs:element name="pais" type="xs:string" />
 	<xs:element name="patrocinador" type="xs:string" />
@@ -133,6 +134,12 @@
     		<xs:maxInclusive value="500"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="tipoPuesto">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:element name="distancia">
 		<xs:complexType>
 			<xs:simpleContent>
@@ -195,19 +202,10 @@
 			<xs:attribute name="nombre" type="xs:string" use="required" />
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="tiempo-victoria">
-		<xs:complexType>
-			<xs:simpleContent>
-				<xs:extension base="xs:duration">
-					<xs:attribute name="unidades" type="xs:string" use="required" />
-				</xs:extension>
-			</xs:simpleContent>
-		</xs:complexType>
-	</xs:element>
 	<xs:element name="clasificados">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="3" ref="clasificado" />
+				<xs:element minOccurs="3" maxOccurs="3" ref="clasificado" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -215,8 +213,8 @@
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="xs:string">
-					<xs:attribute name="puesto" type="xs:integer" use="required" />
-					<xs:attribute name="puntos" type="xs:integer" use="required" />
+					<xs:attribute name="puesto" type="tipoPuesto" use="required" />
+					<xs:attribute name="puntos" type="xs:positiveInteger" use="required" />
 				</xs:extension>
 			</xs:simpleContent>
 		</xs:complexType>

@@ -33,7 +33,7 @@ xmlns="http://www.uniovi.es">
         </coordenadas>
     </origen>
     <vencedor nombre = "Fermín Aldeguer">
-        <tiempo-victoria unidades="segundos">PT2467.651S</tiempo-victoria>
+        <tiempo-victoria>PT2467.651S</tiempo-victoria>
     </vencedor>
     <clasificados>
         <clasificado puesto="1" puntos="545">Marc Márquez</clasificado>
