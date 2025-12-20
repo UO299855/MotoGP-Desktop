@@ -12,8 +12,17 @@
             $this->database = "UO299855_DB";
         }
 
-        public function runSqlScript($path, $verbose = true) {
-            $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+        public function runSqlScript($path, $verbose = true, $selectDB = true) {
+            if ($selectDB) {
+                try {
+                    $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+                } catch(mysqli_sql_exception $dbException) {
+                    if($verbose) echo "<p>No hay tablas, pues la base de datos está vacía. Reinicie la base de datos para poder llevar a cabo la operación.</p>";
+                    return;
+                }
+            } else {
+                $db = new mysqli($this->host, $this->user, $this->password);
+            }
             if ($db->connect_errno) {
                 if ($verbose) echo "<p>Error al conectarse a la base de datos</p>";
                 return false;
@@ -63,7 +72,12 @@
         }
 
         public function exportDB() {
-            $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+            try {
+                $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+            } catch(mysqli_sql_exception $dbException) {
+                echo "<p>No hay tablas, pues la base de datos está vacía. Reiníciela antes de exportar.</p>";
+                return;
+            }
             if($db->connect_errno) {
                 echo "<p>Error al conectarse a la base de datos</p>";
                 return;
@@ -81,6 +95,13 @@
         }
 
         public function importDB() {
+            try {
+                $db = new mysqli($this->host, $this->user, $this->password, $this->database);
+                $db->close();
+            } catch(mysqli_sql_exception $dbException) {
+                echo "<p>No hay tablas, pues la base de datos está vacía. Reiníciela antes de importar.</p>";
+                return;
+            }
             $directory = "import/";
             if(!is_dir($directory)) {
                 echo "<p>No se pudo encontrar la carpeta para importar archivos.</p>";
@@ -118,8 +139,6 @@
             if($csvFile == false) {
                 echo "<p>Error al leer del archivo " .$fileName ." </p>";
             }
-            preg_match('/import\/(.*).csv/', $fileName,$tableName);
-            $tableName = $tableName[1];
             $fields = fgetcsv( $csvFile,0,";");
             $columns = implode(",",$fields);
             $fieldN = count($fields);
@@ -128,18 +147,29 @@
             $query = "INSERT INTO `" . $this->database ."`.`" .$tableName ."` ($columns) VALUES $placeholders;";
             $prepared = $db->prepare($query);
             // Iteramos por cada fila del CSV
+            $rowN = 1;
+            $error = false;
             while(($entry = fgetcsv( $csvFile,0,";")) != false) {
+                $rowN++;
                 if(count($entry) != $fieldN) {
-                    continue;
+                    echo "<p>No se pudo importar desde $fileName. Error en la fila $rowN: número de campos inválido.</p>";
+                    $error = true;
+                    break;
                 }
                 $prepared->bind_param($types, ...$entry);
-                $prepared->execute();
+                try {
+                    $prepared->execute();
+                } catch(mysqli_sql_exception $e) {
+                    echo "<p>No se pudo importar desde $fileName. Error al insertar la fila $rowN.</p>";
+                    $error = true;
+                    break;
+                }
             }
             $prepared->close();
 
             fclose($csvFile);
             $db->close();
-            echo "<p>Se ha importado correctamente desde $fileName.</p>";
+            if(!$error) echo "<p>Se ha importado correctamente desde $fileName.</p>";
         }
     }
 ?>
@@ -170,14 +200,16 @@
                 <input type = 'submit' class='button' name = 'reiniciar' value = 'Reiniciar base de datos' title="Borra y crea de nuevo las tablas"/>
                 <input type = 'submit' class='button' name = 'exportar' value = 'Exportar base de datos' title="Exporta los datos de cada tabla a un archivo CSV"/>
                 <input type = 'submit' class='button' name = 'importar' value = 'Importar base de datos' title="Reinicia las tablas y luego importa desde un CSV"/>
+                <input type = 'submit' class='button' name = 'eliminar' value = 'Eliminar base de datos' title="Elimina la base de datos y sus tablas. Posteriormente hay que crearla de nuevo."/>
             </form>
             <?php
                 if(count($_POST) > 0) {
                     $config = new Configuracion();
                     if(isset($_POST["vaciar"])) $config->runSqlScript("scripts-sql/vaciarTablas.sql");
-                    if(isset($_POST["reiniciar"])) $config->runSqlScript("scripts-sql/reiniciarTablas.sql");
+                    if(isset($_POST["reiniciar"])) $config->runSqlScript("scripts-sql/reiniciarTablas.sql", true, false);
                     if(isset($_POST["exportar"])) $config->exportDB();
-                    if(isset($_POST["importar"])) $config->importDB();                    
+                    if(isset($_POST["importar"])) $config->importDB();
+                    if(isset($_POST["eliminar"])) $config->runSqlScript("scripts-sql/eliminarBase.sql");
                 }
             ?>
         </section>
