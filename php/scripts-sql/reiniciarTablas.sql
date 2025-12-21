@@ -1,11 +1,11 @@
-CREATE DATABASE IF NOT EXISTS `uo299855_db`;
-DROP TABLE IF EXISTS `uo299855_db`.`respuestas_test`;
-DROP TABLE IF EXISTS `uo299855_db`.`observaciones_test`;
-DROP TABLE IF EXISTS `uo299855_db`.`resultados_test`;
-DROP TABLE IF EXISTS `uo299855_db`.`dispositivos`;
-DROP TABLE IF EXISTS `uo299855_db`.`usuarios`;
+CREATE DATABASE IF NOT EXISTS `UO299855_DB`;
+DROP TABLE IF EXISTS `UO299855_DB`.`respuestas_test`;
+DROP TABLE IF EXISTS `UO299855_DB`.`observaciones_test`;
+DROP TABLE IF EXISTS `UO299855_DB`.`resultados_test`;
+DROP TABLE IF EXISTS `UO299855_DB`.`dispositivos`;
+DROP TABLE IF EXISTS `UO299855_DB`.`usuarios`;
 
-CREATE TABLE `uo299855_db`.`usuarios` (
+CREATE TABLE `UO299855_DB`.`usuarios` (
     id INT NOT NULL AUTO_INCREMENT,
     profesion VARCHAR(255) NOT NULL,
     edad INT NOT NULL,
@@ -17,12 +17,12 @@ CREATE TABLE `uo299855_db`.`usuarios` (
     CONSTRAINT CHECK_PERICIA CHECK(pericia_informatica BETWEEN 0 AND 10)
 );
 
-CREATE TABLE `uo299855_db`.`dispositivos` (
+CREATE TABLE `UO299855_DB`.`dispositivos` (
     tipo ENUM('ordenador', 'tablet', 'telefono') NOT NULL,
     CONSTRAINT PK_DISPOSITIVO PRIMARY KEY(tipo)    
 );
 
-CREATE TABLE `uo299855_db`.`resultados_test` (
+CREATE TABLE `UO299855_DB`.`resultados_test` (
     id_usuario INT NOT NULL,
     dispositivo ENUM('ordenador', 'tablet', 'telefono') NOT NULL,
     tiempo BIGINT NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE `uo299855_db`.`resultados_test` (
     CONSTRAINT CHECK_VALORACION CHECK(valoracion BETWEEN 0 AND 10)
 );
 
-CREATE TABLE `uo299855_db`.`observaciones_test` (
+CREATE TABLE `UO299855_DB`.`observaciones_test` (
     id_usuario INT NOT NULL,
     dispositivo ENUM('ordenador', 'tablet', 'telefono') NOT NULL,
     comentarios TEXT,
@@ -47,7 +47,7 @@ CREATE TABLE `uo299855_db`.`observaciones_test` (
     CONSTRAINT FK_OBSERVACIONES_DISPOSITIVOS FOREIGN KEY(dispositivo) REFERENCES dispositivos(tipo)
 );
 
-CREATE TABLE `uo299855_db`.`respuestas_test` (
+CREATE TABLE `UO299855_DB`.`respuestas_test` (
     id_usuario INT NOT NULL,
     dispositivo ENUM('ordenador', 'tablet', 'telefono') NOT NULL,
 
@@ -69,6 +69,6 @@ CREATE TABLE `uo299855_db`.`respuestas_test` (
 );
 
 
-INSERT INTO `uo299855_db`.`dispositivos` (`tipo`) VALUES ('ordenador');
-INSERT INTO `uo299855_db`.`dispositivos` (`tipo`) VALUES ('telefono');
-INSERT INTO `uo299855_db`.`dispositivos` (`tipo`) VALUES ('tablet');
+INSERT INTO `UO299855_DB`.`dispositivos` (`tipo`) VALUES ('ordenador');
+INSERT INTO `UO299855_DB`.`dispositivos` (`tipo`) VALUES ('telefono');
+INSERT INTO `UO299855_DB`.`dispositivos` (`tipo`) VALUES ('tablet');

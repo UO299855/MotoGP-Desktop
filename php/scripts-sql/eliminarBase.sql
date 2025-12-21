@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS `uo299855_db`.`respuestas_test`;
-DROP TABLE IF EXISTS `uo299855_db`.`observaciones_test`;
-DROP TABLE IF EXISTS `uo299855_db`.`resultados_test`;
-DROP TABLE IF EXISTS `uo299855_db`.`dispositivos`;
-DROP TABLE IF EXISTS `uo299855_db`.`usuarios`;
-DROP DATABASE IF EXISTS `uo299855_db`;
+DROP TABLE IF EXISTS `UO299855_DB`.`respuestas_test`;
+DROP TABLE IF EXISTS `UO299855_DB`.`observaciones_test`;
+DROP TABLE IF EXISTS `UO299855_DB`.`resultados_test`;
+DROP TABLE IF EXISTS `UO299855_DB`.`dispositivos`;
+DROP TABLE IF EXISTS `UO299855_DB`.`usuarios`;
+DROP DATABASE IF EXISTS `UO299855_DB`;

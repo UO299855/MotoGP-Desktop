@@ -53,6 +53,7 @@
         private function showAvailableUsers() {
             $db = new mysqli($this->host, $this->user, $this->password, $this->database);
             if ($db->connect_errno) {
+                $db->close();
                 echo "<p>Error al conectarse a la base de datos</p>";
                 return;
             }
