@@ -24,7 +24,6 @@ header, header > section {
     column-gap: 2ex;
 }
 
-
 /*Especificidad 002*/
 header button {
     display: none;

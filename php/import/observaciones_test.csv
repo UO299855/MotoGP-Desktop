@@ -1,5 +1,5 @@
 id_usuario;dispositivo;comentarios
-1;tablet;"Test realizado con la tablet de la Escuela, luego el JS no funcionaba adecuadamente. Además, la media query del guion no garantizaba la adaptabilidad en este caso."
+1;tablet;"Test realizado con la tablet de la Escuela, luego el JS no funcionaba adecuadamente. Además, la media query del guion no recogía este tamaño."
 2;ordenador;"El usuario no sabía que la página web se puede agrandar con ""control +"". Una vez se lo comenté, me dijo que mucho mejor así."
 3;tablet;"Gran dificultad con la inserción de infoCircuito.html. La página web se mostraba sin problemas para la tablet, garantizando la adaptabilidad."
 4;telefono;"El usuario leyó los contenidos de la web detenidamente. Hay un ligero scroll horizontal en piloto.html, aunque el usuario no se dio cuenta. Es pequeño, pero he de redimensionarla mejor."

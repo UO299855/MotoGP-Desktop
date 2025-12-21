@@ -1,9 +1,0 @@
-TODO : todo esto
-It's very difficult to do todo esto
-
-Tengo que hacer la memoria con los cambios de la versión con xml y con dtd
-Generar gráficamente el árbol DOM de los XML (tanto con xml2svg.exe como con el PDF de opera)
-poner enlaces útiles para las referencias en el XML
-Revisar que las dos versiones del XML sean iguales
-
-Revisar la accesibilidad de las tablas
