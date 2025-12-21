@@ -19,17 +19,16 @@
         
         public function mostrar() {
             $nanos = $this->tiempo;
-            // Usamos _ para que sean float
-            $mins = intdiv($nanos, 60_000_000_000);
-            $nanos -= $mins * 60_000_000_000;
-            $seconds = $nanos / 1_000_000_000;
+            $mins = intdiv($nanos, 60000000000);
+            $nanos -= $mins * 60000000000;
+            $seconds = $nanos / 1000000000;
 
             // Formato mm:ss.s
             return sprintf("%02d:%04.1f", $mins, $seconds);
         }
 
         public function getMillis() {
-            return intdiv($this->tiempo, 1_000_000);
+            return intdiv($this->tiempo, 1000000);
         }
     }
 ?>
