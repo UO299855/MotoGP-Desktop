@@ -1,0 +1,23 @@
+ El volumen de la unidad C es OS_Install
+ El n£mero de serie del volumen es: E8C2-C350
+
+ Directorio de C:\xampp\htdocs\MotoGP-Desktop
+
+19/12/2025  18:34             1.015 00awaiting.html
+19/12/2025  18:16             2.309 00clasificaciones.html
+19/12/2025  18:18             1.328 00config.html
+19/12/2025  18:41             2.440 00cronometro-ui.html
+19/12/2025  18:36               792 00end.html
+19/12/2025  18:35             1.418 00feedback.html
+19/12/2025  18:35             1.470 00observations.html
+19/12/2025  18:35             3.440 00survey.html
+15/12/2025  19:47             5.169 ayuda.html
+20/12/2025  11:48             2.518 circuito.html
+16/12/2025  11:31             2.667 cronometro.html
+29/11/2025  18:00             2.202 index.html
+15/12/2025  20:51             2.787 juegos.html
+16/12/2025  18:36             4.129 memoria.html
+19/12/2025  19:31             3.746 meteorologia.html
+21/12/2025  08:54             6.861 piloto.html
+              16 archivos         44.291 bytes
+               0 dirs  1.848.477.392.896 bytes libres

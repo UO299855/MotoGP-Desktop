@@ -144,7 +144,7 @@ class Ciudad {
             "apparent_temperature" : "Temperatura ambiente",
             "rain" : "Lluvia",
             "relative_humidity_2m" : "Humedad relativa",
-            "temperature_2m" : "Temperatura",
+            "temperature_2m" : "Temperatura a 2m del suelo",
             "wind_direction_10m" : "Dirección del viento",
             "wind_speed_10m" : "Velocidad del viento"
         }

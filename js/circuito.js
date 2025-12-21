@@ -143,7 +143,11 @@ class CargadorSVG {
         reader.onload = (event) => {
             this.#insertarSVG(reader.result)
         }
-        reader.readAsText(file)
+        if(file && file.type == "image/svg+xml") {
+            reader.readAsText(file)
+        } else {
+            this.#showErrorP(`Error al leer ${file.name}. Escoja un archivo válido.`)
+        }
     }
 
 
@@ -171,6 +175,23 @@ class CargadorSVG {
 class CargadorKML {
     #input
     #div
+    #errorP
+
+    #showErrorP(errorStr) {
+        if(this.#errorP == null) {
+            this.#errorP = $(`<p>${errorStr}</p>`)
+            $(this.#input).after(this.#errorP)
+        } else {
+            this.#errorP.text(errorStr)
+        }
+    }
+
+    #removeErorP() {
+        if(this.#errorP != null) {
+                this.#errorP.remove()
+                this.#errorP = null
+        }
+    }
 
     constructor() {
         let section = $("<section></section>").appendTo("main")
@@ -192,10 +213,25 @@ class CargadorKML {
         reader.onload = (event) => {
             this.#insertarCapaKML(reader.result)
         }
-        reader.readAsText(file)
+        // En este caso, comprobamos la extensión
+        if(file && file.name.split(".").pop().toLowerCase() == "kml") {
+            reader.readAsText(file)
+        } else {
+            this.#showErrorP(`Error al leer ${file.name}. Escoja un archivo válido.`)
+        }
     }
 
     #insertarCapaKML(kmlText) {
+        const nameSpace = "http://www.opengis.net/kml/2.2"
+        const nsResolver = prefix => nameSpace;
+        let parsedDocument = new DOMParser().parseFromString(kmlText, "application/xml")
+        const parseError = parsedDocument.querySelector("parsererror");
+        if(parseError) {
+            return this.#showErrorP("El archivo seleccionado no es un KML válido. Por favor, seleccione otro archivo.")
+        } else {
+            this.#removeErorP()
+        }
+
         if(this.#div == null) {
             this.#div = document.createElement("div")
             $(this.#input).after($(this.#div))
@@ -203,9 +239,6 @@ class CargadorKML {
             this.#div.innerHTML = ""
         }
 
-        const nameSpace = "http://www.opengis.net/kml/2.2"
-        const nsResolver = prefix => nameSpace;
-        let parsedDocument = new DOMParser().parseFromString(kmlText, "application/xml")
         const origen = parsedDocument.evaluate("//ns:Placemark/ns:Point/ns:coordinates",
             parsedDocument, nsResolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
         console.log(origen)

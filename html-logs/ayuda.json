@@ -1,5 +1,86 @@
 {
-  "error": "HTTP error",
-  "status_code": 429,
-  "response": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}.h2{line-height:2.25rem;font-size:1.5rem;font-weight:500}@media (width <= 720px){.h2{line-height:1.5rem;font-size:1.25rem}}#challenge-error-text{background-image:url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+\");background-repeat:no-repeat;background-size:contain;padding-left:34px}@media (prefers-color-scheme: dark){body{background-color:#222;color:#d9d9d9}}</style><meta http-equiv=\"refresh\" content=\"360\"></head><body><div class=\"main-wrapper\" role=\"main\"><div class=\"main-content\"><noscript><div class=\"h2\"><span id=\"challenge-error-text\">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script>(function(){window._cf_chl_opt = {cvId: '3',cZone: 'validator.w3.org',cType: 'managed',cRay: '9b08af85cbc80d72',cH: 'zP6kPAstQDZV5jDTQAlCk1Gf36ZuAPnPmcjZo6E8G8U-1766166032-1.2.1.1-UUuH1k0f8iJYQdiARSJhPJZcVBIQKslN93irwoWFfy86L.JX9q2JMk1PKyTqqR6G',cUPMDTk:\"\\/nu\\/?out=json&__cf_chl_tk=xJWeO2FTBg0ppEA8vF21W0ljO1hmaCdTaNZHZaz5np0-1766166032-1.0.1.1-h_SnwC4.blPiCfYq.eKY6Gan4KzamqvWJXKuBaH7dKE\",cFPWv: 'g',cITimeS: '1766166032',cTplC:0,cTplV:5,cTplB: '0',fa:\"\\/nu\\/?out=json&__cf_chl_f_tk=xJWeO2FTBg0ppEA8vF21W0ljO1hmaCdTaNZHZaz5np0-1766166032-1.0.1.1-h_SnwC4.blPiCfYq.eKY6Gan4KzamqvWJXKuBaH7dKE\",md: '81ugQWyZO36nqV7GXxZTdOdronRtr9TEwgmm9041rCQ-1766166032-1.2.1.1-8ZMPmotopbIo0rJWglURWFebKG0jHlbr_4CMupatOFcwgyIF9d9W4ZOx_WoWi0O8bWPDHQmZGIoLinNY7QmGB7jwShm0MX0tukvJ3FilSjOsQ6HGvaZa99xA4zHeWSQnHlKScJUzaWYh2zQVlMleYgT0Oc5PjDSezmfjPsmQSnPvGR3oL1I6z1ENh4ElmIXViAbSOS6XE3dJgkQIqhqHuv8ImuEhAmAn6VwXtreDFxewd.bt19RENgSCssRMLH1UpZ4z2mGBa.rlQyfSSJLX.wsTTZN6GGryT1X3vMTIzhygxe307pa1UdyKdgUaKJWQID4zHOtuckr_otl.AloWDQmWX78PVmABMI74Mz4z_r_ygYUQM0w._WQN.UO94VHnxQHOclJRawlr8n7q6.qTn9WBRj5uSzT_PvllszJo7E1UKAeOo.Q05LmuUCW7aAo7ABH.tVNIRlkEMI5MTljP0Y6gWrXd19wQ0EB8_NjxVLfCSig8p9zfjLX1Zj61aC0Jqd0Q5QtqRqnJtHTWpKQw5k.Wt.YinMp_JqhchQZ6x_an9TWzToW6LTro1Q0.TZNSkVAYQEBwMuS8KEu3veEfiMvWYNluMT8dEgrCGYx5IPF34CtNAscmcPdm3Ya2C9BgnW0yHi612ZcG6NutiPi_OW0aEg97Yb.3vknethWUSvadzKA7XdW8CSHlE3EJqF9kuW195Wl.IhwZDZ.pBQQrrf4xyH0ictKmKlD3XSyoKHlaSS2J5zD6waRG0j3IR8ifUQk2_ei674TewcrbJH4XLRySHFulFmxbSc7zRE.jqPqAaMepGWcYQdC8h0B0yvbe0dB.7vOEL0Z1ZNUSZO4UCDppvJg3JQT7eOd8BLKKWBc7u4IAqMzRACq6LCOHTy0bOe0x3FiysQX.DPOFjuwULJ4EzVObguX3xQ_OOckiiZzM86DypTpAeGCNqhgE9kl7aK.SE81GiFzKfpXlveEPotXhxDFCwtg6qAZikY4s5uzvJCjADhgyGQu1EGLQXKkPXkbjEzPO9fjSPi0M76x0.g',mdrd: 'immVsoU49.MCIT0GuvmYVpD9wxnA7DyotL3Cf4w448s-1766166032-1.2.1.1-Fr902DPNo5mwBDw3Lfj8Xv_iAbRZOWjQuqAlMWpsNmFDmdS8UIEsAoyPvjhJFDXtXDNS3j5fLhYnAxe3sWilD8JG_1fg8HVViYgMK35S8coD4xg5zQoQAcXoueHB1b24UnXufa1s0l.bu_O3.fzoKjrtabWpJm7fntCzCzcKRS5CFtvk6WJPiiYbBwmF014kwAMk3o6a3rq9Kb3QoAcFMGPN8v9K37RMiV4A0l7BqFuSTimAc23xVTRJsvDA3eDFYIMY0_OXpobnWcl1R6Ds9mH8sAng96m78XzrlI4jiZMJDdAo7m10v73tVK9OhuK9E0fDCeG5Jnv3HUtKlZNR7OjSQQU5yflfFWJOWAly9jQyX8Sqc2ns2i9GwAljVsKfd38PZ13ePfPFLn6nTx6u7ItRlB5SIzZpFNuix_JHlmJS_PMjz5SGOZ_DnmebYHAVQAQlS5L5xKqQ5BZjBBEM8eMppaW7JBvAa50qr4pCfy78hU1gNANlaPc4NZe7rh7758BJNoQhRqxJIb.l_WekQLDspHrlK29h1Ug0rdN0J78eliNwSB7I1yZWXiDrmZ0EVXSCf2C83Yg_0y3ccxnQRL4Z2ngkgK0Rf.advR.MPJPT1k23ATCe9CyEb1EgzqByI4E3Kc41r_aYvW4C2EU.VX1j.fcv8W.wbqVShY_.y_G0_0A3tocH9u7V._d3GP_qLMJ1B3qtP_anOZrpXgaEepTkTY.IEye3UiyPL4fXIESqROR_9DZ4qLPHkjesevSTzSsnn837Az5hj48c7wn.2.OxjB0AfnAOIN_DMl_fgQ8NcFD_N1OiEoiWRmXzRRXmAtMXmuJK2IXNj.kkjdfpWk9K_22hk1sZlbPSV8vjY4XbGfq7.VOm0iR2o9yaJa9IaeagOaZdgIfeNmmszo8i0nQxbaXy3QL4ACbr0qQFAPuAIDt631eu8OEFkB7YFw8qX0oRWlh0vjfKpx1xe5odOHHO4yYGCwS2YPjGCt9N7WXKIrSyudaTsYRhuSNpK2f1ilOThyXa0bl0jBPhKpFbkDdv1HvJY_jQ7EBlZNK4GGoszPnS1rnPrl9zyNiyqMxyzbGq3vYwqiqbJFaHJDKfa.Yyj7_PwWRNNjR6PF3y92YDhe2yS1gPCbynxiJqVQxvaOSl6ZeCbNY5f4tVDzm6aPTRiJ1OBOFdf7E7AaUDcl2eIo2nc5yb2tz7Gu9OYIWzkXSXFoE2X4JhReKoEZWP1bjD7PympcO_31QL5c4gufZ7a.fIXgknkRcEj_jPH7W_NnpFk0eAMf.aINJm1ft.8csjpxK.h9G3wWSVIn.Jpl2.q1IJaocxA0JoOVGDuaKYUZUdw4n77nXqx7X.KFD78XCG6y31UJIC6n9UfBBxQri0EOXJqYn085WVZTEXdYxC6QO8LVsDwxV7_9EebxbGOoalHH1oY3I5C.NkuaYq87Qh5O_R0FbWiu2O_dVf.nTw2Zfu_ypUPoQ8XshXGTQ1BeRywArPDMqLkjRXzzV1_DJ3RIMMOEuElecCNBo32QATSMCtgoM_sZdiI8Ue.PjwYFfv0XaX.Ukj46bHuZY9bRvgLlJ0Qsqr6JG5op1jtO4aak8ZbfaP2icafPahe0ro8ccNIEdNpf.GtW4deFGhG.q2TECGtGcs8rSQQbCIMEsvyfD5Jr79bg.Z.q9MDRP6ZITliQ85OJ_fsFllhFH1NYz_n52sO9eHfVvNs8dweTmu6eH8azmCGGjHbdAlTs3RyWz0S0A57CognBzwKyP0jH_8wUe9hKipz2VBgjZQUgRJb_Fs3Q9rQsBPJ9vAUPm2R.1ESwEVfUqGm8PdZjMm_J.hMHtEkBtIix8RNW7kz.L2PVdabg4bUOmY8WtzCAjTyNxVtxnqKXcGA3rmIYzut55YGMpXbPtzaC6Wjn1_KAr9b_02F1X26WsO_6jfD4PUaUhP7Pkfxi4X5P5hFi901gocvQYQu73HUCO5M5mUuRXEp5bnRwj6LU2OeBBNh9dZMTqWfv7oVOZpcfHWOGPB4WzuzsTb2evCuNNvvjV7N_k83FcegyfZO9zGDUXjoXhEanZTBA7Kudc6nUweB2IyG2YqRxmgfPBpcjUEf14VOEAfZMfFM2dqr2C9FY.Wz3swuidTOtuukSJQWOVY.Pwi5lUGcndhwiGa_YXxds8s5AKhRyRryIKFqyhw1nXZmwUI3z4NrZnG6OqbQ.oU05m5kwKhErnWD8UtcOZeExukkaxi0XaVhwYgZOxPmTZsokWYpdzQboWpAksycS4n30egGhEU1yfXJ8cQQp8pt5tAP0qp3eAUYh3R63jB5fyf9WCVYe.ZBh5AxFtXIjM_sW8KSjoXmqCPQWkTH_d8NYRbYYrHbtPIYRTfkvRKyHsNKnTLuGrZ_D52m14Y0uu4f5LKXj5ZgsV8T4b_P6inADPBQAQh1FKko9vcYzm3tSGbNLt05mAB53bR5EndptmtDDQ3V2V_QdiqC7ou1ZGCo0JpocUTIvbOoZgFBbG6nIVFXy5WF9Zg_xXmCg8XQJNp6PPp3HUO_MrFv813VrnTQf3JCX.IBWgFLOIbd8MvaIauDhuuCCFnVLa438IxvOcdXFYKLOQV8kRJUp7x9716s15UIjcRXd2vXxYtBP0CTQeovH0A9SvRlS.CYAYjAVRO2nfXlQKeoZyKNy.Eo79JTxog.nmchdmgKBfHCkhXLKq5mX1GPosKa2gW43hRuk1VcA10mlYPMdtS5BTvA4F0a39EwQ60QeBl1tHnIlT3b9iUQwkLWqbJDoJxSAiKyjIeFaOxYa8aKSQMBCs8.Kjyqdjyx_TmHDm.c1TZSzV91qI3bDX25xGmbtFtepPS7lb4_b5PMb3S8NuRbWMim3OTYOEcotLtg4L3yzOe9CftvM8DwE27.f0chtTUBov6BQ3uh_0ItVoXxuzoThtL9_DPcpNg01ynBpGAUPFE4i8WxCzj2g.yq.JOAbKADdRVH9Xnc3l28h2V7tSjz.5VC5MBSPtOaIZj0fIiXh8hVwn4ASQES43gSR3kVAHo8c0qaOZp8Y.OY07m_1ctDeOOyx8NOotB25DK6.gCUBqX05i5Ki580qYtUD8rzeBQBjJo291icObhsWu3K4mD5g_RFKZ421xifEG6TFnEyV85kN9AmDraREOBq1Ro3XCdFzSMgv9TjZv057H2bgaPxPmnItSBHt2VZsyOl_4cANQxe6WOYAiPAF6SAP11akAp0qG4ziZK4R.d4PF.KEzK.PHjXjusn2e1UslqpuzjNoX7HbOpwzuhfsvkVfCPBduVhlYIgxgQAcfS_CGJWK7GdZq6_6O5nnz8AnlfvRvtJyJl9TYMGJRswWSBAK4mwYll9RBnrJaie8HJmpmHEa36jZONg5v3VD69IQrUzckpishL3hfyFjv9e6D8OUjioj8Lzaq3GL384QQ7yVSSjT3Rw530w._D0SUDQ5SuGoLXjATluA.91x__OpGSivmf.4YfK.eZKTr.mIAAywq88zudQiLFHZHGEA0P4ixCes3RZ.K7P_xFukHPo0o5GIAPTI5o6uWnIgxkZGUyra7yCdMT1y7VBCcwD9oqI0B9P3EWvQA04qDJJb.46wbV20rHha.2aqt_mEqtlkicSCeSHELthwWdSw8c_zdv4dfktYgnryCjiO..cpzlN0SLtQ1Ap9fJtHWCXIqCZLclQtAbwtNG.mZPVTvsdBuYycaj4vBL2rtJDQFgVixwd2DYcppv2dlF8hlxLUm.JY55_zwnr7td692NQvurElmtAl0tAgkRTWs7_BSK_7QIzzgGDbEAjo4b8.aREsmIZ0f_o9TT_Ts96j6Ay1VN04nqlqSDInYGxsXUXsVtTjNTbHTCshTk5qOh_wuOmuaD2kvAmR9IY_FvBI.I4B0ephOpvh2Dzg1DLtZzfbtoBMJf9Qj6f8y5KA8_rG1tBbDDeAEgTBRPYRcdqRsGkAVPO.NYdNenEpxfTCmDueN8e_QNOhg3zihHfp4dkYV6QW_ziJzNJT_vNqTh3W8pVYNqBDeNcHYCf0ieOCK7EPnebG80Po8BD5X4nJnRjju4Pq5Y12Iw1l8XCcy3ReuHr0bEJsexwec2YsrE6Rhdzzv1i2QJjp8NeuQY1BS_ffWFOndIfcM0ntVaCtvp1D_7NFLxzuqnjaejRcwtxIGdVn03u2ODzz6Ph_RiKjXKv2c6cMuhz5hBWZQYPQ2U74F2r7DVfFxg8jiIqqWRw5RPXBlA506a_l4sRDnygGxBCibmCa8jlNdOKdVIrqBUzzuC0UdiRdw_8Q9QzA.IAsOxFSHUrXAXnPAt4ubAIoEkZlXNIE81sX90xpQAKTlPlausf1CHZuYNPXHtKVN4ugbjvz9vsuPdDFh0prXOUddvo8QfBacd48ZZB5RjEs7FYhY4kixF0EhJAanB8l2tNCrxnNJp94k1ceosJUTUsqMZI6yI4y3f.kCDRRrzPF5gGldiWqjIqdfxloFT4.M9U199xB5JgrCeqAKgtdNt0m7JGLSIe1IWtgUQqCSGOYYn1s1_BX5st8s2os1NuwDGdy_J4TFc8gWk0rA_yGCJ8eYX3PIUlIRXwrcu92zbejwlgSfFGGnmds9ZBn5HXfgADDKRR72FORAJtsxoO7VDWAY48hgdjshsY.d.JE5AzAYTBcNeBpFeFaC_SfP.muAI1ucM1PpA04AjVankfpswG4Qp8Oi7wEFyfZWnXd67MYLUoiUiYP8rWRG7KSbrFDqa_aYvDi9_qyfT3ol5ozAGn40TaSRvwLZwvtnVqavBsQ2PxREy4CVrJ7jLIbvjqRjpLA5d99nHrDH2f9wo5K7hEs9ChoOf_dFMItm1l5keyxyPls0ybj45gfENc.fFkOSsvLLwkNsv2ko4lwmQ3Fy_ujxKATAh9e.pXG863ni4q0O983t.CRHVqQ5XHkw0bHOqvdQ80gL4hOSVHCyE.w',};var a = document.createElement('script');a.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=9b08af85cbc80d72';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,\"\\/nu\\/?out=json&__cf_chl_rt_tk=xJWeO2FTBg0ppEA8vF21W0ljO1hmaCdTaNZHZaz5np0-1766166032-1.0.1.1-h_SnwC4.blPiCfYq.eKY6Gan4KzamqvWJXKuBaH7dKE\"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>"
+  "version": "25.12.21",
+  "messages": [
+    {
+      "type": "info",
+      "lastLine": 6,
+      "lastColumn": 28,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "o -->\n    <meta charset=\"UTF-8\" />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 24
+    },
+    {
+      "type": "info",
+      "lastLine": 9,
+      "lastColumn": 56,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "tle>\n\n    <meta name=\"author\" content=\"Javier Ortín Rodenas\"/>\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 52
+    },
+    {
+      "type": "info",
+      "lastLine": 10,
+      "lastColumn": 89,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "as\"/>\n    <meta name=\"description\" content=\"Información de ayuda del proyecto MotoGP-Desktop\"/> <!--C",
+      "hiliteStart": 10,
+      "hiliteLength": 85
+    },
+    {
+      "type": "info",
+      "lastLine": 11,
+      "lastColumn": 79,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "io-->\n    <meta name=\"keywords\" content=\"ayuda,información,moto,premio,competición\"/> <!--C",
+      "hiliteStart": 10,
+      "hiliteLength": 75
+    },
+    {
+      "type": "info",
+      "lastLine": 12,
+      "lastColumn": 75,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "io-->\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\n\n    ",
+      "hiliteStart": 10,
+      "hiliteLength": 71
+    },
+    {
+      "type": "info",
+      "lastLine": 14,
+      "lastColumn": 70,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "0\"/>\n\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"estilo/estilo.css\" />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 66
+    },
+    {
+      "type": "info",
+      "lastLine": 15,
+      "lastColumn": 70,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "s\" />\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"estilo/layout.css\" />\n    <",
+      "hiliteStart": 10,
+      "hiliteLength": 66
+    },
+    {
+      "type": "info",
+      "lastLine": 16,
+      "lastColumn": 69,
+      "firstColumn": 5,
+      "message": "Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.",
+      "extract": "s\" />\n    <link rel=\"icon\" href=\"multimedia/favicon.ico\" type=\"image/ico\"/>\n\n    ",
+      "hiliteStart": 10,
+      "hiliteLength": 65
+    }
+  ],
+  "language": "es"
 }

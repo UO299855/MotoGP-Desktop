@@ -114,11 +114,13 @@ p + h3 {
     margin-top:4ex
 }
 
-/* Regla para el mapa dinámico TODO revisar*/
+/* Regla para el mapa dinámico*/
+/* He optado por incluir el div dentro de la sección del input correspondiente. Por tanto, he modificado ligeramente el selector*/
 /*Especificidad 003*/
 main > section > div {
     height: 100vh;
     width: 100%;
+    margin-top: 2ex;
 }
 
 /*Especificidad 002*/
@@ -167,6 +169,7 @@ section article img, section article video {
         display: none;
     }
 
+    /*Especificidad 002,002*/
     header > h1, header > button{
         margin-left: 0em;
     }
@@ -186,7 +189,7 @@ section article img, section article video {
         width: 100vw;
     }
 
-    /*Especificidad 014*/
+    /*Especificidad 012*/
     button[aria-expanded="true"] ~ nav {
         display: flex;
     }
