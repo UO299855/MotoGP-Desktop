@@ -151,9 +151,10 @@ class Ciudad {
         const hour = 15 //hora de la carrera en la hora local (GMT+8)
 
         let table = $("<table></table>").appendTo(section)
-
+        $("<caption>Meteorología de la carrera</caption>").appendTo(table)
+        let tbody = $("<tbody></tbody>").appendTo(table)
         for(let key in params) {
-            let row = $("<tr></tr>").appendTo(table)
+            let row = $("<tr></tr>").appendTo(tbody)
             let value = params[key]
             $(`<th id='${value.replaceAll(" ", "_")}_carrera' scope='row'>${value} (${data.hourly_units[key]})</th>`).appendTo(row)
             $(`<td headers='${value.replaceAll(" ", "_")}_carrera'>${data.hourly[key][hour]}</td>`).appendTo(row)            
