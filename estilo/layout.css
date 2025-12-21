@@ -12,6 +12,10 @@ h1 {
     margin-left: 2ex;
 }
 
+/*Especificidad 001*/svg {
+    max-width: 100%;
+}
+
 /*Especificidad 001*/
 header, header > section {
     display: flex;
@@ -123,6 +127,12 @@ main > section > div {
     margin-top: 2ex;
 }
 
+/*Especificidad 001*/
+input {
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
 /*Especificidad 002*/
 form label {
     display: flex;
@@ -167,6 +177,11 @@ section article img, section article video {
     /*Especificidad 012*/
     body > p:first-of-type {
         display: none;
+    }
+
+    /*Especificidad 003*/
+    main > section > div {
+        height: 75vh; /* Hay que redefinir esta propiedad para garantizar la adaptabilidad */
     }
 
     /*Especificidad 002,002*/
