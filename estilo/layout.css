@@ -12,11 +12,12 @@ h1 {
     margin-left: 2ex;
 }
 
-/*Especificidad 001*/svg {
+/*Especificidad 001*/
+svg {
     max-width: 100%;
 }
 
-/*Especificidad 001*/
+/*Especificidad 002*/
 header, header > section {
     display: flex;
     flex-direction: row;
@@ -53,6 +54,7 @@ main > section > h4:first-child {
     margin-top:0em;
 }
 
+/*Especificidad 012, 012*/
 section > ul:last-child, section > p:last-child {
     margin-bottom : 0em;
 }
@@ -77,7 +79,7 @@ section > article {
 }
 
 /* Para el contenido incrustado, da márgenes a encabezados que no sean el primero*/
-/*Especificidad 002*/
+/*Especificidad 012*/
 article h4:nth-child(n+2) {
     margin-top: 2.5em;
 }
