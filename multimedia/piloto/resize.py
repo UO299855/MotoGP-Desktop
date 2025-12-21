@@ -5,9 +5,9 @@ image_path = "joan-mir.jpg"  # Cambia esto por la ruta de tu imagen
 img = Image.open(image_path)
 
 # Redimensiona la imagen (por ejemplo, a 800x600 píxeles)
-new_width = 700
-new_height = 466
+new_width = 600
+new_height = 398
 resized_img = img.resize((new_width, new_height))
 
 # Guarda la nueva imagen redimensionada
-resized_img.save("joan-mir.jpg")  # El nombre del archivo nuevo
+resized_img.save("joan-mir-tablet.jpg")  # El nombre del archivo nuevo
